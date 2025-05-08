@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Processos{% endblock %}
+
+{% block content %}
+
+<!-- Hero Processos -->
+<section class="hero-section">
+    <!-- vídeo de fundo -->
+    <video class="hero-video" autoplay muted loop playsinline
+           poster="{{ url_for('static', filename='imgs/hero-bg.jpg') }}">
+      <source src="{{ url_for('static', filename='videos/tec.mp4') }}" type="video/mp4">
+    </video>
+  
+    <!-- overlay escurecido -->
+    <div class="hero-overlay"></div>
+  
+    <!-- texto centralizado -->
+    <div class="hero-content">
+      <h1>Processos &amp; Tecnologias</h1>
+      <p>Integramos <span class="highlight">automação</span> e boas práticas DevOps para liberar todo o potencial do seu software.</p>
+    </div>
+  </section>
+
+<!-- Seção Diferenciais & Processo -->
+<section id="processos" class="processos-section">
+  <div class="container">
+    <h2>Diferenciais & Processo</h2>
+    <p>Unimos velocidade de execução e governança sólida:</p>
+    <ul class="process-list">
+      <li><strong>Onboarding Ágil:</strong> kickoff em até 3 dias úteis.</li>
+      <li><strong>Estrutura de Squads:</strong> times multidisciplinares trabalhando em sinergia.</li>
+      <li><strong>Ciclos Semanais:</strong> entregas incrementais com demonstrações regulares.</li>
+      <li><strong>Governança:</strong> relatórios e métricas de progresso em dashboards compartilhados.</li>
+      <li><strong>Suporte Evolutivo:</strong> plano de manutenção e roadmap de melhorias contínuas.</li>
+    </ul>
+    <p><strong>Diferenciais:</strong> certificações em AWS e RD Station, parcerias estratégicas e expertise comprovada em múltiplos setores.</p>
+  </div>
+</section>
+
+<!-- Seção Tecnologias Utilizadas -->
+<section id="tecnologias" class="tecnologias-section">
+  <div class="container">
+    <h2>Ferramentas & Tecnologias</h2>
+    <p>Principais linguagens, frameworks e plataformas que utilizamos:</p>
+    <ul class="tech-list">
+      <li>Python</li>
+      <li>JavaScript (Node.js, React, Next.js)</li>
+      <li>Flutter</li>
+      <li>Docker & Kubernetes</li>
+      <li>AWS (EC2, S3, Lambda)</li>
+      <li>Azure</li>
+      <li>RD Station</li>  
+      <li>FastAPI & NestJS</li>
+      <li>PostgreSQL & Redis</li>
+    </ul>
+  </div>
+</section>
+
+{% endblock %}

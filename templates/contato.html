@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Contato{% endblock %}
+{% block content %}
+
+<section id="contato" class="contact-section">
+  <div class="contact-overlay">
+    <img
+      src="{{ url_for('static', filename='imgs/hero-bg.jpg') }}"
+      alt=""
+      class="contact-bg-image"
+      role="presentation"
+    >
+  </div>
+
+  <div class="contact-content">
+    <div class="contact-header">
+      <h2>Fale Conosco</h2>
+      <p>
+        Conecte-se e descubra como nossas
+        <span class="highlight">soluções</span>
+        podem transformar seu negócio.
+      </p>
+    </div>
+
+    <address class="contact-details">
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:contato@nisconsultoria.com.br">
+          contato@nisconsultoria.com.br
+        </a>
+      </p>
+      <p>
+        <strong>Telefone:</strong>
+        <a href="tel:+5547992064403">
+          +55 (47) 99206-4403
+        </a>
+      </p>
+      <p>
+        <strong>Website:</strong>
+        <a
+          href="https://www.nisconsultoria.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          www.nisconsultoria.com.br
+        </a>
+      </p>
+    </address>
+    
+    <div class="contact-buttons">
+      <a
+        href="https://wa.me/5547992064403"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-contact"
+        aria-label="Falar via WhatsApp"
+      >
+        WhatsApp
+      </a>
+      <a
+        href="https://www.linkedin.com/company/n-i-s-insights-solutions"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-contact"
+        aria-label="Acessar perfil LinkedIn"
+      >
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="NIS Insights &amp; Solutions transforma dados em estratégias de sucesso. Soluções personalizadas em insights e analytics.">
+  <meta property="og:title" content="NIS Insights &amp; Solutions">
+  <meta property="og:description" content="Transformando dados em estratégias de sucesso.">
+  <meta property="og:image" content="http://localhost/static/nis_logo.svg">
+  <meta property="og:url" content="http://localhost/">
+  <meta name="theme-color" content="#0D3B66">
+
+  <title>NIS Consultoria – Home</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Open+Sans:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header-top" id="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo-link" aria-label="Página Inicial">
+        <img src="static/nis_logo.svg" alt="Logo NIS" class="logo" loading="lazy">
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-overlay">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="servicos">Serviços</a></li>
+        <li><a href="portfolio">Portfólio</a></li>
+        <li><a href="processos">Tecnologias</a></li>
+        <li><a href="contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="nav-overlay" id="nav-overlay">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="servicos">Serviços</a></li>
+      <li><a href="portfolio">Portfólio</a></li>
+      <li><a href="processos">Tecnologias</a></li>
+      <li><a href="contato">Contato</a></li>
+    </ul>
+  </div>
+
+  <!-- Conteúdo específico de cada página -->
+  
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <video class="hero-video" autoplay muted loop
+         poster="static/imgs/hero-bg.jpg">
+    <source src="static/videos/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>NIS Consultoria</h1>
+    <p>Construindo <span class="highlight">software</span> que impulsiona o seu negócio</p>
+    <a href="servicos" class="btn-cta">Conheça nossos serviços</a>
+  </div>
+</section>
+
+<!-- Destaque -->
+<section class="info-section destaque-section">
+  <div class="destaque-content">
+    <div class="destaque-text">
+      <h2>Por que escolher a NIS?</h2>
+      <p>Na NIS, combinamos inovação e excelência técnica para criar <strong>software sob medida</strong> que impulsiona resultados concretos. Cada projeto é arquitetado para transformar desafios complexos em soluções digitais escaláveis e seguras, elevando sua competitividade.</p>
+      <ul class="destaque-list">
+        <li><span class="destaque-icon">&#10003;</span> Desenvolvimento de Software Personalizado</li>
+        <li><span class="destaque-icon">&#10003;</span> Integrações Robustas e Escaláveis (APIs, Microserviços)</li>
+        <li><span class="destaque-icon">&#10003;</span> Entregas Ágeis, Testes Automatizados e DevOps</li>
+      </ul>
+    </div>
+    <div class="destaque-image">
+      <img src="static/imgs/destaque.jpg" alt="Imagem de Destaque">
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Cards de Projetos -->
+<section class="highlight-section">
+  <div class="highlight-card classic">
+    <div class="highlight-image"
+         style="background-image: url('static/imgs/card1.jpg');"></div>
+    <div class="highlight-text">
+      <h3>Soluções Personalizadas</h3>
+      <p>Cada projeto é desenvolvido de forma única para atender às demandas do seu negócio e impulsionar seu crescimento.</p>
+      <a href="portfolio" class="btn-highlight">Confira Nossos Projetos</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="highlight-card classic">
+    <div class="highlight-image"
+         style="background-image: url('static/imgs/card2.jpg');"></div>
+    <div class="highlight-text">
+      <h3>Consultoria Estratégica</h3>
+      <p>Oferecemos insights e soluções sob medida para transformar desafios em oportunidades reais de crescimento.</p>
+      <a href="servicos" class="btn-highlight">Veja Nossas Soluções</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="highlight-card classic">
+  <div class="highlight-image"
+       style="background-image: url('static/imgs/card3.jpg');"></div>
+  <div class="highlight-text">
+    <h3>Processos &amp; Tecnologias</h3>
+    <p>Implementamos pipelines CI/CD, automação e boas práticas DevOps para garantir releases rápidos, seguros e escaláveis.</p>
+    <a href="processos" class="btn-highlight">Conheça nossa abordagem</a>
+  </div>
+</div>
+
+<!-- Missão e Visão -->
+<section class="info-section">
+  <div class="info-cards">
+    <!-- Missão -->
+    <div class="info-card">
+      <h2>Missão</h2>
+      <p>Criar <strong>software sob medida</strong> e integrações inteligentes que acelerem os processos dos nossos clientes,
+         elevando eficiência, segurança e escalabilidade em cada entrega.</p>
+    </div>
+
+    <!-- Visão -->
+    <div class="info-card">
+      <h2>Visão</h2>
+      <p>Ser referência em soluções digitais que transformam desafios de negócio em plataformas robustas
+         e inovadoras, impulsionando o crescimento sustentável dos nossos parceiros.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Pronto para potencializar seu negócio?</h2>
+  <p>Entre em contato e descubra como nossas soluções personalizadas podem impulsionar sua empresa.</p>
+  <a href="contato" class="btn-cta-alt">Fale Conosco</a>
+</section>
+
+
+
+<!-- Rodapé -->
+<footer class="site-footer">
+  <!-- Onda decorativa -->
+  <div class="footer-wave">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+      <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="var(--color-primary)" />
+    </svg>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="footer-container">
+    <!-- Sobre -->
+    <div class="footer-col about">
+      <h3>NIS Consultoria</h3>
+      <p>Construindo software que impulsiona o seu negócio.</p>
+      <p>
+        <strong>Tel:</strong>
+        <a href="tel:+5547992064403">+55&nbsp;(47)&nbsp;99206-4403</a><br>
+        <strong>Email:</strong>
+        <a href="mailto:contato@nisinsights.com">contato@nisinsights.com</a>
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div class="footer-col links">
+      <h4>Institucional</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="servicos">Serviços</a></li>
+        <li><a href="portfolio">Portfólio</a></li>
+        <li><a href="processos">Tecnologias</a></li>
+        <li><a href="contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-col social">
+      <h4>Siga-nos</h4>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/company/n-i-s-insights-solutions" target="_blank" rel="noopener">
+            <img src="static/icons/linkedin.svg" alt="" class="social-icon">
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/5547992064403" target="_blank" rel="noopener">
+            <img src="static/icons/whatsapp.svg" alt="" class="social-icon">
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-col newsletter">
+      <h4>Fique por dentro</h4>
+      <form action="https://formspree.io/f/xknajwye" method="POST" class="newsletter-form">
+        <!-- label fica oculto pelo CSS -->
+        <label for="newsletter-email">Seu e-mail</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="Seu e-mail" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Barra inferior -->
+  <div class="footer-bottom">
+    <button class="scroll-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+  </div>
+</footer>
+
+<!-- Faixa copyright -->
+<div class="footer-year">&copy; 2025&nbsp;NIS&nbsp;Consultoria</div>
+
+<!-- JS -->
+<script src="static/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Portfólio{% endblock %}
+
+{% block content %}
+<!-- Hero Portfólio -->
+<section class="hero-section">
+  <!-- vídeo de fundo -->
+  <video class="hero-video" autoplay muted loop playsinline
+         poster="{{ url_for('static', filename='imgs/hero-bg.jpg') }}">
+    <source src="{{ url_for('static', filename='videos/port.mp4') }}" type="video/mp4">
+  </video>
+
+  <!-- overlay escurecido -->
+  <div class="hero-overlay"></div>
+
+  <!-- texto centralizado -->
+  <div class="hero-content">
+    <h1>Nosso Portfólio</h1>
+    <p>Cases que mostram como <span class="highlight">software</span> e inovação impulsionam resultados.</p>
+  </div>
+</section>
+
+<!-- PORTFÓLIO – 1 projeto em formato checklist -->
+<section class="portfolio-section">
+
+  <!-- Cabeçalho da seção -->
+<header class="portfolio-header">
+  <h2 class="eyebrow">Projeto em Destaque</h2>
+</header>
+
+  <!-- Card único centralizado -->
+  <div class="portfolio-single">
+    <article class="portfolio-card white single">
+
+      <!-- Título -->
+      <h3 class="project-title">
+        <span class="brand">Ótica</span> Itajaí
+      </h3>
+
+      <!-- Checklist estilo processos -->
+      <ul class="check-list">
+        <li>
+          <strong>Desafio:</strong> integrar presença digital e processos internos
+          para vendas online.
+        </li>
+        <li>
+          <strong>Solução:</strong> landing page de alta conversão,
+          conteúdo sazonal em redes sociais
+          e sistema completo (clientes, estoque, pedidos, pagamentos, workflow).
+        </li>
+        <li>
+          <strong>Resultados:</strong>
+          <span class="kpi">+150&nbsp;%</span> em conversão,&nbsp;
+          <span class="kpi">−40&nbsp;%</span> no tempo de processamento,&nbsp;
+          <span class="kpi">25&nbsp;%</span> das vendas online em 2 meses.
+        </li>
+      </ul>
+
+    </article>
+  </div><!-- /.portfolio-single -->
+</section>
+
+
+</section>
+
+
+{% endblock %}

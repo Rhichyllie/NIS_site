@@ -1,0 +1,1485 @@
+/* ================= RESET BÁSICO ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= TIPOGRAFIA E CORPO ================= */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  background-color: #f3f3f3;
+  color: #333;
+  padding-top: 90px; /* Espaço para o header fixo */
+}
+
+/* ================= VARIÁVEIS DE COR ================= */
+:root {
+  --color-primary: #0b2350;   /* azul-escuro */
+  --color-secondary: #8698ab; /* cinza-azulado */
+  --color-accent: #c4b8a8;    /* tom quente */
+}
+
+:root {
+  /* palette do footer */
+  --color-footer-bg: #0B2350;      /* fundo azul profundo */
+  --color-footer-fg: #d1d4db;      /* texto cinza-claro */
+  --color-footer-heading: #fff;    /* títulos brancos */
+  --color-footer-accent: #C4B8A8;  /* detalhe champagne/metálico */
+}
+/* ================= HEADER & NAVBAR ================= */
+.header-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, padding 0.3s ease;
+  padding: 10px 30px;
+}
+
+.header-top.scrolled {
+  background: transparent;
+  padding: 5px 30px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+/* Logo: usar object-fit: cover para cortar espaços brancos */
+.logo {
+  height: 100px;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  outline: none;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Menu Desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--color-secondary);
+}
+
+/* ================= MOBILE MENU OVERLAY (ELABORADO) ================= */
+/* Por padrão (telas grandes), o overlay fica oculto */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.98);
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+  
+  .hamburger {
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-primary);
+    margin: 3px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .hamburger:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  .nav-overlay.active {
+    transform: translateY(0);
+  }
+  .nav-overlay {
+    display: flex;
+  }
+  
+  .nav-overlay ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-overlay li {
+    margin: 20px 0;
+  }
+  
+  .nav-overlay a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-overlay a:hover {
+    color: var(--color-secondary);
+  }
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('{{ url_for("static", filename="imgs/hero-bg.jpg") }}') no-repeat center center/cover;
+}
+
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -2;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Título principal na Hero Section: usar Bebas Neue para igualar o header */
+.hero-content h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInLeft 1.2s ease forwards;
+}
+
+/* Subtítulo com Playfair Display para contraste elegante */
+.hero-content p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  animation: fadeInUp 1.4s ease forwards;
+}
+
+/* Destaque na palavra "dados" usando Bebas Neue */
+.hero-content .highlight {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Botão Premium com gradiente e animação */
+.btn-cta {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: #fff;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-weight: bold;
+  /* Bordas menos arredondadas para um visual premium e sério */
+  border-radius: 4px;
+  transition: all 0.3s;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: fadeInRight 1.6s ease forwards;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= KEYFRAMES DE ANIMAÇÃO ================= */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================= RESET BÁSICO ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= TIPOGRAFIA E CORPO ================= */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  background-color: #f3f3f3;
+  color: #333;
+  padding-top: 90px; /* Espaço para o header fixo */
+}
+
+/* ================= VARIÁVEIS DE COR ================= */
+:root {
+  --color-primary: #0b2350;   /* azul-escuro */
+  --color-secondary: #8698ab; /* cinza-azulado */
+  --color-accent: #c4b8a8;    /* tom quente */
+}
+
+/* ================= HEADER & NAVBAR ================= */
+.header-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, padding 0.3s ease;
+  padding: 10px 30px;
+}
+
+.header-top.scrolled {
+  background: transparent;
+  padding: 5px 30px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+/* Logo: usa object-fit: cover para cortar espaços brancos */
+.logo {
+  height: 100px;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  outline: none;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Menu Desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--color-secondary);
+}
+
+/* ================= MOBILE MENU OVERLAY (ELABORADO) ================= */
+/* Fora do media query, o overlay fica oculto */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.98);
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+
+  .hamburger {
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-primary);
+    margin: 3px 0;
+    transition: background-color 0.3s;
+  }
+
+  .hamburger:hover {
+    background-color: var(--color-secondary);
+  }
+
+  /* Exibe o overlay somente no mobile */
+  .nav-overlay.active {
+    transform: translateY(0);
+  }
+  .nav-overlay {
+    display: flex;
+  }
+
+  .nav-overlay ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-overlay li {
+    margin: 20px 0;
+  }
+
+  .nav-overlay a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-overlay a:hover {
+    color: var(--color-secondary);
+  }
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('{{ url_for("static", filename="imgs/hero-bg.jpg") }}') no-repeat center center/cover;
+}
+
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -2;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Título principal na Hero Section: usar Bebas Neue para igualar o header */
+.hero-content h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInLeft 1.2s ease forwards;
+}
+
+/* Subtítulo com Playfair Display para um toque elegante */
+.hero-content p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  animation: fadeInUp 1.4s ease forwards;
+}
+
+/* Destaque na palavra "dados" usando Bebas Neue */
+.hero-content .highlight {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Botão Premium com gradiente e animação */
+.btn-cta {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: #fff;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-weight: bold;
+  /* Container sem arredondamento */
+  border: none;
+  transition: all 0.3s;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: fadeInRight 1.6s ease forwards;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= KEYFRAMES DE ANIMAÇÃO ================= */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================= DESTAQUE COMERCIAL PREMIUM ================= */
+.destaque-section {
+  background: #0b2350; /* Fundo escuro sofisticado */
+  color: #fff;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  /* Removido border-radius */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.destaque-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.destaque-text {
+  flex: 1 1 500px;
+  padding: 20px;
+}
+
+.destaque-text h2 {
+  /* Para manter o mesmo padrão do header, usamos Bebas Neue */
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.destaque-text p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.destaque-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.destaque-list li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.destaque-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  color: #ffc107;
+}
+
+.destaque-image {
+  flex: 1 1 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+.destaque-image img {
+  max-width: 100%;
+  /* Borda sutil aplicada somente na imagem */
+  border: 2px solid #fff;
+  /* Se preferir um pequeno arredondamento somente na imagem, deixe: border-radius: 4px; */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.destaque-image img:hover {
+  transform: scale(1.03);
+}
+
+/* ================= QUADROS (CARDS) – ESTILIZAÇÃO MELHORADA ================= */
+
+/* Para o layout Clássico: Imagem à esquerda e texto à direita */
+.highlight-card.classic .highlight-image {
+  flex: 1;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;  /* Aumentado para preencher melhor o card */
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.highlight-card.classic .highlight-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.highlight-card.classic .highlight-text {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  color: #333;
+}
+
+/* Para o layout Overlay: Imagem de fundo com texto sobreposto */
+.highlight-card.overlay {
+  min-height: 500px;  /* Aumentado para maior destaque */
+  position: relative;
+}
+
+.highlight-card.overlay .highlight-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.highlight-card.overlay .highlight-image:hover {
+  filter: brightness(1.05);
+}
+
+.highlight-card.overlay .highlight-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* Botão dos Cards – sem alterações significativas, mas mantendo a harmonia */
+.btn-highlight {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+.btn-highlight:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+/* ================= TEXTO NOS CARDS – LAYOUT CLÁSSICO ================= */
+.highlight-card.classic .highlight-text h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;              /* Aumentado para maior impacto */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: var(--color-primary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  /* Sombra leve para destaque */
+}
+
+.highlight-card.classic .highlight-text p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;              /* Leve aumento no tamanho */
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);  /* Sutil sombra para suavizar */
+}
+
+/* ================= TEXTO NOS CARDS – LAYOUT OVERLAY ================= */
+.highlight-card.overlay .highlight-text h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #ffc107; /* Se desejar manter o dourado, ou altere para outra cor de destaque */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-card.overlay .highlight-text p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= INFO CARDS ================= */
+.info-cards {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.info-card {
+  flex: 1 1 320px;
+  max-width: 420px;
+  background: #fff;
+  padding: 30px;
+  margin: 10px;
+  border: 1px solid #e0e0e0; /* Borda sutil */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra premium */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.info-card h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  margin: 8px auto 0;
+}
+
+.info-card p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ================= CTA FINAL ================= */
+.cta-section {
+  text-align: center;
+  padding: 60px 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+  background: var(--color-secondary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-section h2 {
+  font-family: 'Bebas Neue', sans-serif; /* Para harmonia com o header */
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-section p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.btn-cta-alt {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: #fff;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 4px; /* Leve arredondamento para o botão */
+}
+
+.btn-cta-alt:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+
+/* ---------- Footer premium ---------- */
+.site-footer{
+  background:var(--color-footer-bg);
+  color:var(--color-footer-fg);
+  padding:60px 20px 40px;
+  position:relative;
+}
+
+/* links */
+.site-footer a{color:var(--color-footer-fg);text-decoration:none;transition:color .3s}
+.site-footer a:hover{color:var(--color-footer-accent)}
+
+/* títulos */
+.footer-col h3,.footer-col h4{
+  color:var(--color-footer-heading);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2rem;letter-spacing:2px;margin-bottom:18px;position:relative}
+.footer-col h3::after,.footer-col h4::after{
+  content:"";width:48px;height:3px;background:var(--color-footer-accent);display:block;margin-top:8px}
+
+/* grid */
+.footer-container{
+  max-width:1150px;margin:0 auto;
+  display:grid;gap:48px 32px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr))
+}
+@media(min-width:768px){.footer-container{column-gap:70px}}
+
+.footer-col.about p{max-width:340px;font-size:1rem;line-height:1.7}
+.footer-col.about strong{color:var(--color-footer-accent);font-weight:600}
+
+/* lista Institucional */
+.footer-col.links ul{list-style:none;padding-left:0}
+.footer-col.links li{margin:6px 0;position:relative}
+.footer-col.links li::before{
+  content:"›";position:absolute;left:-14px;
+  color:var(--color-footer-accent);font-weight:900}
+
+/* social */
+.footer-col.social ul{list-style:none;padding-left:0}
+.footer-col.social li{margin:8px 0;display:flex;align-items:center;gap:10px}
+.social-icon{
+  width:22px;height:22px;transition:transform .3s,filter .3s;
+  filter:invert(88%) sepia(7%) saturate(313%) hue-rotate(173deg) brightness(93%)}
+.footer-col.social a:hover .social-icon{
+  transform:scale(1.2);filter:brightness(200%) invert(0)}
+
+/* newsletter */
+.newsletter-form{display:flex;gap:12px;max-width:380px}
+.newsletter-form label{display:none}
+.newsletter-form input{
+  flex:1;padding:14px 18px;border:none;border-radius:8px;
+  background:#f5f6f8;font-size:1rem}
+.newsletter-form button{
+  background:var(--color-footer-accent);color:var(--color-footer-bg);
+  border:none;padding:0 24px;border-radius:8px;
+  font-family:'Bebas Neue',sans-serif;font-size:1.1rem;
+  cursor:pointer;transition:background .3s,transform .3s,box-shadow .3s}
+.newsletter-form button:hover{
+  background:#fff;transform:translateY(-2px);
+  box-shadow:0 4px 10px rgba(0,0,0,.25)}
+
+/* scroll-top */
+.scroll-top{
+  background:var(--color-footer-accent);color:var(--color-footer-bg);
+  width:46px;height:46px;border:none;border-radius:50%;font-size:1.3rem;
+  cursor:pointer;position:absolute;right:20px;bottom:20px;
+  transition:transform .3s,box-shadow .3s}
+.scroll-top:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(0,0,0,.35)}
+
+/* faixa final */
+.footer-year{
+  background:var(--color-footer-accent);
+  color:var(--color-footer-bg);
+  text-align:center;
+  font-family:'Open Sans',sans-serif;
+  font-size:.95rem;
+  padding:12px 0
+}
+
+/* ================= SERVICE VIDEO SECTION ================= */
+.service-video-section {
+  position: relative;
+  height: 100vh; /* Ocupa a altura total da viewport */
+  overflow: hidden;
+  background: #0b2350; /* Fundo de fallback para o caso do vídeo não carregar */
+}
+
+.service-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que o vídeo preencha o container sem distorções */
+  z-index: 1;
+}
+
+.service-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay para contraste */
+  z-index: 2;
+}
+
+/* Container do Título e Subtítulo Centralizado */
+.service-video-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+  padding: 40px 20px;
+}
+
+/* Título da Seção */
+.service-video-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Subtítulo/Mensagem */
+.service-video-header p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Destaque Premium para palavras-chave */
+.highlight {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ================= SERVIÇOS GRID ================= */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;  /* Aumentado de 30px para 40px para melhor espaçamento */
+  margin-top: 40px;
+  padding: 0 20px; /* Garante que os cards não encostem nas bordas */
+}
+
+/* Responsividade: 2 colunas em telas médias, 1 em telas pequenas */
+@media (max-width: 992px) {
+  .servicos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .servicos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= CARD DE SERVIÇOS ================= */
+.servico {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  margin-bottom: 20px;  /* Espaçamento vertical extra */
+}
+
+.servico:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.servico h3 {
+  font-family: 'Bebas Neue', sans-serif; /* Para manter o padrão premium */
+  font-size: 2.4rem;  /* Um pouco maior para maior impacto */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Sombra leve para dar profundidade */
+  text-align: center;
+}
+
+.servico p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.servico ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.servico li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.servico li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+
+/* ================= CONTATO SECTION – DESIGN PREMIUM ================= */
+.contact-section {
+  position: relative;
+  padding: 100px 20px;
+  margin: 0 auto 60px;
+  border-radius: 8px;
+  text-align: center;
+  overflow: hidden;
+  /* Gradiente utilizando as cores do site */
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Camada de fundo com animação de zoom */
+.contact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.contact-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  filter: blur(2px) brightness(0.7);
+  animation: zoomIn 8s infinite alternate;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* Conteúdo sobreposto à imagem */
+.contact-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #fff;
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cabeçalho sem o efeito de gradiente: simples, com fonte e sombra para destaque */
+.contact-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+}
+
+.contact-header p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #eee;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Detalhes de contato – mantendo a identidade com pequenas decorações */
+.contact-details p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  margin: 12px 0;
+  color: #ddd;
+  position: relative;
+  padding: 0 5px;
+}
+
+.contact-details p::before {
+  content: "✦";
+  margin-right: 8px;
+  color: var(--color-accent);
+}
+
+.contact-details a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.contact-details a:hover {
+  color: var(--color-secondary);
+}
+
+/* Botões de contato melhorados para evitar pixelização */
+/* Removi o pseudo-elemento que causava os pixels e adicionei uma transição suave */
+.contact-buttons {
+  margin-top: 40px;
+}
+
+.btn-contact {
+  display: inline-block;
+  padding: 18px 50px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-primary);
+  background: #fff;
+  border: 2px solid var(--color-primary);
+  border-radius: 50px;
+  margin: 10px;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+}
+
+.btn-contact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.45);
+  /* Ao invés do pseudo-elemento, troca para um fundo de gradiente suave */
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  color: #fff;
+}
+
+
+.header-top.scrolled {
+  background-color: #fff; /* ou #0b2350 se quiser trocar ao scroll */
+  transition: background-color 0.3s ease;
+}
+
+/* ================= PROCESSOS & DIFERENCIAIS ================= */
+.processos-section {
+  background: #fff;
+  padding: 60px 20px;
+  margin: 40px 0;
+}
+.processos-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.processos-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.processos-section p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+.process-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 0;
+}
+.process-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.process-list li::before {
+  content: '\2713'; /* checkmark */
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 1.2rem;
+  color: var(--color-accent);
+}
+
+/* ================= TECNOLOGIAS UTILIZADAS ================= */
+.tecnologias-section {
+  background: #f9f9f9;
+  padding: 60px 20px;
+}
+.tecnologias-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tecnologias-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.tecnologias-section p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+.tech-list li {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  transition: transform 0.3s;
+}
+.tech-list li:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------- HEADER da seção ---------- */
+.portfolio-header{
+  text-align:center;
+  margin-bottom:3rem;
+}
+.portfolio-headline{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3.4rem;
+  letter-spacing:1px;            /* estética editorial */
+  text-transform:uppercase;
+  color:var(--color-primary);
+  margin:0;
+}
+.portfolio-subtitle{
+  font-family:'Open Sans',sans-serif;
+  font-size:1.25rem;
+  color:#555;
+  margin-top:.4rem;
+}
+
+/* ---------- layout single-card ---------- */
+.portfolio-single{
+  display:flex;justify-content:center;
+}
+.portfolio-single .portfolio-card{
+  max-width:700px;width:100%;
+}
+
+/* ---------- headline do projeto ---------- */
+.project-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.4rem;
+  letter-spacing:1px;
+  margin:0 0 1rem;
+  position:relative;
+}
+.project-title::after{
+  content:"";
+  width:58px;height:3px;
+  background:var(--color-secondary);
+  display:block;
+  margin-top:6px;
+}
+
+.portfolio-card.white{
+  max-width:680px;
+  background:#fff;                     /* card branco */
+  border-radius:1.2rem;
+  padding:2.2rem 1.8rem;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+  transition:transform .35s, box-shadow .35s;
+}
+.portfolio-card.white:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+
+/* ---------- blocos de texto com respiro ---------- */
+.block{margin:1.2rem 0;}
+.portfolio-card ul.block{margin:0 0 1.2rem 1.4rem;}
+
+/* ---------- KPI destaque ---------- */
+.kpi{color:var(--color-secondary);font-weight:700}
+
+/* ---------- botão CTA fixado ao final ---------- */
+.card-cta{align-self:flex-start;margin-top:auto}
+
+/* --- layout: card único central --- */
+.portfolio-single{
+  display:flex; justify-content:center;
+  padding:2rem 0;
+}
+.portfolio-card.single{            /* limita largura p/ desktop grande */
+  max-width:700px;
+}
+
+/* --- título central azul --- */
+.project-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.6rem;                /* maior impacto */
+  text-align:center;
+  letter-spacing:1.5px;
+  margin-bottom:1.2rem;
+  color:var(--color-primary);      /* azul profundo padrão */
+}
+.project-title .brand{             /* “Ótica” em accent opcional */
+  color:var(--color-secondary);    /* champagne ou qualquer accent */
+}
+
+/* --- blocos com respiro extra --- */
+.block{margin-top:1.1rem}
+.portfolio-card ul{margin-left:1.4rem}
+
+.kpi{color:var(--color-secondary);font-weight:700}
+
+/* ===== CHECK-LIST no card de portfólio ===== */
+.check-list{
+  list-style:none;
+  margin:1.4rem 0 0;
+  padding:0;
+}
+.check-list li{
+  position:relative;
+  padding-left:32px;
+  margin-bottom:22px;
+  font-size:1.1rem;
+  line-height:1.65;
+}
+.check-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0; top:0;
+  color:var(--color-secondary);      /* mesmo accent champagne */
+  font-weight:900;
+  font-size:1.25rem;
+}
+
+/* Eyebrow = título pequeno acima do conteúdo, sem competir com o H1 do hero */
+.eyebrow{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3rem;            /* bem menor que o H1 do hero */
+  letter-spacing:2px;
+  color:var(--color-secondary);  /* accent champagne */
+  text-transform:uppercase;
+  margin:0 0 .2rem;
+}
+
+/* Opcional: mais espaçamento entre hero e a seção */
+.portfolio-section{padding-top:4rem}
+@media(min-width:768px){
+  .portfolio-section{padding-top:5rem}
+}

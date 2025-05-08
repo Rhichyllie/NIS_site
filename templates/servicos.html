@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Serviços{% endblock %}
+{% block content %}
+
+<!-- Hero Services -->
+<section class="hero-section">
+  <!-- vídeo de fundo  -->
+  <video class="hero-video" autoplay muted loop playsinline
+         poster="{{ url_for('static', filename='imgs/hero-bg.jpg') }}">
+    <source src="{{ url_for('static', filename='videos/service.mp4') }}" type="video/mp4">
+  </video>
+
+  <!-- overlay para escurecer o vídeo e melhorar legibilidade -->
+  <div class="hero-overlay"></div>
+
+  <!-- texto centralizado -->
+  <div class="hero-content">
+    <h1>Serviços</h1>
+    <p>Transformamos necessidades em <span class="highlight">soluções reais</span> para negócios digitais.</p>
+  </div>
+</section>
+
+  <div class="servicos-grid">
+    <div class="servico">
+      <h3>Desenvolvimento de Software</h3>
+      <ul>
+        <li>Soluções sob medida com arquitetura moderna.</li>
+        <li>APIs e microserviços para ERPs, CRMs, etc.</li>
+        <li>CI/CD, testes automatizados e versionamento.</li>
+      </ul>
+    </div>
+
+    <div class="servico">
+      <h3>Marketing Digital & Branding</h3>
+      <ul>
+        <li>Websites, landing pages e e-commerces.</li>
+        <li>Campanhas Google Ads e Facebook Ads.</li>
+        <li>SEO, conteúdo e redes sociais.</li>
+      </ul>
+    </div>
+
+    <div class="servico">
+      <h3>Automação & Integrações</h3>
+      <ul>
+        <li>Workflows com APIs, RPA e low-code.</li>
+        <li>Integração de sistemas legados e cloud.</li>
+        <li>Dashboards e relatórios em tempo real.</li>
+      </ul>
+    </div>
+
+    <div class="servico">
+      <h3>Consultoria & Gestão Ágil</h3>
+      <ul>
+        <li>Roadmap digital e maturidade tecnológica.</li>
+        <li>Scrum, Kanban e squads dedicados.</li>
+        <li>Gestão de escopo até go-live.</li>
+      </ul>
+    </div>
+
+    <div class="servico">
+      <h3>Suporte Técnico</h3>
+      <ul>
+        <li>Planos com SLA e atendimento proativo.</li>
+        <li>Correções, updates e melhorias contínuas.</li>
+        <li>Treinamento e documentação técnica.</li>
+      </ul>
+    </div>
+
+    <div class="servico">
+      <h3>Inteligência de Dados & BI</h3>
+      <ul>
+        <li>ETL/ELT e modelagem de dados moderna.</li>
+        <li>Dashboards interativos e KPIs.</li>
+        <li>Análise preditiva e relatórios customizados.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

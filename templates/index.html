@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <video class="hero-video" autoplay muted loop
+         poster="{{ url_for('static', filename='imgs/hero-bg.jpg') }}">
+    <source src="{{ url_for('static', filename='videos/hero.mp4') }}" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>NIS Consultoria</h1>
+    <p>Construindo <span class="highlight">software</span> que impulsiona o seu negócio</p>
+    <a href="{{ url_for('servicos') }}" class="btn-cta">Conheça nossos serviços</a>
+  </div>
+</section>
+
+<!-- Destaque -->
+<section class="info-section destaque-section">
+  <div class="destaque-content">
+    <div class="destaque-text">
+      <h2>Por que escolher a NIS?</h2>
+      <p>Na NIS, combinamos inovação e excelência técnica para criar <strong>software sob medida</strong> que impulsiona resultados concretos. Cada projeto é arquitetado para transformar desafios complexos em soluções digitais escaláveis e seguras, elevando sua competitividade.</p>
+      <ul class="destaque-list">
+        <li><span class="destaque-icon">&#10003;</span> Desenvolvimento de Software Personalizado</li>
+        <li><span class="destaque-icon">&#10003;</span> Integrações Robustas e Escaláveis (APIs, Microserviços)</li>
+        <li><span class="destaque-icon">&#10003;</span> Entregas Ágeis, Testes Automatizados e DevOps</li>
+      </ul>
+    </div>
+    <div class="destaque-image">
+      <img src="{{ url_for('static', filename='imgs/destaque.jpg') }}" alt="Imagem de Destaque">
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Cards de Projetos -->
+<section class="highlight-section">
+  <div class="highlight-card classic">
+    <div class="highlight-image"
+         style="background-image: url('{{ url_for('static', filename='imgs/card1.jpg') }}');"></div>
+    <div class="highlight-text">
+      <h3>Soluções Personalizadas</h3>
+      <p>Cada projeto é desenvolvido de forma única para atender às demandas do seu negócio e impulsionar seu crescimento.</p>
+      <a href="{{ url_for('portfolio') }}" class="btn-highlight">Confira Nossos Projetos</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="highlight-card classic">
+    <div class="highlight-image"
+         style="background-image: url('{{ url_for('static', filename='imgs/card2.jpg') }}');"></div>
+    <div class="highlight-text">
+      <h3>Consultoria Estratégica</h3>
+      <p>Oferecemos insights e soluções sob medida para transformar desafios em oportunidades reais de crescimento.</p>
+      <a href="{{ url_for('servicos') }}" class="btn-highlight">Veja Nossas Soluções</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="highlight-card classic">
+  <div class="highlight-image"
+       style="background-image: url('{{ url_for('static', filename='imgs/card3.jpg') }}');"></div>
+  <div class="highlight-text">
+    <h3>Processos &amp; Tecnologias</h3>
+    <p>Implementamos pipelines CI/CD, automação e boas práticas DevOps para garantir releases rápidos, seguros e escaláveis.</p>
+    <a href="{{ url_for('processos') }}" class="btn-highlight">Conheça nossa abordagem</a>
+  </div>
+</div>
+
+<!-- Missão e Visão -->
+<section class="info-section">
+  <div class="info-cards">
+    <!-- Missão -->
+    <div class="info-card">
+      <h2>Missão</h2>
+      <p>Criar <strong>software sob medida</strong> e integrações inteligentes que acelerem os processos dos nossos clientes,
+         elevando eficiência, segurança e escalabilidade em cada entrega.</p>
+    </div>
+
+    <!-- Visão -->
+    <div class="info-card">
+      <h2>Visão</h2>
+      <p>Ser referência em soluções digitais que transformam desafios de negócio em plataformas robustas
+         e inovadoras, impulsionando o crescimento sustentável dos nossos parceiros.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Pronto para potencializar seu negócio?</h2>
+  <p>Entre em contato e descubra como nossas soluções personalizadas podem impulsionar sua empresa.</p>
+  <a href="{{ url_for('contato') }}" class="btn-cta-alt">Fale Conosco</a>
+</section>
+
+{% endblock %}
