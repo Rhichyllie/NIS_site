@@ -1,14 +1,16 @@
 {
   "version": 2,
+  "public": true,
   "builds": [
     { "src": "build/**", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/",           "dest": "/build/index.html" },
-    { "src": "/contato",    "dest": "/build/contato.html" },
-    { "src": "/portfolio",  "dest": "/build/portfolio.html" },
-    { "src": "/processos",  "dest": "/build/processos.html" },
-    { "src": "/servicos",   "dest": "/build/servicos.html" },
-    { "src": "/static/(.*)", "dest": "/build/static/$1" }
+    { "src": "/",           "dest": "/index.html" },
+    { "src": "/contato",    "dest": "/contato.html" },
+    { "src": "/portfolio",  "dest": "/portfolio.html" },
+    { "src": "/processos",  "dest": "/processos.html" },
+    { "src": "/servicos",   "dest": "/servicos.html" },
+    { "src": "/static/(.*)", "dest": "/static/$1" }
   ]
 }
+
