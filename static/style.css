@@ -673,7 +673,7 @@ body {
   transform: scale(1.03);
 }
 
-/* ================= QUADROS (CARDS) – ESTILIZAÇÃO MELHORADA ================= */
+/* ================= QUADROS (CARDS) ================= */
 
 /* Para o layout Clássico: Imagem à esquerda e texto à direita */
 .highlight-card.classic .highlight-image {
@@ -895,11 +895,21 @@ body {
 
 
 /* ---------- Footer premium ---------- */
-.site-footer{
-  background:var(--color-footer-bg);
-  color:var(--color-footer-fg);
-  padding:60px 20px 40px;
-  position:relative;
+.site-footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-fg);
+  padding: 60px 20px 40px;
+  position: relative;
+  text-align: center; /* NOVO: centraliza conteúdo */
+}
+
+.footer-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  gap: 48px 32px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  justify-content: center; /* NOVO: centraliza o grid */
 }
 
 /* links */
@@ -1045,10 +1055,11 @@ body {
 /* ================= SERVIÇOS GRID ================= */
 .servicos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;  /* Aumentado de 30px para 40px para melhor espaçamento */
+  grid-template-columns: repeat(3, 1fr); /* Agora são 3 colunas por linha */
+  gap: 40px;
   margin-top: 40px;
-  padding: 0 20px; /* Garante que os cards não encostem nas bordas */
+  padding: 0 20px;
+  justify-items: stretch;
 }
 
 /* Responsividade: 2 colunas em telas médias, 1 em telas pequenas */
