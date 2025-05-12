@@ -900,16 +900,22 @@ body {
   color: var(--color-footer-fg);
   padding: 60px 20px 40px;
   position: relative;
-  text-align: center; /* NOVO: centraliza conteúdo */
 }
 
 .footer-container {
   max-width: 1150px;
   margin: 0 auto;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  justify-items: center; /* CENTRALIZA o conteúdo de cada coluna */
+  text-align: left;      /* mantém texto alinhado à esquerda dentro das colunas */
   gap: 48px 32px;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  justify-content: center; /* NOVO: centraliza o grid */
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    column-gap: 70px;
+  }
 }
 
 /* links */
