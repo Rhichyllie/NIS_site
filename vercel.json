@@ -1,14 +1,14 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "freeze.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      { "src": "/static/(.*)", "dest": "/static/$1" },
-      { "src": "/(.*)",        "dest": "/$1.html" }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    { "src": "build/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/",           "dest": "/build/index.html" },
+    { "src": "/contato",    "dest": "/build/contato.html" },
+    { "src": "/portfolio",  "dest": "/build/portfolio.html" },
+    { "src": "/processos",  "dest": "/build/processos.html" },
+    { "src": "/servicos",   "dest": "/build/servicos.html" },
+    { "src": "/static/(.*)", "dest": "/build/static/$1" }
+  ]
+}
