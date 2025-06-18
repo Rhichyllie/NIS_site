@@ -1,32 +1,34 @@
 from jinja2 import Environment, FileSystemLoader
 import os
-import re
 
-# Caminhos
-TEMPLATE_DIR = 'templates'
-OUTPUT_DIR = 'public'
-pages = ['index.html', 'processos.html', 'servicos.html', 'portfolio.html', 'contato.html']
+TEMPLATE_DIR = "templates"
+OUTPUT_DIR   = "public"
+PAGES = [
+    "index.html",
+    "processos.html",
+    "servicos.html",
+    "portfolio.html",
+    "contato.html",      # novo arquivo
+]
 
-# Configura Jinja
-env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
-
-# Cria pasta public
+# cria pasta de saída
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Função para remover/extrair url_for antes de processar
-def preprocess_template(template_text):
-    return re.sub(r"\{\{\s*url_for\('static',\s*filename='([^']+)'\)\s*\}\}", r"/static/\1", template_text)
+# configura Jinja
+env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
-# Renderiza cada página
-for page in pages:
-    with open(os.path.join(TEMPLATE_DIR, page), encoding='utf-8') as f:
-        raw_template = f.read()
-        raw_template = preprocess_template(raw_template)  # remove url_for
+# ✨ stub simples de url_for só para 'static'
+def fake_url_for(endpoint, filename=""):
+    if endpoint == "static":
+        return f"/static/{filename}"
+    return ""
 
-    template = env.from_string(raw_template)
-    rendered = template.render()
+env.globals["url_for"] = fake_url_for   # <-- aqui está o segredo
 
-    output_path = os.path.join(OUTPUT_DIR, page)
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(rendered)
-        print(f"[✔] Gerado: {output_path}")
+# renderiza todas as páginas
+for page in PAGES:
+    template = env.get_template(page)
+    html = template.render()          # pode passar context aqui se precisar
+    with open(os.path.join(OUTPUT_DIR, page), "w", encoding="utf-8") as f:
+        f.write(html)
+        print(f"[✔] Gerado: {page}")

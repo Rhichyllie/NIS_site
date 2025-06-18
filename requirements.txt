@@ -1,3 +1,4 @@
 Flask
 gunicorn
 Frozen-Flask
+jinja2==3.1.3
