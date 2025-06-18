@@ -1,4 +1,4 @@
 {
-  "buildCommand": "python3 -m pip install --quiet -r requirements.txt && python3 render_pages.py",
+  "buildCommand": "python3 -m pip install --quiet -r requirements.txt && python3 render_pages.py && cp -R static public/static",
   "outputDirectory": "public"
 }
