@@ -1,4 +1,38 @@
 {% extends "base.html" %}
+{% set contact_points = [
+  {
+    "label": "Email",
+    "href": "mailto:contato@nisconsultoria.com.br",
+    "text": "contato@nisconsultoria.com.br",
+    "external": false
+  },
+  {
+    "label": "Telefone",
+    "href": "tel:+5547992064403",
+    "text": "+55 (47) 99206-4403",
+    "external": false
+  },
+  {
+    "label": "Website",
+    "href": "https://www.nisconsultoria.com.br",
+    "text": "www.nisconsultoria.com.br",
+    "external": true
+  }
+] %}
+{% set contact_actions = [
+  {
+    "href": "https://wa.me/5547992064403",
+    "text": "WhatsApp",
+    "class": "btn-contact btn-contact-primary",
+    "label": "Falar via WhatsApp"
+  },
+  {
+    "href": "https://www.linkedin.com/company/n-i-s-insights-solutions",
+    "text": "LinkedIn",
+    "class": "btn-contact",
+    "label": "Acessar perfil LinkedIn"
+  }
+] %}
 {% block title %}Contato{% endblock %}
 {% block content %}
 
@@ -23,49 +57,33 @@
     </div>
 
     <address class="contact-details">
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:contato@nisconsultoria.com.br">
-          contato@nisconsultoria.com.br
-        </a>
-      </p>
-      <p>
-        <strong>Telefone:</strong>
-        <a href="tel:+5547992064403">
-          +55 (47) 99206-4403
-        </a>
-      </p>
-      <p>
-        <strong>Website:</strong>
-        <a
-          href="https://www.nisconsultoria.com.br"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          www.nisconsultoria.com.br
-        </a>
-      </p>
+      <ul class="contact-list">
+        {% for item in contact_points %}
+        <li class="contact-item">
+          <span class="contact-label">{{ item.label }}</span>
+          <a
+            href="{{ item.href }}"
+            {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+          >
+            {{ item.text }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
     </address>
     
     <div class="contact-buttons">
+      {% for item in contact_actions %}
       <a
-        href="https://wa.me/5547992064403"
+        href="{{ item.href }}"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-contact"
-        aria-label="Falar via WhatsApp"
+        class="{{ item.class }}"
+        aria-label="{{ item.label }}"
       >
-        WhatsApp
+        {{ item.text }}
       </a>
-      <a
-        href="https://www.linkedin.com/company/nis-solucoes"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-contact"
-        aria-label="Acessar perfil LinkedIn"
-      >
-        LinkedIn
-      </a>
+      {% endfor %}
     </div>
   </div>
 </section>

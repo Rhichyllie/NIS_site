@@ -1,9 +1,48 @@
 {% extends "base.html" %}
+{% set highlights = [
+  {
+    "slug": "automation",
+    "title": "Automação de Processos",
+    "description": "Mapeamos, simulamos e orquestramos fluxos BPMN para reduzir custos e acelerar seus processos críticos.",
+    "href": "/servicos.html#automacao",
+    "cta": "Saiba Mais"
+  },
+  {
+    "slug": "documents",
+    "title": "Gestão Documental",
+    "description": "Digitalize, classifique e gerencie documentos com segurança e compliance, tudo em um só lugar.",
+    "href": "/servicos.html#ecm",
+    "cta": "Veja Como"
+  },
+  {
+    "slug": "integrations",
+    "title": "Integrações & RPA",
+    "description": "Conectamos sistemas legados e cloud, automatizando tarefas repetitivas com robôs RPA inteligentes.",
+    "href": "/servicos.html#integracoes",
+    "cta": "Explorar Integrações"
+  },
+  {
+    "slug": "data",
+    "title": "Inteligência de Dados",
+    "description": "Transformamos dados em insights acionáveis com ETL moderno, dashboards em tempo real e análises preditivas.",
+    "href": "/servicos.html#bi",
+    "cta": "Conheça Nossas Soluções"
+  }
+] %}
+{% set principles = [
+  {
+    "title": "Missão",
+    "description": "Desenvolver <strong>software sob medida</strong> e fluxos automatizados que elevem eficiência, segurança e escalabilidade em cada entrega."
+  },
+  {
+    "title": "Visão",
+    "description": "Ser referência em soluções digitais que convertem desafios de negócio em plataformas robustas e inovadoras, impulsionando o crescimento sustentável dos nossos parceiros."
+  }
+] %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
 
-<!-- Hero Section -->
 <section class="hero-section">
   <video class="hero-video" autoplay muted loop
          poster="/static/imgs/hero-bg.jpg">
@@ -11,103 +50,60 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <!-- Nome fantasia enxuto -->
-    <h1>NIS</h1>
-    <!-- Nome empresarial para SEO/acessibilidade (oculto via CSS se desejar) -->
-    <p class="sr-only">NIS Negócios, Inovações e Soluções LTDA</p>
+    <h1>NIS Negócios, Inovações e Soluções LTDA</h1>
     <p>Construindo <span class="highlight">software e automação</span> que impulsionam o seu negócio</p>
     <a href="/servicos.html" class="btn-cta">Conheça nossos serviços</a>
   </div>
 </section>
 
-<!-- Destaque -->
-<section class="info-section destaque-section">
-  <div class="destaque-content">
-    <div class="destaque-text">
-      <h2>Por que escolher a NIS?</h2>
-      <p>Na NIS, combinamos inovação e excelência técnica para criar soluções digitais que transformam desafios complexos em fluxos escaláveis, seguros e inteligentes.</p>
-      <ul class="destaque-list">
-        <li><span class="destaque-icon">&#10003;</span> Automação de Processos (BPM/BPMN)</li>
-        <li><span class="destaque-icon">&#10003;</span> Gestão Documental</li>
-        <li><span class="destaque-icon">&#10003;</span> Integrações &amp; RPA</li>
-      </ul>
+<div class="home-flow">
+  <section class="info-section destaque-section">
+    <div class="destaque-content">
+      <div class="destaque-text">
+        <h2>Por que escolher a NIS?</h2>
+        <p>Na NIS, combinamos inovação e excelência técnica para criar soluções digitais que transformam desafios complexos em fluxos escaláveis, seguros e inteligentes.</p>
+        <ul class="destaque-list">
+          <li><span class="destaque-icon">&#10003;</span> Automação de Processos (BPM/BPMN)</li>
+          <li><span class="destaque-icon">&#10003;</span> Gestão Documental</li>
+          <li><span class="destaque-icon">&#10003;</span> Integrações &amp; RPA</li>
+        </ul>
+      </div>
+      <div class="destaque-image">
+        <img src="/static/imgs/destaque.jpg" alt="Equipe NIS trabalhando em soluções digitais" loading="lazy" decoding="async">
+      </div>
     </div>
-    <div class="destaque-image">
-      <img src="/static/imgs/destaque.jpg" alt="Equipe NIS trabalhando em soluções digitais">
+  </section>
+
+  <section class="highlight-section" aria-label="Principais frentes de atuação">
+    {% for item in highlights %}
+    <article class="highlight-card highlight-card--{{ item.slug }}">
+      <div class="highlight-image" aria-hidden="true"></div>
+      <div class="highlight-text">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <a href="{{ item.href }}" class="btn-highlight">{{ item.cta }}</a>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section class="info-section info-section-principles">
+    <div class="info-cards">
+      {% for item in principles %}
+      <article class="info-card principle-card">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description | safe }}</p>
+      </article>
+      {% endfor %}
     </div>
-  </div>
-</section>
+  </section>
 
-<hr class="divider">
-
-<!-- Cards de Projetos / Destaques -->
-<section class="highlight-section">
-  <div class="highlight-card classic">
-    <div class="highlight-image" style="background-image: url('/static/imgs/card1.jpg');"></div>
-    <div class="highlight-text">
-      <h3>Automação de Processos</h3>
-      <p>Mapeamos, simulamos e orquestramos fluxos BPMN para reduzir custos e acelerar seus processos críticos.</p>
-      <a href="/servicos.html#automacao" class="btn-highlight">Saiba Mais</a>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <div class="highlight-card classic">
-    <div class="highlight-image" style="background-image: url('/static/imgs/card2.jpg');"></div>
-    <div class="highlight-text">
-      <h3>Gestão Documental</h3>
-      <p>Digitalize, classifique e gerencie documentos com segurança e compliance — tudo em um só lugar.</p>
-      <a href="/servicos.html#ecm" class="btn-highlight">Veja Como</a>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <div class="highlight-card classic">
-    <div class="highlight-image" style="background-image: url('/static/imgs/card3.jpg');"></div>
-    <div class="highlight-text">
-      <h3>Integrações &amp; RPA</h3>
-      <p>Conectamos sistemas legados e cloud, automatizando tarefas repetitivas com robôs RPA inteligentes.</p>
-      <a href="/servicos.html#integracoes" class="btn-highlight">Explorar Integrações</a>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<div class="highlight-card classic">
-  <div class="highlight-image" style="background-image: url('/static/imgs/card4.jpg');"></div>
-  <div class="highlight-text">
-    <h3>Inteligência de Dados</h3>
-    <p>Transformamos dados em insights acionáveis com ETL moderno, dashboards em tempo real e análises preditivas.</p>
-    <a href="/servicos.html#bi" class="btn-highlight">Conheça Nossas Soluções</a>
-  </div>
+  <section class="cta-section">
+    <h2>Pronto para potencializar seu negócio?</h2>
+    <p>Entre em contato e descubra como nossas soluções personalizadas podem impulsionar sua empresa.</p>
+    <a href="/contato.html" class="btn-cta-alt">Fale Conosco</a>
+  </section>
 </div>
-
-<!-- Missão e Visão -->
-<section class="info-section">
-  <div class="info-cards">
-    <!-- Missão -->
-    <div class="info-card">
-      <h2>Missão</h2>
-      <p>Desenvolver <strong>software sob medida</strong> e fluxos automatizados que elevem eficiência, segurança e escalabilidade em cada entrega.</p>
-    </div>
-
-    <!-- Visão -->
-    <div class="info-card">
-      <h2>Visão</h2>
-      <p>Ser referência em soluções digitais que convertem desafios de negócio em plataformas robustas e inovadoras, impulsionando o crescimento sustentável dos nossos parceiros.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <h2>Pronto para potencializar seu negócio?</h2>
-  <p>Entre em contato e descubra como nossas soluções personalizadas podem impulsionar sua empresa.</p>
-  <a href="/contato.html" class="btn-cta-alt">Fale Conosco</a>
-</section>
 
 {% endblock %}
 

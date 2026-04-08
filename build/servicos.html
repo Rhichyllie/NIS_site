@@ -1,68 +1,85 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="NIS Insights & Solutions transforma dados em estratégias de sucesso. Soluções personalizadas em insights e analytics.">
-  <meta property="og:title" content="NIS Insights & Solutions">
-  <meta property="og:description" content="Transformando dados em estratégias de sucesso.">
-  <meta property="og:image" content="/static/nis_logo.svg">
+        content="NIS transforma processos complexos em fluxos digitais inteligentes. Especialistas em automação de processos, gestão documental e integrações.">
+  <meta property="og:title" content="NIS">
+  <meta property="og:description" content="Software e automação que impulsionam o seu negócio.">
+  <meta property="og:image" content="/static/logo.svg">
   <meta property="og:url" content="https://nisconsultoria.com.br/">
-  <meta name="theme-color" content="#0D3B66">
+  <meta name="theme-color" content="#5F7386">
 
-  <title>NIS Consultoria – Serviços</title>
+  <title>NIS - Serviços</title>
 
-  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Open+Sans:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/static/favicon.ico" sizes="any">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/static/favicon.ico">
 
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-  <!-- Cabeçalho -->
   <header class="header-top" id="header">
-    <nav class="navbar">
-      <a href="/index.html" class="logo-link" aria-label="Página Inicial">
-        <img src="/static/nis_logo.svg" alt="Logo NIS" class="logo" loading="lazy">
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="/index.html" class="logo-link" aria-label="Página inicial">
+        <img src="/static/logo.svg" alt="NIS" class="logo" decoding="async" fetchpriority="high">
       </a>
-      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-overlay">
+      <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-overlay">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
       </button>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
+        
         <li><a href="/index.html">Home</a></li>
+        
         <li><a href="/servicos.html">Serviços</a></li>
+        
         <li><a href="/portfolio.html">Portfólio</a></li>
+        
         <li><a href="/processos.html">Tecnologias</a></li>
+        
         <li><a href="/contato.html">Contato</a></li>
+        
       </ul>
     </nav>
   </header>
 
-  <!-- Menu mobile -->
-  <div class="nav-overlay" id="nav-overlay">
+  <nav class="nav-overlay" id="nav-overlay" aria-label="Menu mobile" aria-hidden="true">
     <ul>
+      
       <li><a href="/index.html">Home</a></li>
+      
       <li><a href="/servicos.html">Serviços</a></li>
+      
       <li><a href="/portfolio.html">Portfólio</a></li>
+      
       <li><a href="/processos.html">Tecnologias</a></li>
+      
       <li><a href="/contato.html">Contato</a></li>
+      
     </ul>
-  </div>
+  </nav>
 
-  <!-- Conteúdo específico de cada página -->
-  
+  <main class="site-main">
+    
 
 <!-- Hero Services -->
 <section class="hero-section">
   <!-- vídeo de fundo  -->
   <video class="hero-video" autoplay muted loop playsinline
-         poster="static/imgs/hero-bg.jpg">
-    <source src="static/videos/service.mp4" type="video/mp4">
+         poster="/static/imgs/hero-bg.jpg">
+    <source src="/static/videos/service.mp4" type="video/mp4">
   </video>
 
   <!-- overlay para escurecer o vídeo e melhorar legibilidade -->
@@ -71,144 +88,147 @@
   <!-- texto centralizado -->
   <div class="hero-content">
     <h1>Serviços</h1>
-    <p>Transformamos necessidades em <span class="highlight">soluções reais</span> para negócios digitais.</p>
+    <p>Transformamos <span class="highlight">processos complexos</span> em fluxos digitais e inteligentes.</p>
   </div>
 </section>
 
-  <div class="servicos-grid">
-    <div class="servico">
-      <h3>Desenvolvimento de Software</h3>
-      <ul>
-        <li>Soluções sob medida com arquitetura moderna.</li>
-        <li>APIs e microserviços para ERPs, CRMs, etc.</li>
-        <li>CI/CD, testes automatizados e versionamento.</li>
-      </ul>
-    </div>
-
-    <div class="servico">
-      <h3>Marketing Digital & Branding</h3>
-      <ul>
-        <li>Websites, landing pages e e-commerces.</li>
-        <li>Campanhas Google Ads e Facebook Ads.</li>
-        <li>SEO, conteúdo e redes sociais.</li>
-      </ul>
-    </div>
-
-    <div class="servico">
-      <h3>Automação & Integrações</h3>
-      <ul>
-        <li>Workflows com APIs, RPA e low-code.</li>
-        <li>Integração de sistemas legados e cloud.</li>
-        <li>Dashboards e relatórios em tempo real.</li>
-      </ul>
-    </div>
-
-    <div class="servico">
-      <h3>Consultoria & Gestão Ágil</h3>
-      <ul>
-        <li>Roadmap digital e maturidade tecnológica.</li>
-        <li>Scrum, Kanban e squads dedicados.</li>
-        <li>Gestão de escopo até go-live.</li>
-      </ul>
-    </div>
-
-    <div class="servico">
-      <h3>Suporte Técnico</h3>
-      <ul>
-        <li>Planos com SLA e atendimento proativo.</li>
-        <li>Correções, updates e melhorias contínuas.</li>
-        <li>Treinamento e documentação técnica.</li>
-      </ul>
-    </div>
-
-    <div class="servico">
-      <h3>Inteligência de Dados & BI</h3>
-      <ul>
-        <li>ETL/ELT e modelagem de dados moderna.</li>
-        <li>Dashboards interativos e KPIs.</li>
-        <li>Análise preditiva e relatórios customizados.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-<!-- Rodapé -->
-<footer class="site-footer">
-  <!-- Onda decorativa -->
-  <div class="footer-wave">
-    <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
-      <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="var(--color-primary)" />
-    </svg>
+<div class="servicos-grid">
+  <div class="servico">
+    <h3>Desenvolvimento de Software</h3>
+    <ul>
+      <li>Soluções sob medida com arquitetura moderna.</li>
+      <li>APIs e microserviços escaláveis.</li>
+      <li>CI/CD, testes automatizados e versionamento.</li>
+      <li>Service desk com SLA definido.</li>
+      <li>Manutenção evolutiva e correções.</li>
+      <li>Monitoramento proativo e otimizações contínuas.</li>
+    </ul>
   </div>
 
-  <!-- Conteúdo principal -->
-  <div class="footer-container">
-    <!-- Sobre -->
-    <div class="footer-col about">
-      <h3>NIS Consultoria</h3>
-      <p>Construindo software que impulsiona o seu negócio.</p>
-      <p>
-        <strong>Tel:</strong>
-        <a href="tel:+5547992064403">+55&nbsp;(47)&nbsp;99206-4403</a><br>
-        <strong>Email:</strong>
-        <a href="mailto:contato@nisconsultoria.com">contato@nisinsights.com</a>
-      </p>
-    </div>
-
-    <!-- Links -->
-    <div class="footer-col links">
-      <h4>Institucional</h4>
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/servicos.html">Serviços</a></li>
-        <li><a href="/portfolio.html">Portfólio</a></li>
-        <li><a href="/processos.html">Tecnologias</a></li>
-        <li><a href="/contato.html">Contato</a></li>
-      </ul>
-    </div>
-
-    <!-- Social -->
-    <div class="footer-col social">
-      <h4>Siga-nos</h4>
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/company/n-i-s-insights-solutions" target="_blank" rel="noopener">
-            <img src="/static/icons/linkedin.svg" alt="" class="social-icon">
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a href="https://wa.me/5547992064403" target="_blank" rel="noopener">
-            <img src="/static/icons/whatsapp.svg" alt="" class="social-icon">
-            WhatsApp
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="footer-col newsletter">
-      <h4>Fique por dentro</h4>
-      <form action="https://formspree.io/f/xknajwye" method="POST" class="newsletter-form">
-        <label for="newsletter-email">Seu e-mail</label>
-        <input type="email" id="newsletter-email" name="email" placeholder="Seu e-mail" required>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+  <div class="servico" id="automacao">
+    <h3>Automação de Processos (BPM/BPMN)</h3>
+    <ul>
+      <li>Mapeamento e otimização de workflows.</li>
+      <li>Modelagem BPMN 2.0 e simulação.</li>
+      <li>Orquestração em BPMS low-code / no-code.</li>
+    </ul>
   </div>
 
-  <!-- Barra inferior -->
-  <div class="footer-bottom">
-    <button class="scroll-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+  <div class="servico" id="ecm">
+    <h3>Gestão Documental & ECM</h3>
+    <ul>
+      <li>Implementação de plataformas ECM / GED.</li>
+      <li>Classificação, versionamento e retenção.</li>
+      <li>Assinaturas digitais e compliance LGPD.</li>
+    </ul>
   </div>
-</footer>
 
-<!-- Faixa copyright -->
-<div class="footer-year">&copy; 2025&nbsp;NIS&nbsp;Consultoria</div>
+  <div class="servico" id="integracoes">
+    <h3>Integrações & RPA</h3>
+    <ul>
+      <li>Conectores API/REST e mensageria.</li>
+      <li>Robôs RPA para tarefas repetitivas.</li>
+      <li>Sincronização de sistemas legados e cloud.</li>
+    </ul>
+  </div>
 
-<!-- JS -->
-<script src="/static/script.js"></script>
+  <div class="servico" id="bi">
+    <h3>Inteligência de Dados & BI</h3>
+    <ul>
+      <li>ETL/ELT e data warehousing moderno.</li>
+      <li>Dashboards interativos com KPIs em tempo real.</li>
+      <li>Análise preditiva e storytelling de dados.</li>
+    </ul>
+  </div>
+
+  <div class="servico">
+    <h3>Consultoria & Governança Ágil</h3>
+    <ul>
+      <li>Avaliação de maturidade digital e roadmap.</li>
+      <li>Scrum, Kanban e squads dedicados.</li>
+      <li>Gestão de escopo, riscos e go-live.</li>
+      <li>Design UX/UI centrado no usuário.</li>
+      <li>Prototipagem rápida e testes de usabilidade.</li>
+      <li>Treinamento de usuários e materiais de onboarding.</li>
+    </ul>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col about">
+        <h3>NIS</h3>
+        <p>Software e automação que impulsionam o seu negócio.</p>
+        <ul class="footer-contact-list">
+          <li>
+            <span>Tel</span>
+            <a href="tel:+5547992064403">+55 (47) 99206-4403</a>
+          </li>
+          <li>
+            <span>Email</span>
+            <a href="mailto:contato@nisconsultoria.com.br">contato@nisconsultoria.com.br</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col links">
+        <h4>Institucional</h4>
+        <ul>
+          
+          <li><a href="/index.html">Home</a></li>
+          
+          <li><a href="/servicos.html">Serviços</a></li>
+          
+          <li><a href="/portfolio.html">Portfólio</a></li>
+          
+          <li><a href="/processos.html">Tecnologias</a></li>
+          
+          <li><a href="/contato.html">Contato</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col social">
+        <h4>Siga-nos</h4>
+        <ul>
+          
+          <li>
+            <a href="https://www.linkedin.com/company/n-i-s-insights-solutions" target="_blank" rel="noopener">
+              <img src="/static/icons/linkedin.svg" alt="" class="social-icon" aria-hidden="true">
+              LinkedIn
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://wa.me/5547992064403" target="_blank" rel="noopener">
+              <img src="/static/icons/whatsapp.svg" alt="" class="social-icon" aria-hidden="true">
+              WhatsApp
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h4>Fique por dentro</h4>
+        <form action="https://formspree.io/f/xknajwye" method="POST" class="newsletter-form">
+          <label for="newsletter-email">Seu e-mail</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Seu e-mail" required>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <button class="scroll-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+    </div>
+  </footer>
+
+  <div class="footer-year">&copy; 2026&nbsp;NIS</div>
+
+  <script src="/static/script.js"></script>
 
 </body>
 </html>
