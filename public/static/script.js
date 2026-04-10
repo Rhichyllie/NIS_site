@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const navOverlay = document.getElementById('nav-overlay');
   const scrollTopButton = document.querySelector('.scroll-top');
-  const pageLinks = document.querySelectorAll('.nav-links a, .nav-overlay a');
+  const pageLinks = document.querySelectorAll('.nav-links a, .nav-overlay-list a');
   const desktopBreakpoint = window.matchMedia('(min-width: 781px)');
 
   let scrollFrame = null;

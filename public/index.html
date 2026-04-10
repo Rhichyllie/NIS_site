@@ -3,15 +3,16 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="NIS transforma processos complexos em fluxos digitais inteligentes. Especialistas em automação de processos, gestão documental e integrações.">
+        content="A NIS organiza processos críticos com automação, gestão documental, integrações e soluções sob medida, com foco prioritário em logística e outras operações complexas.">
   <meta property="og:title" content="NIS">
-  <meta property="og:description" content="Software e automação que impulsionam o seu negócio.">
+  <meta property="og:description" content="Menos retrabalho, mais rastreabilidade e mais controle entre documentos, pessoas e sistemas.">
   <meta property="og:image" content="/static/logo.svg">
   <meta property="og:url" content="https://nisconsultoria.com.br/">
   <meta name="theme-color" content="#5F7386">
@@ -27,145 +28,320 @@
 
   <link rel="stylesheet" href="/static/style.css">
 </head>
-<body>
+<body class="home-page">
 
   <header class="header-top" id="header">
     <nav class="navbar" aria-label="Navegação principal">
-      <a href="/index.html" class="logo-link" aria-label="Página inicial">
-        <img src="/static/logo.svg" alt="NIS" class="logo" decoding="async" fetchpriority="high">
+      <a href="/index.html" class="logo-link" aria-label="Página inicial da NIS">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/static/logo.svg" alt="">
+        </span>
+        <span class="brand-copy">
+          <span class="brand-name">NIS</span>
+          <span class="brand-title">Negócios, Inovações e Soluções</span>
+        </span>
       </a>
-      <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-overlay">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-      </button>
-      <ul class="nav-links">
-        
-        <li><a href="/index.html">Home</a></li>
-        
-        <li><a href="/servicos.html">Serviços</a></li>
-        
-        <li><a href="/portfolio.html">Portfólio</a></li>
-        
-        <li><a href="/processos.html">Tecnologias</a></li>
-        
-        <li><a href="/contato.html">Contato</a></li>
-        
-      </ul>
+      <div class="nav-desktop" aria-label="Links principais">
+        <ul class="nav-links">
+          
+          <li><a href="/index.html"><span>Início</span></a></li>
+          
+          <li><a href="/servicos.html"><span>Soluções</span></a></li>
+          
+          <li><a href="/portfolio.html"><span>Portfólio</span></a></li>
+          
+          <li><a href="/processos.html"><span>Método</span></a></li>
+          
+          <li><a href="/contato.html"><span>Contato</span></a></li>
+          
+        </ul>
+      </div>
+      <div class="header-actions">
+        <a href="/contato.html" class="btn-cta btn-header">
+          <span class="btn-header-label">Agendar conversa</span>
+          <span class="btn-header-icon" aria-hidden="true"></span>
+        </a>
+        <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-overlay">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <nav class="nav-overlay" id="nav-overlay" aria-label="Menu mobile" aria-hidden="true">
-    <ul>
-      
-      <li><a href="/index.html">Home</a></li>
-      
-      <li><a href="/servicos.html">Serviços</a></li>
-      
-      <li><a href="/portfolio.html">Portfólio</a></li>
-      
-      <li><a href="/processos.html">Tecnologias</a></li>
-      
-      <li><a href="/contato.html">Contato</a></li>
-      
-    </ul>
+    <div class="nav-overlay-panel">
+      <a href="/index.html" class="nav-overlay-brand" aria-label="Página inicial da NIS">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/static/logo.svg" alt="">
+        </span>
+        <span class="brand-copy">
+          <span class="brand-name">NIS</span>
+          <span class="brand-title">Negócios, Inovações e Soluções</span>
+        </span>
+      </a>
+      <ul class="nav-overlay-list">
+        
+        <li><a href="/index.html"><span>Início</span></a></li>
+        
+        <li><a href="/servicos.html"><span>Soluções</span></a></li>
+        
+        <li><a href="/portfolio.html"><span>Portfólio</span></a></li>
+        
+        <li><a href="/processos.html"><span>Método</span></a></li>
+        
+        <li><a href="/contato.html"><span>Contato</span></a></li>
+        
+      </ul>
+      <a href="/contato.html" class="btn-cta btn-header btn-header-mobile">
+        <span class="btn-header-label">Agendar conversa</span>
+        <span class="btn-header-icon" aria-hidden="true"></span>
+      </a>
+    </div>
   </nav>
 
   <main class="site-main">
     
 
-<section class="hero-section">
-  <video class="hero-video" autoplay muted loop
+<section class="hero-section hero-home">
+  <video class="hero-video" autoplay muted loop playsinline
          poster="/static/imgs/hero-bg.jpg">
     <source src="/static/videos/hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>NIS Negócios, Inovações e Soluções LTDA</h1>
-    <p>Construindo <span class="highlight">software e automação</span> que impulsionam o seu negócio</p>
-    <a href="/servicos.html" class="btn-cta">Conheça nossos serviços</a>
+  <div class="hero-content hero-content-home">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Logística e operações críticas</span>
+      <h1>Controle para fluxos que ainda vivem de retrabalho.</h1>
+      <p>A NIS organiza processos, documentos, integrações e software sob medida para dar mais clareza e rastreabilidade à operação.</p>
+      <div class="hero-actions">
+        <a href="/contato.html" class="btn-cta btn-hero-primary">Conversar sobre a operação</a>
+        <a href="/servicos.html" class="hero-link">Conhecer soluções</a>
+      </div>
+      <p class="hero-note">Especialmente em transportadoras, operadores logísticos, armazenagem e centros de distribuição.</p>
+    </div>
+
+    <aside class="hero-panel">
+      <span class="hero-panel-label">Onde a NIS entra com mais força</span>
+      <h2>Fluxo, documento e decisão na mesma estrutura.</h2>
+      <p>Menos ruído entre áreas. Mais controle sobre exceções, aprovações e evidências.</p>
+    </aside>
   </div>
 </section>
 
-<div class="home-flow">
-  <section class="info-section destaque-section">
+<div class="home-stage">
+  <div class="home-flow">
+  <section class="editorial-section pain-section" aria-labelledby="pain-title">
+    <div class="pain-shell">
+      <div class="section-intro section-intro--compact">
+        <span class="eyebrow">Onde a operação perde controle</span>
+        <h2 id="pain-title">O desgaste raramente nasce de uma única ferramenta. Ele aparece entre etapas.</h2>
+        <p>Quando pessoas, documentos, aprovações e sistemas dependem de controles paralelos, a rotina custa mais do que deveria.</p>
+      </div>
+
+      <div class="pain-grid">
+        
+        <article class="pain-card">
+          <h3>Aprovação dispersa</h3>
+          <p>Exceções e liberações fora do fluxo, sem dono claro nem histórico confiável.</p>
+        </article>
+        
+        <article class="pain-card">
+          <h3>Documento sem trilha</h3>
+          <p>Comprovantes e evidências espalhados entre pessoas, pastas e sistemas paralelos.</p>
+        </article>
+        
+        <article class="pain-card">
+          <h3>Retrabalho operacional</h3>
+          <p>Sistemas sem integração, digitação repetida e conferência manual na rotina crítica.</p>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section how-section section-shell section-shell--warm" aria-labelledby="how-title">
+    <div class="section-intro section-intro--split">
+      <div>
+        <span class="eyebrow">Como a NIS atua</span>
+        <h2 id="how-title">A NIS organiza o fluxo certo antes de automatizar qualquer etapa.</h2>
+      </div>
+      <p>Leitura operacional, desenho de processo, organização documental, integrações e desenvolvimento entram na medida exata do problema.</p>
+    </div>
+
+    <div class="process-steps">
+      
+      <article class="process-step">
+        <span class="step-index">01</span>
+        <div>
+          <h3>Lemos o fluxo real da operação</h3>
+          <p>Mapeamos gargalos, documentos, exceções e dependências antes de propor tecnologia.</p>
+        </div>
+      </article>
+      
+      <article class="process-step">
+        <span class="step-index">02</span>
+        <div>
+          <h3>Desenhamos a solução certa</h3>
+          <p>Estruturamos processo, regras e integrações para reduzir atrito com clareza.</p>
+        </div>
+      </article>
+      
+      <article class="process-step">
+        <span class="step-index">03</span>
+        <div>
+          <h3>Implementamos com base evolutiva</h3>
+          <p>Automação, gestão documental, software e dados entram como base evolutiva.</p>
+        </div>
+      </article>
+      
+    </div>
+  </section>
+
+  <section class="editorial-section solutions-home-section section-shell section-shell--muted" aria-labelledby="solutions-title">
+    <div class="section-intro">
+      <span class="eyebrow">Pilares de solução</span>
+      <h2 id="solutions-title">Soluções para dar clareza, controle e continuidade à operação.</h2>
+      <p>Cada frente atua sozinha ou em conjunto, conforme o atrito entre processo, documento e sistema.</p>
+    </div>
+
+    <div class="highlight-section highlight-section--solutions" aria-label="Principais pilares de solução">
+      
+      <article class="highlight-card highlight-card--automation">
+        <div class="highlight-image" aria-hidden="true"></div>
+        <div class="highlight-text">
+          <span class="card-kicker">Fluxo e decisão</span>
+          <h3>Processos e aprovações</h3>
+          <p>Fluxos com regra, responsável e trilha de decisão.</p>
+          <ul class="card-points">
+            
+            <li>Pedidos e exceções com dono claro</li>
+            
+            <li>Mais previsibilidade entre etapas</li>
+            
+          </ul>
+          <a href="/servicos.html#processos" class="btn-highlight">Ver solução</a>
+        </div>
+      </article>
+      
+      <article class="highlight-card highlight-card--documents">
+        <div class="highlight-image" aria-hidden="true"></div>
+        <div class="highlight-text">
+          <span class="card-kicker">Documento e evidência</span>
+          <h3>Documentos e controle operacional</h3>
+          <p>Documentos críticos com acesso, versionamento e rastreabilidade.</p>
+          <ul class="card-points">
+            
+            <li>Menos busca manual</li>
+            
+            <li>Mais segurança e rastreabilidade</li>
+            
+          </ul>
+          <a href="/servicos.html#documentos" class="btn-highlight">Ver solução</a>
+        </div>
+      </article>
+      
+      <article class="highlight-card highlight-card--integrations">
+        <div class="highlight-image" aria-hidden="true"></div>
+        <div class="highlight-text">
+          <span class="card-kicker">Sistema e automação</span>
+          <h3>Integrações e automações</h3>
+          <p>Sistemas conectados e tarefas repetitivas fora da rotina manual.</p>
+          <ul class="card-points">
+            
+            <li>ERP, TMS, WMS e legados</li>
+            
+            <li>Menos digitação e conciliação</li>
+            
+          </ul>
+          <a href="/servicos.html#integracoes" class="btn-highlight">Ver solução</a>
+        </div>
+      </article>
+      
+      <article class="highlight-card highlight-card--data">
+        <div class="highlight-image" aria-hidden="true"></div>
+        <div class="highlight-text">
+          <span class="card-kicker">Produto e inteligência</span>
+          <h3>Soluções sob medida e dados</h3>
+          <p>Software, dashboards e dados quando a operação pede algo específico.</p>
+          <ul class="card-points">
+            
+            <li>Portais, APIs e painéis</li>
+            
+            <li>Mais leitura da operação</li>
+            
+          </ul>
+          <a href="/servicos.html#sob-medida" class="btn-highlight">Ver solução</a>
+        </div>
+      </article>
+      
+    </div>
+  </section>
+
+  <section class="destaque-section destaque-section--logistics">
     <div class="destaque-content">
       <div class="destaque-text">
-        <h2>Por que escolher a NIS?</h2>
-        <p>Na NIS, combinamos inovação e excelência técnica para criar soluções digitais que transformam desafios complexos em fluxos escaláveis, seguros e inteligentes.</p>
+        <span class="eyebrow">Onde a aderência é mais imediata</span>
+        <h2>Em logística, esses gargalos aparecem com mais frequência e urgência.</h2>
+        <p>Transportadoras, operadores logísticos, armazenagem e centros de distribuição convivem com documentos, exceções, aprovações e sistemas que precisam conversar melhor.</p>
         <ul class="destaque-list">
-          <li><span class="destaque-icon">&#10003;</span> Automação de Processos (BPM/BPMN)</li>
-          <li><span class="destaque-icon">&#10003;</span> Gestão Documental</li>
-          <li><span class="destaque-icon">&#10003;</span> Integrações &amp; RPA</li>
+          
+          <li><span class="destaque-icon">&#10003;</span>Operadores logísticos, transportadoras, armazenagem e centros de distribuição.</li>
+          
+          <li><span class="destaque-icon">&#10003;</span>Rotinas com anexos, comprovantes, pendências, conferências e exceções operacionais.</li>
+          
+          <li><span class="destaque-icon">&#10003;</span>Necessidade de rastrear o que aconteceu, quem aprovou, onde está o documento e qual etapa está parada.</li>
+          
+          <li><span class="destaque-icon">&#10003;</span>Integração entre pessoas, documentos e sistemas para ganhar controle sem travar a operação.</li>
+          
         </ul>
       </div>
       <div class="destaque-image">
-        <img src="/static/imgs/destaque.jpg" alt="Equipe NIS trabalhando em soluções digitais" loading="lazy" decoding="async">
+        <img src="/static/imgs/destaque.jpg" alt="Operação em andamento com foco em controle e rastreabilidade" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
 
-  <section class="highlight-section" aria-label="Principais frentes de atuação">
-    
-    <article class="highlight-card highlight-card--automation">
-      <div class="highlight-image" aria-hidden="true"></div>
-      <div class="highlight-text">
-        <h3>Automação de Processos</h3>
-        <p>Mapeamos, simulamos e orquestramos fluxos BPMN para reduzir custos e acelerar seus processos críticos.</p>
-        <a href="/servicos.html#automacao" class="btn-highlight">Saiba Mais</a>
+  <section class="info-section info-section-flexibility section-shell section-shell--clean">
+    <div class="section-intro section-intro--split">
+      <div>
+        <span class="eyebrow">Além da logística</span>
+        <h2>A mesma base organiza outras rotinas críticas.</h2>
       </div>
-    </article>
-    
-    <article class="highlight-card highlight-card--documents">
-      <div class="highlight-image" aria-hidden="true"></div>
-      <div class="highlight-text">
-        <h3>Gestão Documental</h3>
-        <p>Digitalize, classifique e gerencie documentos com segurança e compliance, tudo em um só lugar.</p>
-        <a href="/servicos.html#ecm" class="btn-highlight">Veja Como</a>
-      </div>
-    </article>
-    
-    <article class="highlight-card highlight-card--integrations">
-      <div class="highlight-image" aria-hidden="true"></div>
-      <div class="highlight-text">
-        <h3>Integrações & RPA</h3>
-        <p>Conectamos sistemas legados e cloud, automatizando tarefas repetitivas com robôs RPA inteligentes.</p>
-        <a href="/servicos.html#integracoes" class="btn-highlight">Explorar Integrações</a>
-      </div>
-    </article>
-    
-    <article class="highlight-card highlight-card--data">
-      <div class="highlight-image" aria-hidden="true"></div>
-      <div class="highlight-text">
-        <h3>Inteligência de Dados</h3>
-        <p>Transformamos dados em insights acionáveis com ETL moderno, dashboards em tempo real e análises preditivas.</p>
-        <a href="/servicos.html#bi" class="btn-highlight">Conheça Nossas Soluções</a>
-      </div>
-    </article>
-    
-  </section>
+      <p>Quando fluxo, documento ou integração travam a rotina, a NIS estrutura a solução no contexto certo.</p>
+    </div>
 
-  <section class="info-section info-section-principles">
-    <div class="info-cards">
+    <div class="info-cards info-cards--three info-cards--flexibility">
       
-      <article class="info-card principle-card">
-        <h2>Missão</h2>
-        <p>Desenvolver <strong>software sob medida</strong> e fluxos automatizados que elevem eficiência, segurança e escalabilidade em cada entrega.</p>
+      <article class="info-card info-card--compact info-card--feature">
+        <h3>Backoffice e operação</h3>
+        <p>Aprovações, anexos e dependências entre áreas com mais ordem e rastreabilidade.</p>
       </article>
       
-      <article class="info-card principle-card">
-        <h2>Visão</h2>
-        <p>Ser referência em soluções digitais que convertem desafios de negócio em plataformas robustas e inovadoras, impulsionando o crescimento sustentável dos nossos parceiros.</p>
+      <article class="info-card info-card--compact">
+        <h3>Software sob medida</h3>
+        <p>Portais, aplicações e APIs quando a operação não cabe em ferramenta pronta.</p>
+      </article>
+      
+      <article class="info-card info-card--compact">
+        <h3>Dados e visibilidade</h3>
+        <p>Painéis e estruturas de dados para acompanhar o fluxo com clareza.</p>
       </article>
       
     </div>
   </section>
 
-  <section class="cta-section">
-    <h2>Pronto para potencializar seu negócio?</h2>
-    <p>Entre em contato e descubra como nossas soluções personalizadas podem impulsionar sua empresa.</p>
-    <a href="/contato.html" class="btn-cta-alt">Fale Conosco</a>
+  <section class="cta-section cta-section--home">
+    <span class="eyebrow eyebrow-inverse">Próximo passo</span>
+    <h2>Se documentos, aprovações e sistemas travam a rotina, a NIS pode organizar esse fluxo.</h2>
+    <p>A conversa começa no ponto de maior atrito operacional.</p>
+    <div class="cta-actions">
+      <a href="/contato.html" class="btn-cta-alt">Agendar conversa</a>
+      <a href="/servicos.html" class="btn-highlight btn-highlight-inverse">Conhecer soluções</a>
+    </div>
   </section>
+  </div>
 </div>
 
 
@@ -175,7 +351,7 @@
     <div class="footer-container">
       <div class="footer-col about">
         <h3>NIS</h3>
-        <p>Software e automação que impulsionam o seu negócio.</p>
+        <p>Organizamos processos críticos com automação, documentos, integrações e soluções sob medida.</p>
         <ul class="footer-contact-list">
           <li>
             <span>Tel</span>
@@ -189,16 +365,16 @@
       </div>
 
       <div class="footer-col links">
-        <h4>Institucional</h4>
+        <h4>Navegação</h4>
         <ul>
           
-          <li><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Início</a></li>
           
-          <li><a href="/servicos.html">Serviços</a></li>
+          <li><a href="/servicos.html">Soluções</a></li>
           
           <li><a href="/portfolio.html">Portfólio</a></li>
           
-          <li><a href="/processos.html">Tecnologias</a></li>
+          <li><a href="/processos.html">Método</a></li>
           
           <li><a href="/contato.html">Contato</a></li>
           

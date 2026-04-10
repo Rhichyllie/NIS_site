@@ -1,109 +1,241 @@
 {% extends "base.html" %}
-{% set highlights = [
+{% set pain_points = [
+  {
+    "title": "Aprovação dispersa",
+    "description": "Exceções e liberações fora do fluxo, sem dono claro nem histórico confiável."
+  },
+  {
+    "title": "Documento sem trilha",
+    "description": "Comprovantes e evidências espalhados entre pessoas, pastas e sistemas paralelos."
+  },
+  {
+    "title": "Retrabalho operacional",
+    "description": "Sistemas sem integração, digitação repetida e conferência manual na rotina crítica."
+  }
+] %}
+{% set operating_steps = [
+  {
+    "step": "01",
+    "title": "Lemos o fluxo real da operação",
+    "description": "Mapeamos gargalos, documentos, exceções e dependências antes de propor tecnologia."
+  },
+  {
+    "step": "02",
+    "title": "Desenhamos a solução certa",
+    "description": "Estruturamos processo, regras e integrações para reduzir atrito com clareza."
+  },
+  {
+    "step": "03",
+    "title": "Implementamos com base evolutiva",
+    "description": "Automação, gestão documental, software e dados entram como base evolutiva."
+  }
+] %}
+{% set solution_pillars = [
   {
     "slug": "automation",
-    "title": "Automação de Processos",
-    "description": "Mapeamos, simulamos e orquestramos fluxos BPMN para reduzir custos e acelerar seus processos críticos.",
-    "href": "/servicos.html#automacao",
-    "cta": "Saiba Mais"
+    "kicker": "Fluxo e decisão",
+    "title": "Processos e aprovações",
+    "description": "Fluxos com regra, responsável e trilha de decisão.",
+    "points": ["Pedidos e exceções com dono claro", "Mais previsibilidade entre etapas"],
+    "href": "/servicos.html#processos",
+    "cta": "Ver solução"
   },
   {
     "slug": "documents",
-    "title": "Gestão Documental",
-    "description": "Digitalize, classifique e gerencie documentos com segurança e compliance, tudo em um só lugar.",
-    "href": "/servicos.html#ecm",
-    "cta": "Veja Como"
+    "kicker": "Documento e evidência",
+    "title": "Documentos e controle operacional",
+    "description": "Documentos críticos com acesso, versionamento e rastreabilidade.",
+    "points": ["Menos busca manual", "Mais segurança e rastreabilidade"],
+    "href": "/servicos.html#documentos",
+    "cta": "Ver solução"
   },
   {
     "slug": "integrations",
-    "title": "Integrações & RPA",
-    "description": "Conectamos sistemas legados e cloud, automatizando tarefas repetitivas com robôs RPA inteligentes.",
+    "kicker": "Sistema e automação",
+    "title": "Integrações e automações",
+    "description": "Sistemas conectados e tarefas repetitivas fora da rotina manual.",
+    "points": ["ERP, TMS, WMS e legados", "Menos digitação e conciliação"],
     "href": "/servicos.html#integracoes",
-    "cta": "Explorar Integrações"
+    "cta": "Ver solução"
   },
   {
     "slug": "data",
-    "title": "Inteligência de Dados",
-    "description": "Transformamos dados em insights acionáveis com ETL moderno, dashboards em tempo real e análises preditivas.",
-    "href": "/servicos.html#bi",
-    "cta": "Conheça Nossas Soluções"
+    "kicker": "Produto e inteligência",
+    "title": "Soluções sob medida e dados",
+    "description": "Software, dashboards e dados quando a operação pede algo específico.",
+    "points": ["Portais, APIs e painéis", "Mais leitura da operação"],
+    "href": "/servicos.html#sob-medida",
+    "cta": "Ver solução"
   }
 ] %}
-{% set principles = [
+{% set logistics_points = [
+  "Operadores logísticos, transportadoras, armazenagem e centros de distribuição.",
+  "Rotinas com anexos, comprovantes, pendências, conferências e exceções operacionais.",
+  "Necessidade de rastrear o que aconteceu, quem aprovou, onde está o documento e qual etapa está parada.",
+  "Integração entre pessoas, documentos e sistemas para ganhar controle sem travar a operação."
+] %}
+{% set flex_cards = [
   {
-    "title": "Missão",
-    "description": "Desenvolver <strong>software sob medida</strong> e fluxos automatizados que elevem eficiência, segurança e escalabilidade em cada entrega."
+    "title": "Backoffice e operação",
+    "description": "Aprovações, anexos e dependências entre áreas com mais ordem e rastreabilidade."
   },
   {
-    "title": "Visão",
-    "description": "Ser referência em soluções digitais que convertem desafios de negócio em plataformas robustas e inovadoras, impulsionando o crescimento sustentável dos nossos parceiros."
+    "title": "Software sob medida",
+    "description": "Portais, aplicações e APIs quando a operação não cabe em ferramenta pronta."
+  },
+  {
+    "title": "Dados e visibilidade",
+    "description": "Painéis e estruturas de dados para acompanhar o fluxo com clareza."
   }
 ] %}
 {% block title %}Home{% endblock %}
+{% block body_class %}home-page{% endblock %}
 
 {% block content %}
 
-<section class="hero-section">
-  <video class="hero-video" autoplay muted loop
+<section class="hero-section hero-home">
+  <video class="hero-video" autoplay muted loop playsinline
          poster="/static/imgs/hero-bg.jpg">
     <source src="/static/videos/hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>NIS Negócios, Inovações e Soluções LTDA</h1>
-    <p>Construindo <span class="highlight">software e automação</span> que impulsionam o seu negócio</p>
-    <a href="/servicos.html" class="btn-cta">Conheça nossos serviços</a>
+  <div class="hero-content hero-content-home">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Logística e operações críticas</span>
+      <h1>Controle para fluxos que ainda vivem de retrabalho.</h1>
+      <p>A NIS organiza processos, documentos, integrações e software sob medida para dar mais clareza e rastreabilidade à operação.</p>
+      <div class="hero-actions">
+        <a href="/contato.html" class="btn-cta btn-hero-primary">Conversar sobre a operação</a>
+        <a href="/servicos.html" class="hero-link">Conhecer soluções</a>
+      </div>
+      <p class="hero-note">Especialmente em transportadoras, operadores logísticos, armazenagem e centros de distribuição.</p>
+    </div>
+
+    <aside class="hero-panel">
+      <span class="hero-panel-label">Onde a NIS entra com mais força</span>
+      <h2>Fluxo, documento e decisão na mesma estrutura.</h2>
+      <p>Menos ruído entre áreas. Mais controle sobre exceções, aprovações e evidências.</p>
+    </aside>
   </div>
 </section>
 
-<div class="home-flow">
-  <section class="info-section destaque-section">
-    <div class="destaque-content">
-      <div class="destaque-text">
-        <h2>Por que escolher a NIS?</h2>
-        <p>Na NIS, combinamos inovação e excelência técnica para criar soluções digitais que transformam desafios complexos em fluxos escaláveis, seguros e inteligentes.</p>
-        <ul class="destaque-list">
-          <li><span class="destaque-icon">&#10003;</span> Automação de Processos (BPM/BPMN)</li>
-          <li><span class="destaque-icon">&#10003;</span> Gestão Documental</li>
-          <li><span class="destaque-icon">&#10003;</span> Integrações &amp; RPA</li>
-        </ul>
+<div class="home-stage">
+  <div class="home-flow">
+  <section class="editorial-section pain-section" aria-labelledby="pain-title">
+    <div class="pain-shell">
+      <div class="section-intro section-intro--compact">
+        <span class="eyebrow">Onde a operação perde controle</span>
+        <h2 id="pain-title">O desgaste raramente nasce de uma única ferramenta. Ele aparece entre etapas.</h2>
+        <p>Quando pessoas, documentos, aprovações e sistemas dependem de controles paralelos, a rotina custa mais do que deveria.</p>
       </div>
-      <div class="destaque-image">
-        <img src="/static/imgs/destaque.jpg" alt="Equipe NIS trabalhando em soluções digitais" loading="lazy" decoding="async">
+
+      <div class="pain-grid">
+        {% for item in pain_points %}
+        <article class="pain-card">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+        {% endfor %}
       </div>
     </div>
   </section>
 
-  <section class="highlight-section" aria-label="Principais frentes de atuação">
-    {% for item in highlights %}
-    <article class="highlight-card highlight-card--{{ item.slug }}">
-      <div class="highlight-image" aria-hidden="true"></div>
-      <div class="highlight-text">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <a href="{{ item.href }}" class="btn-highlight">{{ item.cta }}</a>
+  <section class="editorial-section how-section section-shell section-shell--warm" aria-labelledby="how-title">
+    <div class="section-intro section-intro--split">
+      <div>
+        <span class="eyebrow">Como a NIS atua</span>
+        <h2 id="how-title">A NIS organiza o fluxo certo antes de automatizar qualquer etapa.</h2>
       </div>
-    </article>
-    {% endfor %}
-  </section>
+      <p>Leitura operacional, desenho de processo, organização documental, integrações e desenvolvimento entram na medida exata do problema.</p>
+    </div>
 
-  <section class="info-section info-section-principles">
-    <div class="info-cards">
-      {% for item in principles %}
-      <article class="info-card principle-card">
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.description | safe }}</p>
+    <div class="process-steps">
+      {% for item in operating_steps %}
+      <article class="process-step">
+        <span class="step-index">{{ item.step }}</span>
+        <div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
       </article>
       {% endfor %}
     </div>
   </section>
 
-  <section class="cta-section">
-    <h2>Pronto para potencializar seu negócio?</h2>
-    <p>Entre em contato e descubra como nossas soluções personalizadas podem impulsionar sua empresa.</p>
-    <a href="/contato.html" class="btn-cta-alt">Fale Conosco</a>
+  <section class="editorial-section solutions-home-section section-shell section-shell--muted" aria-labelledby="solutions-title">
+    <div class="section-intro">
+      <span class="eyebrow">Pilares de solução</span>
+      <h2 id="solutions-title">Soluções para dar clareza, controle e continuidade à operação.</h2>
+      <p>Cada frente atua sozinha ou em conjunto, conforme o atrito entre processo, documento e sistema.</p>
+    </div>
+
+    <div class="highlight-section highlight-section--solutions" aria-label="Principais pilares de solução">
+      {% for item in solution_pillars %}
+      <article class="highlight-card highlight-card--{{ item.slug }}">
+        <div class="highlight-image" aria-hidden="true"></div>
+        <div class="highlight-text">
+          <span class="card-kicker">{{ item.kicker }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <ul class="card-points">
+            {% for point in item.points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+          <a href="{{ item.href }}" class="btn-highlight">{{ item.cta }}</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
   </section>
+
+  <section class="destaque-section destaque-section--logistics">
+    <div class="destaque-content">
+      <div class="destaque-text">
+        <span class="eyebrow">Onde a aderência é mais imediata</span>
+        <h2>Em logística, esses gargalos aparecem com mais frequência e urgência.</h2>
+        <p>Transportadoras, operadores logísticos, armazenagem e centros de distribuição convivem com documentos, exceções, aprovações e sistemas que precisam conversar melhor.</p>
+        <ul class="destaque-list">
+          {% for item in logistics_points %}
+          <li><span class="destaque-icon">&#10003;</span>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="destaque-image">
+        <img src="/static/imgs/destaque.jpg" alt="Operação em andamento com foco em controle e rastreabilidade" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section info-section-flexibility section-shell section-shell--clean">
+    <div class="section-intro section-intro--split">
+      <div>
+        <span class="eyebrow">Além da logística</span>
+        <h2>A mesma base organiza outras rotinas críticas.</h2>
+      </div>
+      <p>Quando fluxo, documento ou integração travam a rotina, a NIS estrutura a solução no contexto certo.</p>
+    </div>
+
+    <div class="info-cards info-cards--three info-cards--flexibility">
+      {% for item in flex_cards %}
+      <article class="info-card info-card--compact{% if loop.first %} info-card--feature{% endif %}">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="cta-section cta-section--home">
+    <span class="eyebrow eyebrow-inverse">Próximo passo</span>
+    <h2>Se documentos, aprovações e sistemas travam a rotina, a NIS pode organizar esse fluxo.</h2>
+    <p>A conversa começa no ponto de maior atrito operacional.</p>
+    <div class="cta-actions">
+      <a href="/contato.html" class="btn-cta-alt">Agendar conversa</a>
+      <a href="/servicos.html" class="btn-highlight btn-highlight-inverse">Conhecer soluções</a>
+    </div>
+  </section>
+  </div>
 </div>
 
 {% endblock %}
-

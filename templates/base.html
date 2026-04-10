@@ -1,10 +1,11 @@
 {% set nav_items = [
-  {"href": "/index.html", "label": "Home"},
-  {"href": "/servicos.html", "label": "Serviços"},
+  {"href": "/index.html", "label": "Início"},
+  {"href": "/servicos.html", "label": "Soluções"},
   {"href": "/portfolio.html", "label": "Portfólio"},
-  {"href": "/processos.html", "label": "Tecnologias"},
+  {"href": "/processos.html", "label": "Método"},
   {"href": "/contato.html", "label": "Contato"},
 ] %}
+{% set header_cta = {"href": "/contato.html", "label": "Agendar conversa"} %}
 {% set social_items = [
   {"href": "https://www.linkedin.com/company/n-i-s-insights-solutions", "label": "LinkedIn", "icon": "/static/icons/linkedin.svg"},
   {"href": "https://wa.me/5547992064403", "label": "WhatsApp", "icon": "/static/icons/whatsapp.svg"},
@@ -18,9 +19,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="NIS transforma processos complexos em fluxos digitais inteligentes. Especialistas em automação de processos, gestão documental e integrações.">
+        content="A NIS organiza processos críticos com automação, gestão documental, integrações e soluções sob medida, com foco prioritário em logística e outras operações complexas.">
   <meta property="og:title" content="NIS">
-  <meta property="og:description" content="Software e automação que impulsionam o seu negócio.">
+  <meta property="og:description" content="Menos retrabalho, mais rastreabilidade e mais controle entre documentos, pessoas e sistemas.">
   <meta property="og:image" content="/static/logo.svg">
   <meta property="og:url" content="https://nisconsultoria.com.br/">
   <meta name="theme-color" content="#5F7386">
@@ -36,32 +37,48 @@
 
   <link rel="stylesheet" href="/static/style.css">
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
 
   <header class="header-top" id="header">
     <nav class="navbar" aria-label="Navegação principal">
-      <a href="/index.html" class="logo-link" aria-label="Página inicial">
-        <img src="/static/logo.svg" alt="NIS" class="logo" decoding="async" fetchpriority="high">
+      <a href="/index.html" class="logo-link" aria-label="Página inicial da NIS">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/static/logo.svg" alt="">
+        </span>
       </a>
-      <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-overlay">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-      </button>
-      <ul class="nav-links">
-        {% for item in nav_items %}
-        <li><a href="{{ item.href }}">{{ item.label }}</a></li>
-        {% endfor %}
-      </ul>
+      <div class="nav-desktop" aria-label="Links principais">
+        <ul class="nav-links">
+          {% for item in nav_items %}
+          <li><a href="{{ item.href }}"><span>{{ item.label }}</span></a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="header-actions">
+        <a href="{{ header_cta.href }}" class="btn-cta btn-header">
+          <span>{{ header_cta.label }}</span>
+          <span class="btn-header-arrow" aria-hidden="true"></span>
+        </a>
+        <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-overlay">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <nav class="nav-overlay" id="nav-overlay" aria-label="Menu mobile" aria-hidden="true">
-    <ul>
-      {% for item in nav_items %}
-      <li><a href="{{ item.href }}">{{ item.label }}</a></li>
-      {% endfor %}
-    </ul>
+    <div class="nav-overlay-panel">
+      <ul class="nav-overlay-list">
+        {% for item in nav_items %}
+        <li><a href="{{ item.href }}"><span>{{ item.label }}</span></a></li>
+        {% endfor %}
+      </ul>
+      <a href="{{ header_cta.href }}" class="btn-cta btn-header btn-header-mobile">
+        <span>{{ header_cta.label }}</span>
+        <span class="btn-header-arrow" aria-hidden="true"></span>
+      </a>
+    </div>
   </nav>
 
   <main class="site-main">
@@ -72,7 +89,7 @@
     <div class="footer-container">
       <div class="footer-col about">
         <h3>NIS</h3>
-        <p>Software e automação que impulsionam o seu negócio.</p>
+        <p>Organizamos processos críticos com automação, documentos, integrações e soluções sob medida.</p>
         <ul class="footer-contact-list">
           <li>
             <span>Tel</span>
@@ -86,7 +103,7 @@
       </div>
 
       <div class="footer-col links">
-        <h4>Institucional</h4>
+        <h4>Navegação</h4>
         <ul>
           {% for item in nav_items %}
           <li><a href="{{ item.href }}">{{ item.label }}</a></li>

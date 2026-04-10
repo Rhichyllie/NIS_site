@@ -1,84 +1,179 @@
 {% extends "base.html" %}
-{% block title %}Serviços{% endblock %}
+{% set solution_pillars = [
+  {
+    "id": "processos",
+    "kicker": "Fluxo e decisão",
+    "title": "Processos e aprovações",
+    "description": "Estruturamos etapas, regras, responsáveis, SLAs e exceções para que a operação deixe de depender de controles informais.",
+    "points": [
+      "Mapeamento e desenho de workflows operacionais",
+      "Aprovações, exceções e filas com rastreabilidade",
+      "Orquestração BPM/BPMN com visão clara de ponta a ponta"
+    ],
+    "note": "Indicado para operações com muitas passagens entre áreas, dependência de validação e retrabalho recorrente."
+  },
+  {
+    "id": "documentos",
+    "kicker": "Documento e evidência",
+    "title": "Documentos e controle operacional",
+    "description": "Centralizamos documentos críticos com classificação, versionamento, acesso confiável e vínculo com o fluxo operacional.",
+    "points": [
+      "GED / ECM para contratos, comprovantes, anexos e dossiês",
+      "Assinaturas, retenção, busca e governança documental",
+      "Mais contexto para a operação e mais segurança para auditoria"
+    ],
+    "note": "Faz sentido quando documento é peça central da rotina, da conferência e da comprovação."
+  },
+  {
+    "id": "integracoes",
+    "kicker": "Sistema e automação",
+    "title": "Integrações e automações",
+    "description": "Conectamos sistemas, eliminamos digitação repetida e automatizamos tarefas para reduzir atrito entre áreas, plataformas e rotinas.",
+    "points": [
+      "Integrações entre ERP, TMS, WMS, portais e legados",
+      "Automação de tarefas manuais e sincronização de dados",
+      "Menos duplicidade operacional e menos conciliação paralela"
+    ],
+    "note": "Útil quando a operação depende de sistemas que não conversam e de controles auxiliares para fechar o fluxo."
+  },
+  {
+    "id": "sob-medida",
+    "kicker": "Produto e inteligência",
+    "title": "Soluções sob medida e dados",
+    "description": "Desenvolvemos portais, aplicações, APIs, dashboards e estruturas analíticas quando a operação exige uma resposta própria.",
+    "points": [
+      "Software sob medida para contexto operacional específico",
+      "Dashboards, indicadores e visibilidade sobre o processo",
+      "Evolução contínua com sustentação técnica e arquitetura sólida"
+    ],
+    "note": "Quando a ferramenta pronta não cobre a realidade do negócio, desenhamos a solução certa para o cenário."
+  }
+] %}
+{% set logistics_fit = [
+  "Controle de anexos, comprovantes, pendências e documentos ao longo da operação.",
+  "Aprovações e exceções que precisam de histórico, SLA e clareza entre áreas.",
+  "Integração entre sistemas de operação, backoffice e controles paralelos.",
+  "Mais rastreabilidade para decisões, evidências e status sem depender de busca manual."
+] %}
+{% set flexibility_points = [
+  {
+    "title": "Backoffice e operações administrativas",
+    "description": "Processos internos, fluxos documentais, aprovações e rotinas que exigem mais controle e menos dispersão."
+  },
+  {
+    "title": "Produtos e camadas operacionais próprias",
+    "description": "Portais, aplicações, integrações, APIs e componentes feitos para acomodar regras específicas do negócio."
+  },
+  {
+    "title": "Dados para gestão e melhoria contínua",
+    "description": "Indicadores, dashboards e visão analítica para acompanhar gargalos, tempos de ciclo e estabilidade operacional."
+  }
+] %}
+{% block title %}Soluções{% endblock %}
 {% block content %}
 
-<!-- Hero Services -->
-<section class="hero-section">
-  <!-- vídeo de fundo  -->
+<section class="hero-section hero-section--solutions">
   <video class="hero-video" autoplay muted loop playsinline
          poster="{{ url_for('static', filename='imgs/hero-bg.jpg') }}">
     <source src="{{ url_for('static', filename='videos/service.mp4') }}" type="video/mp4">
   </video>
-
-  <!-- overlay para escurecer o vídeo e melhorar legibilidade -->
   <div class="hero-overlay"></div>
+  <div class="hero-content hero-content-home">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Soluções para operação crítica</span>
+      <h1>Soluções que organizam fluxo, documento, integração e decisão.</h1>
+      <p>A NIS traduz tecnologia em estrutura operacional: menos retrabalho, mais rastreabilidade e mais controle para logística e outras operações complexas.</p>
+      <div class="hero-actions">
+        <a href="/contato.html" class="btn-cta">Conversar sobre a operação</a>
+        <a href="#pilares" class="btn-highlight btn-hero-secondary">Ver pilares</a>
+      </div>
+    </div>
 
-  <!-- texto centralizado -->
-  <div class="hero-content">
-    <h1>Serviços</h1>
-    <p>Transformamos <span class="highlight">processos complexos</span> em fluxos digitais e inteligentes.</p>
+    <aside class="hero-panel hero-panel--compact">
+      <span class="hero-panel-label">O que entregamos</span>
+      <ul class="hero-panel-list">
+        <li>Processos com regra, dono e SLA.</li>
+        <li>Documentos com controle e acesso confiável.</li>
+        <li>Integrações que eliminam duplicidade manual.</li>
+        <li>Software e dados sob medida para contexto real.</li>
+      </ul>
+    </aside>
   </div>
 </section>
 
-<div class="servicos-grid">
-  <div class="servico">
-    <h3>Desenvolvimento de Software</h3>
-    <ul>
-      <li>Soluções sob medida com arquitetura moderna.</li>
-      <li>APIs e microserviços escaláveis.</li>
-      <li>CI/CD, testes automatizados e versionamento.</li>
-      <li>Service desk com SLA definido.</li>
-      <li>Manutenção evolutiva e correções.</li>
-      <li>Monitoramento proativo e otimizações contínuas.</li>
-    </ul>
-  </div>
+<div class="solutions-flow">
+  <section class="editorial-section editorial-section--intro">
+    <div class="section-intro">
+      <span class="eyebrow">Como pensamos solução</span>
+      <h2>A NIS não vende stack. Estrutura a operação certa para o problema certo.</h2>
+      <p>Cada entrega pode combinar processo, documento, integração, software e dados na medida necessária. O desenho muda conforme a rotina, o volume operacional e os sistemas já existentes.</p>
+    </div>
+  </section>
 
-  <div class="servico" id="automacao">
-    <h3>Automação de Processos (BPM/BPMN)</h3>
-    <ul>
-      <li>Mapeamento e otimização de workflows.</li>
-      <li>Modelagem BPMN 2.0 e simulação.</li>
-      <li>Orquestração em BPMS low-code / no-code.</li>
-    </ul>
-  </div>
+  <section id="pilares" class="servicos-grid servicos-grid--solutions" aria-label="Pilares de solução da NIS">
+    {% for item in solution_pillars %}
+    <article class="servico servico--solution" id="{{ item.id }}">
+      <div class="servico-top">
+        <span class="servico-kicker">{{ item.kicker }}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      <ul>
+        {% for point in item.points %}
+        <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+      <p class="servico-note">{{ item.note }}</p>
+    </article>
+    {% endfor %}
+  </section>
 
-  <div class="servico" id="ecm">
-    <h3>Gestão Documental & ECM</h3>
-    <ul>
-      <li>Implementação de plataformas ECM / GED.</li>
-      <li>Classificação, versionamento e retenção.</li>
-      <li>Assinaturas digitais e compliance LGPD.</li>
-    </ul>
-  </div>
+  <section class="destaque-section destaque-section--logistics">
+    <div class="destaque-content">
+      <div class="destaque-text">
+        <span class="eyebrow">Aderência prioritária para logística</span>
+        <h2>Alta carga documental, múltiplas aprovações e baixa visibilidade operacional.</h2>
+        <p>Esse é o cenário em que a NIS gera tração mais rápida hoje, especialmente para operadores logísticos, transportadoras, armazenagem e centros de distribuição.</p>
+        <ul class="destaque-list">
+          {% for item in logistics_fit %}
+          <li><span class="destaque-icon">&#10003;</span>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="destaque-image">
+        <img src="{{ url_for('static', filename='imgs/destaque.jpg') }}" alt="Estrutura operacional com foco em documentação, fluxo e rastreabilidade" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
 
-  <div class="servico" id="integracoes">
-    <h3>Integrações & RPA</h3>
-    <ul>
-      <li>Conectores API/REST e mensageria.</li>
-      <li>Robôs RPA para tarefas repetitivas.</li>
-      <li>Sincronização de sistemas legados e cloud.</li>
-    </ul>
-  </div>
+  <section class="info-section info-section-flexibility">
+    <div class="section-intro section-intro--split">
+      <div>
+        <span class="eyebrow">Amplitude da NIS</span>
+        <h2>Logística é prioridade comercial, não limite de atuação.</h2>
+      </div>
+      <p>As mesmas capacidades atendem backoffice, operações administrativas, integrações críticas e produtos internos sempre que a rotina pede mais estrutura, controle e continuidade.</p>
+    </div>
 
-  <div class="servico" id="bi">
-    <h3>Inteligência de Dados & BI</h3>
-    <ul>
-      <li>ETL/ELT e data warehousing moderno.</li>
-      <li>Dashboards interativos com KPIs em tempo real.</li>
-      <li>Análise preditiva e storytelling de dados.</li>
-    </ul>
-  </div>
+    <div class="info-cards info-cards--three">
+      {% for item in flexibility_points %}
+      <article class="info-card info-card--compact">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
 
-  <div class="servico">
-    <h3>Consultoria & Governança Ágil</h3>
-    <ul>
-      <li>Avaliação de maturidade digital e roadmap.</li>
-      <li>Scrum, Kanban e squads dedicados.</li>
-      <li>Gestão de escopo, riscos e go-live.</li>
-      <li>Design UX/UI centrado no usuário.</li>
-      <li>Prototipagem rápida e testes de usabilidade.</li>
-      <li>Treinamento de usuários e materiais de onboarding.</li>
-    </ul>
-  </div>
+  <section class="cta-section cta-section--solutions">
+    <span class="eyebrow eyebrow-inverse">Conversa inicial</span>
+    <h2>Se o gargalo está entre processo, documento e sistema, a NIS desenha uma resposta operacional para isso.</h2>
+    <p>Fale com a equipe para avaliar o contexto da sua operação e identificar a combinação certa entre automação, gestão documental, integrações e solução sob medida.</p>
+    <div class="cta-actions">
+      <a href="/contato.html" class="btn-cta-alt">Agendar conversa</a>
+      <a href="/portfolio.html" class="btn-highlight btn-highlight-inverse">Ver portfólio</a>
+    </div>
+  </section>
 </div>
+
 {% endblock %}
