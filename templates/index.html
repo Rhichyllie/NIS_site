@@ -33,6 +33,8 @@
 {% set solution_pillars = [
   {
     "slug": "automation",
+    "featured": true,
+    "priority": true,
     "kicker": "Fluxo e decisão",
     "title": "Processos e aprovações",
     "description": "Fluxos com regra, responsável e trilha de decisão.",
@@ -60,6 +62,9 @@
   },
   {
     "slug": "data",
+    "featured": true,
+    "priority": true,
+    "media_left": true,
     "kicker": "Produto e inteligência",
     "title": "Soluções sob medida e dados",
     "description": "Software, dashboards e dados quando a operação pede algo específico.",
@@ -101,21 +106,55 @@
   <div class="hero-overlay"></div>
   <div class="hero-content hero-content-home">
     <div class="hero-copy">
-      <span class="hero-eyebrow">Logística e operações críticas</span>
-      <h1>Controle para fluxos que ainda vivem de retrabalho.</h1>
-      <p>A NIS organiza processos, documentos, integrações e software sob medida para dar mais clareza e rastreabilidade à operação.</p>
-      <div class="hero-actions">
-        <a href="/contato.html" class="btn-cta btn-hero-primary">Conversar sobre a operação</a>
-        <a href="/servicos.html" class="hero-link">Conhecer soluções</a>
+      <div class="hero-copy-main">
+        <span class="hero-eyebrow">Logística e operações críticas</span>
+        <h1>
+          <span>Controle</span>
+          <span>para fluxos</span>
+          <span>que ainda</span>
+          <span>vivem de</span>
+          <span>retrabalho.</span>
+        </h1>
+        <p class="hero-summary">A NIS organiza processos, documentos, integrações e software sob medida para dar mais clareza e rastreabilidade à operação.</p>
       </div>
-      <p class="hero-note">Especialmente em transportadoras, operadores logísticos, armazenagem e centros de distribuição.</p>
+      <div class="hero-copy-foot">
+        <div class="hero-actions">
+          <a href="/contato.html" class="btn-cta btn-hero-primary">Conversar sobre a operação</a>
+          <a href="/servicos.html" class="hero-link">
+            <span class="hero-link-copy">
+              <small>Fluxo, documento e integração</small>
+              <strong>Conhecer soluções</strong>
+            </span>
+          </a>
+        </div>
+        <p class="hero-note"><span class="hero-note-label">Maior aderência em</span> transportadoras, operadores logísticos, armazenagem e centros de distribuição.</p>
+      </div>
     </div>
 
-    <aside class="hero-panel">
-      <span class="hero-panel-label">Onde a NIS entra com mais força</span>
-      <h2>Fluxo, documento e decisão na mesma estrutura.</h2>
-      <p>Menos ruído entre áreas. Mais controle sobre exceções, aprovações e evidências.</p>
-    </aside>
+    <div class="hero-aside">
+      <aside class="hero-panel">
+        <div class="hero-panel-head">
+          <span class="hero-panel-label">Onde a NIS entra com mais força</span>
+          <h2>Fluxo, documento e decisão na mesma estrutura.</h2>
+          <p>Menos ruído entre áreas. Mais controle sobre exceções, aprovações e evidências.</p>
+        </div>
+        <ul class="hero-panel-list" aria-label="Camadas de atuação da NIS">
+          <li>
+            <strong>Fluxo com regra</strong>
+            <span>Responsável, etapa e exceção com leitura clara.</span>
+          </li>
+          <li>
+            <strong>Documento com trilha</strong>
+            <span>Evidência, histórico e acesso no lugar certo.</span>
+          </li>
+          <li>
+            <strong>Integração na medida</strong>
+            <span>Sistemas e software conectados ao fluxo real da rotina.</span>
+          </li>
+        </ul>
+        <p class="hero-panel-note">Quando essas camadas se alinham, a operação ganha ritmo sem perder controle.</p>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -123,69 +162,165 @@
   <div class="home-flow">
   <section class="editorial-section pain-section" aria-labelledby="pain-title">
     <div class="pain-shell">
-      <div class="section-intro section-intro--compact">
-        <span class="eyebrow">Onde a operação perde controle</span>
-        <h2 id="pain-title">O desgaste raramente nasce de uma única ferramenta. Ele aparece entre etapas.</h2>
-        <p>Quando pessoas, documentos, aprovações e sistemas dependem de controles paralelos, a rotina custa mais do que deveria.</p>
-      </div>
+      <div class="pain-layout">
+        <div class="pain-intro">
+          <div class="section-intro section-intro--compact pain-intro-copy">
+            <div class="pain-intro-head">
+              <span class="eyebrow">Onde a operação perde controle</span>
+              <span class="pain-intro-kicker">Operação fragmentada</span>
+            </div>
+            <h2 id="pain-title">O desgaste raramente nasce de uma única ferramenta. Ele aparece entre etapas.</h2>
+            <p>Quando pessoas, documentos, aprovações e sistemas dependem de controles paralelos, a rotina custa mais do que deveria.</p>
+            <div class="pain-intro-trace" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="pain-intro-support">
+            <span class="pain-intro-support-label">A fricção costuma aparecer entre</span>
+            <p>Pessoas, documentos, aprovações e sistemas que tentam se confirmar fora do mesmo fluxo.</p>
+          </div>
+        </div>
 
-      <div class="pain-grid">
-        {% for item in pain_points %}
-        <article class="pain-card">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
-        </article>
-        {% endfor %}
+        <div class="pain-grid-shell">
+          <div class="pain-grid-meta" aria-hidden="true">
+            <span class="pain-grid-meta-label">Pontos de ruptura recorrentes</span>
+            <span class="pain-grid-meta-line"></span>
+          </div>
+          <div class="pain-grid" aria-label="Principais dores operacionais recorrentes">
+          {% for item in pain_points %}
+          <article class="pain-card">
+            <span class="pain-card-index">0{{ loop.index }}</span>
+            <div class="pain-card-body">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+          </article>
+          {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="editorial-section how-section section-shell section-shell--warm" aria-labelledby="how-title">
-    <div class="section-intro section-intro--split">
-      <div>
-        <span class="eyebrow">Como a NIS atua</span>
-        <h2 id="how-title">A NIS organiza o fluxo certo antes de automatizar qualquer etapa.</h2>
-      </div>
-      <p>Leitura operacional, desenho de processo, organização documental, integrações e desenvolvimento entram na medida exata do problema.</p>
-    </div>
+  <section class="editorial-section how-section" aria-labelledby="how-title">
+    <div class="how-shell">
+      <div class="how-layout">
+        <div class="how-intro">
+          <div class="section-intro section-intro--compact how-intro-copy">
+            <div class="how-intro-head">
+              <span class="eyebrow">Como a NIS atua</span>
+              <span class="how-intro-kicker">Método aplicado</span>
+            </div>
+            <h2 id="how-title">A NIS organiza o fluxo certo antes de automatizar qualquer etapa.</h2>
+            <p>Antes de colocar ferramenta no centro, a NIS lê o fluxo real, define a lógica do processo e só então encaixa documento, integração e software com aderência operacional.</p>
+            <div class="how-intro-trace" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
 
-    <div class="process-steps">
-      {% for item in operating_steps %}
-      <article class="process-step">
-        <span class="step-index">{{ item.step }}</span>
-        <div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
+          <div class="how-intro-support">
+            <span class="how-intro-support-label">Intervenção calibrada</span>
+            <p><strong>Leitura operacional, desenho de processo, organização documental, integrações e desenvolvimento</strong> entram na medida exata do problema.</p>
+            <span class="how-intro-support-note">Método antes da ferramenta. Estrutura antes da escala.</span>
+          </div>
         </div>
-      </article>
-      {% endfor %}
+
+        <div class="how-steps-shell">
+          <div class="how-steps-meta" aria-hidden="true">
+            <span class="how-steps-meta-label">Da leitura à base evolutiva</span>
+            <span class="how-steps-meta-line"></span>
+          </div>
+
+          <div class="process-steps" aria-label="Etapas de atuação da NIS">
+            {% for item in operating_steps %}
+            <article class="process-step process-step--{{ loop.index }}">
+              <div class="process-step-top">
+                <span class="step-index">{{ item.step }}</span>
+                <span class="process-step-kicker">
+                  {% if loop.index == 1 %}
+                  Diagnóstico operacional
+                  {% elif loop.index == 2 %}
+                  Desenho e decisão
+                  {% else %}
+                  Implementação evolutiva
+                  {% endif %}
+                </span>
+              </div>
+
+              <div class="process-step-body">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="editorial-section solutions-home-section section-shell section-shell--muted" aria-labelledby="solutions-title">
-    <div class="section-intro">
-      <span class="eyebrow">Pilares de solução</span>
-      <h2 id="solutions-title">Soluções para dar clareza, controle e continuidade à operação.</h2>
-      <p>Cada frente atua sozinha ou em conjunto, conforme o atrito entre processo, documento e sistema.</p>
+    <div class="solutions-intro">
+      <div class="section-intro section-intro--compact solutions-intro-copy">
+        <div class="solutions-intro-head">
+          <span class="eyebrow">Pilares de solução</span>
+          <span class="solutions-intro-kicker">Arquitetura aplicada</span>
+        </div>
+        <h2 id="solutions-title">Soluções para dar clareza, controle e continuidade à operação.</h2>
+        <p>Cada frente atua sozinha ou em conjunto, conforme o atrito entre processo, documento e sistema.</p>
+        <div class="solutions-intro-trace" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <aside class="solutions-intro-support">
+        <span class="solutions-intro-support-label">Estrutura modular de entrega</span>
+        <p><strong>Quatro frentes complementares</strong> que entram separadamente ou em combinação para reduzir atrito entre processo, documento, integração e leitura operacional.</p>
+        <div class="solutions-intro-signals" aria-label="Resultados estruturais da atuação da NIS">
+          <span>Clareza de etapa</span>
+          <span>Controle documental</span>
+          <span>Continuidade sistêmica</span>
+        </div>
+      </aside>
     </div>
 
-    <div class="highlight-section highlight-section--solutions" aria-label="Principais pilares de solução">
-      {% for item in solution_pillars %}
-      <article class="highlight-card highlight-card--{{ item.slug }}">
-        <div class="highlight-image" aria-hidden="true"></div>
-        <div class="highlight-text">
-          <span class="card-kicker">{{ item.kicker }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
-          <ul class="card-points">
-            {% for point in item.points %}
-            <li>{{ point }}</li>
-            {% endfor %}
-          </ul>
-          <a href="{{ item.href }}" class="btn-highlight">{{ item.cta }}</a>
-        </div>
-      </article>
-      {% endfor %}
+    <div class="solutions-grid-shell">
+      <div class="solutions-grid-meta" aria-hidden="true">
+        <span class="solutions-grid-meta-label">Processo, documento, integração e produto aplicados com aderência</span>
+        <span class="solutions-grid-meta-line"></span>
+      </div>
+
+      <div class="highlight-section highlight-section--solutions" aria-label="Principais pilares de solução">
+        {% for item in solution_pillars %}
+        <article class="highlight-card highlight-card--{{ item.slug }}{% if item.featured %} highlight-card--featured{% endif %}{% if item.media_left %} highlight-card--media-left{% endif %}{% if item.priority %} highlight-card--priority{% endif %}">
+          <div class="highlight-image" aria-hidden="true">
+            <span class="highlight-image-index">0{{ loop.index }}</span>
+          </div>
+          <div class="highlight-text">
+            <div class="highlight-card-meta">
+              <span class="card-kicker">{{ item.kicker }}</span>
+              <span class="highlight-card-meta-line" aria-hidden="true"></span>
+            </div>
+            <div class="highlight-copy">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+            <ul class="card-points">
+              {% for point in item.points %}
+              <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+            <a href="{{ item.href }}" class="btn-highlight">
+              <span>{{ item.cta }}</span>
+              <span class="btn-highlight-icon" aria-hidden="true">&#8594;</span>
+            </a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
     </div>
   </section>
 
