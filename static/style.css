@@ -3527,6 +3527,7 @@ body.menu-open .hamburger {
 .solutions-home-section .highlight-card > * {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .solutions-home-section .highlight-card::before {
@@ -3575,15 +3576,15 @@ body.menu-open .hamburger {
 .solutions-home-section .highlight-card--priority.highlight-card--featured {
   gap: clamp(20px, 2.2vw, 28px);
   padding: clamp(22px, 2.4vw, 26px);
-  grid-template-columns: minmax(0, 1.38fr) minmax(220px, 0.62fr);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
+  align-items: stretch;
 }
 
 .solutions-home-section .highlight-card--priority.highlight-card--featured.highlight-card--media-left {
-  grid-template-columns: minmax(220px, 0.62fr) minmax(0, 1.38fr);
+  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
 }
 
-.highlight-image {
+.solutions-home-section .highlight-image {
   position: relative;
   min-height: 248px;
   overflow: hidden;
@@ -3596,7 +3597,7 @@ body.menu-open .hamburger {
     0 24px 40px rgba(34, 44, 54, 0.14);
 }
 
-.highlight-image::before {
+.solutions-home-section .highlight-image::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -3609,7 +3610,7 @@ body.menu-open .hamburger {
     filter var(--transition-base);
 }
 
-.highlight-image::after {
+.solutions-home-section .highlight-image::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -3623,24 +3624,21 @@ body.menu-open .hamburger {
     transform var(--transition-base);
 }
 
-.highlight-image-index {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 0 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(242, 239, 234, 0.18);
-  background: linear-gradient(180deg, rgba(242, 239, 234, 0.18) 0%, rgba(242, 239, 234, 0.08) 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
-  color: rgba(242, 239, 234, 0.92);
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.16em;
-  backdrop-filter: blur(10px);
+.solutions-home-section .highlight-image-index {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  content: none !important;
+  overflow: hidden !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
 }
 
 .solutions-home-section .highlight-card--featured .highlight-image {
@@ -3654,51 +3652,54 @@ body.menu-open .hamburger {
 
 .solutions-home-section .highlight-card--priority.highlight-card--featured .highlight-image {
   min-height: clamp(332px, 24vw, 388px);
+  height: 100%;
 }
 
-.highlight-card--automation {
+.solutions-home-section .highlight-card--automation {
   --solution-line: rgba(95, 115, 134, 0.34);
   --solution-glow: rgba(95, 115, 134, 0.12);
 }
 
-.highlight-card--documents {
+.solutions-home-section .highlight-card--documents {
   --solution-line: rgba(110, 94, 109, 0.32);
   --solution-glow: rgba(110, 94, 109, 0.12);
 }
 
-.highlight-card--integrations {
+.solutions-home-section .highlight-card--integrations {
   --solution-line: rgba(95, 115, 134, 0.26);
   --solution-glow: rgba(206, 194, 175, 0.14);
 }
 
-.highlight-card--data {
+.solutions-home-section .highlight-card--data {
   --solution-line: rgba(110, 94, 109, 0.3);
   --solution-glow: rgba(95, 115, 134, 0.11);
 }
 
-.highlight-card--automation .highlight-image::before {
+.solutions-home-section .highlight-card--automation .highlight-image::before {
   background-image: url("/static/imgs/card1.jpg");
   background-position: 50% 48%;
 }
 
-.highlight-card--documents .highlight-image::before {
+.solutions-home-section .highlight-card--documents .highlight-image::before {
   background-image: url("/static/imgs/card2.jpg");
   background-position: 50% 40%;
 }
 
-.highlight-card--integrations .highlight-image::before {
+.solutions-home-section .highlight-card--integrations .highlight-image::before {
   background-image: url("/static/imgs/card3.jpg");
   background-position: 50% 44%;
 }
 
-.highlight-card--data .highlight-image::before {
+.solutions-home-section .highlight-card--data .highlight-image::before {
   background-image: url("/static/imgs/card4.jpg");
   background-position: 52% 36%;
 }
 
-.highlight-text {
+.solutions-home-section .highlight-text {
   position: relative;
   display: grid;
+  width: 100%;
+  min-width: 0;
   align-content: start;
   gap: 18px;
   justify-items: start;
@@ -3715,7 +3716,7 @@ body.menu-open .hamburger {
     border-color var(--transition-base);
 }
 
-.highlight-text::before {
+.solutions-home-section .highlight-text::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -3736,6 +3737,7 @@ body.menu-open .hamburger {
 .solutions-home-section .highlight-card--priority.highlight-card--featured .highlight-text {
   min-height: 100%;
   align-self: stretch;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
   gap: clamp(20px, 2.1vw, 26px);
   padding: clamp(32px, 3vw, 40px) clamp(28px, 2.8vw, 36px) clamp(32px, 3vw, 38px);
 }
@@ -3745,7 +3747,7 @@ body.menu-open .hamburger {
   padding: 26px 24px 24px;
 }
 
-.highlight-card-meta {
+.solutions-home-section .highlight-card-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -3753,7 +3755,7 @@ body.menu-open .hamburger {
   width: 100%;
 }
 
-.card-kicker {
+.solutions-home-section .card-kicker {
   display: inline-flex;
   align-items: center;
   min-height: 28px;
@@ -3768,7 +3770,7 @@ body.menu-open .hamburger {
   text-transform: uppercase;
 }
 
-.highlight-card-meta-line {
+.solutions-home-section .highlight-card-meta-line {
   flex: 1;
   min-width: 48px;
   height: 1px;
@@ -3778,17 +3780,18 @@ body.menu-open .hamburger {
     transform var(--transition-fast);
 }
 
-.highlight-copy {
+.solutions-home-section .highlight-copy {
   display: grid;
   gap: 12px;
   width: 100%;
+  min-width: 0;
 }
 
 .solutions-home-section .highlight-card--priority.highlight-card--featured .highlight-copy {
   gap: 14px;
 }
 
-.highlight-text h3 {
+.solutions-home-section .highlight-text h3 {
   max-width: 14ch;
   font-size: clamp(1.52rem, 2.4vw, 1.96rem);
   line-height: 0.98;
@@ -3805,10 +3808,10 @@ body.menu-open .hamburger {
 }
 
 .solutions-home-section .highlight-card--priority.highlight-card--featured h3 {
-  max-width: 16ch;
+  max-width: 17ch;
 }
 
-.highlight-text p {
+.solutions-home-section .highlight-text p {
   max-width: 32ch;
   font-size: 1rem;
   line-height: 1.72;
@@ -3821,14 +3824,15 @@ body.menu-open .hamburger {
 }
 
 .solutions-home-section .highlight-card--priority.highlight-card--featured .highlight-text p {
-  max-width: 36ch;
+  max-width: 40ch;
 }
 
-.card-points {
+.solutions-home-section .card-points {
   list-style: none;
   display: grid;
   gap: 10px;
   width: 100%;
+  min-width: 0;
   align-content: start;
 }
 
@@ -3842,7 +3846,7 @@ body.menu-open .hamburger {
   gap: 14px;
 }
 
-.card-points li {
+.solutions-home-section .card-points li {
   position: relative;
   display: grid;
   align-content: center;
@@ -3861,12 +3865,13 @@ body.menu-open .hamburger {
   line-height: 1.58;
   transition:
     border-color var(--transition-fast),
-    background-color var(--transition-fast),
+    background var(--transition-fast),
     box-shadow var(--transition-fast),
+    color var(--transition-fast),
     transform var(--transition-fast);
 }
 
-.card-points li::before {
+.solutions-home-section .card-points li::before {
   content: "";
   position: absolute;
   left: 20px;
@@ -3880,9 +3885,13 @@ body.menu-open .hamburger {
     0 0 0 6px rgba(110, 94, 109, 0.08),
     0 10px 18px rgba(95, 115, 134, 0.08);
   transform: translateY(-50%);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
-.card-points li::after {
+.solutions-home-section .card-points li::after {
   content: "";
   position: absolute;
   left: 20px;
@@ -3892,6 +3901,10 @@ body.menu-open .hamburger {
   background: linear-gradient(90deg, rgba(110, 94, 109, 0.44) 0%, rgba(95, 115, 134, 0.14) 56%, rgba(95, 115, 134, 0) 100%);
   opacity: 0.94;
   transform: translateY(-50%);
+  transition:
+    background var(--transition-fast),
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .solutions-home-section .btn-highlight {
@@ -3910,7 +3923,7 @@ body.menu-open .hamburger {
   font-weight: 700;
 }
 
-.btn-highlight-icon {
+.solutions-home-section .btn-highlight-icon {
   display: grid;
   place-items: center;
   width: 36px;
@@ -3924,7 +3937,7 @@ body.menu-open .hamburger {
   transition:
     transform var(--transition-fast),
     border-color var(--transition-fast),
-    background-color var(--transition-fast),
+    background var(--transition-fast),
     color var(--transition-fast);
 }
 
@@ -3989,8 +4002,39 @@ body.menu-open .hamburger {
   .solutions-home-section .highlight-card:hover .card-points li,
   .solutions-home-section .highlight-card:focus-within .card-points li {
     border-color: rgba(95, 115, 134, 0.14);
-    background: linear-gradient(180deg, rgba(249, 247, 243, 0.84) 0%, rgba(243, 238, 232, 0.72) 100%);
+    background: linear-gradient(180deg, rgba(249, 247, 243, 0.9) 0%, rgba(243, 238, 232, 0.76) 100%);
     transform: translateY(-1px);
+  }
+
+  .solutions-home-section .card-points li:hover,
+  .solutions-home-section .highlight-card:hover .card-points li:hover,
+  .solutions-home-section .highlight-card:focus-within .card-points li:hover {
+    border-color: rgba(88, 75, 87, 0.46);
+    background:
+      linear-gradient(180deg, rgba(110, 94, 109, 0.34) 0%, rgba(88, 75, 87, 0.26) 58%, rgba(77, 66, 76, 0.18) 100%) !important;
+    box-shadow:
+      0 20px 34px rgba(88, 75, 87, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.32);
+    color: rgba(77, 66, 76, 1);
+    transform: translateY(-2px) !important;
+  }
+
+  .solutions-home-section .card-points li:hover::before,
+  .solutions-home-section .highlight-card:hover .card-points li:hover::before,
+  .solutions-home-section .highlight-card:focus-within .card-points li:hover::before {
+    border-color: rgba(248, 245, 241, 0.94);
+    background:
+      linear-gradient(180deg, rgba(132, 113, 131, 1) 0%, rgba(110, 94, 109, 1) 44%, rgba(88, 75, 87, 0.98) 100%) !important;
+    box-shadow:
+      0 0 0 8px rgba(110, 94, 109, 0.24),
+      0 14px 24px rgba(88, 75, 87, 0.22);
+  }
+
+  .solutions-home-section .card-points li:hover::after,
+  .solutions-home-section .highlight-card:hover .card-points li:hover::after,
+  .solutions-home-section .highlight-card:focus-within .card-points li:hover::after {
+    background: linear-gradient(90deg, rgba(110, 94, 109, 0.92) 0%, rgba(88, 75, 87, 0.46) 60%, rgba(95, 115, 134, 0) 100%) !important;
+    opacity: 1;
   }
 
   .solutions-home-section .highlight-card:hover .btn-highlight,
@@ -4945,7 +4989,7 @@ body.menu-open .hamburger {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .highlight-image {
+  .solutions-home-section .highlight-image {
     min-height: 260px;
   }
 
@@ -5276,7 +5320,7 @@ body.menu-open .hamburger {
     border-radius: 24px;
   }
 
-  .highlight-image,
+  .solutions-home-section .highlight-image,
   .solutions-home-section .highlight-card--featured .highlight-image {
     min-height: 228px;
     border-radius: 20px;
@@ -5297,8 +5341,8 @@ body.menu-open .hamburger {
     padding: 24px 22px 22px;
   }
 
-  .highlight-text h3,
-  .highlight-text p {
+  .solutions-home-section .highlight-text h3,
+  .solutions-home-section .highlight-text p {
     max-width: none;
   }
 
@@ -5307,7 +5351,7 @@ body.menu-open .hamburger {
     max-width: none;
   }
 
-  .card-points li {
+  .solutions-home-section .card-points li {
     min-height: 0;
   }
 
@@ -5476,7 +5520,7 @@ body.menu-open .hamburger {
     padding-bottom: 14px;
   }
 
-  .highlight-image,
+  .solutions-home-section .highlight-image,
   .solutions-home-section .highlight-card--featured .highlight-image {
     min-height: 210px;
   }
@@ -5495,19 +5539,19 @@ body.menu-open .hamburger {
     padding: 22px 19px 19px;
   }
 
-  .card-points li {
+  .solutions-home-section .card-points li {
     padding: 12px 14px 12px 38px;
     border-radius: 16px;
     font-size: 0.92rem;
   }
 
-  .card-points li::before {
+  .solutions-home-section .card-points li::before {
     left: 14px;
     width: 9px;
     height: 9px;
   }
 
-  .card-points li::after {
+  .solutions-home-section .card-points li::after {
     left: 14px;
     width: 20px;
   }
