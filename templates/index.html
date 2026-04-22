@@ -158,8 +158,7 @@
   </div>
 </section>
 
-<div class="home-stage">
-  <div class="home-flow">
+<div class="home-stage home-flow">
   <section class="editorial-section pain-section" aria-labelledby="pain-title">
     <div class="pain-shell">
       <div class="pain-layout">
@@ -323,40 +322,62 @@
     </div>
   </section>
 
-  <section class="destaque-section destaque-section--logistics">
+  <section class="destaque-section destaque-section--logistics destaque-section--logistics-home">
     <div class="destaque-content">
       <div class="destaque-text">
-        <span class="eyebrow">Onde a aderência é mais imediata</span>
-        <h2>Em logística, esses gargalos aparecem com mais frequência e urgência.</h2>
-        <p>Transportadoras, operadores logísticos, armazenagem e centros de distribuição convivem com documentos, exceções, aprovações e sistemas que precisam conversar melhor.</p>
+        <div class="destaque-copy-shell">
+          <div class="destaque-heading">
+            <span class="eyebrow">Onde a aderência é mais imediata</span>
+            <span class="destaque-heading-line" aria-hidden="true"></span>
+          </div>
+          <h2>Em logística, esses gargalos aparecem com mais frequência e urgência.</h2>
+          <p>Transportadoras, operadores logísticos, armazenagem e centros de distribuição convivem com documentos, exceções, aprovações e sistemas que precisam conversar melhor.</p>
+        </div>
         <ul class="destaque-list">
           {% for item in logistics_points %}
-          <li><span class="destaque-icon">&#10003;</span>{{ item }}</li>
+          <li>
+            <span class="destaque-icon" aria-hidden="true"></span>
+            <span class="destaque-item-text">{{ item }}</span>
+          </li>
           {% endfor %}
         </ul>
       </div>
       <div class="destaque-image">
-        <img src="/static/imgs/destaque.jpg" alt="Operação em andamento com foco em controle e rastreabilidade" loading="lazy" decoding="async">
+        <div class="destaque-image-shell">
+          <img src="/static/imgs/destaque.jpg" alt="Operação em andamento com foco em controle e rastreabilidade" loading="lazy" decoding="async">
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="info-section info-section-flexibility section-shell section-shell--clean">
-    <div class="section-intro section-intro--split">
-      <div>
-        <span class="eyebrow">Além da logística</span>
-        <h2>A mesma base organiza outras rotinas críticas.</h2>
+  <section class="info-section-flexibility--home" aria-labelledby="flexibility-title">
+    <div class="flexibility-layout">
+      <div class="flexibility-editorial">
+        <div class="flexibility-editorial-shell">
+          <div class="flexibility-heading">
+            <span class="eyebrow">Além da logística</span>
+            <span class="flexibility-heading-line" aria-hidden="true"></span>
+          </div>
+          <div class="flexibility-copy">
+            <h2 id="flexibility-title">A mesma base organiza outras rotinas críticas.</h2>
+            <p>Quando fluxo, documento ou integração travam a rotina, a NIS estrutura a solução no contexto certo.</p>
+          </div>
+        </div>
       </div>
-      <p>Quando fluxo, documento ou integração travam a rotina, a NIS estrutura a solução no contexto certo.</p>
-    </div>
 
-    <div class="info-cards info-cards--three info-cards--flexibility">
-      {% for item in flex_cards %}
-      <article class="info-card info-card--compact{% if loop.first %} info-card--feature{% endif %}">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-      </article>
-      {% endfor %}
+      <div class="flexibility-applications">
+        {% for item in flex_cards %}
+        <article class="flexibility-card{% if loop.first %} flexibility-card--feature{% endif %}">
+          <div class="flexibility-card-shell">
+            <span class="flexibility-card-line" aria-hidden="true"></span>
+            <div class="flexibility-card-copy">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
     </div>
   </section>
 
@@ -369,7 +390,6 @@
       <a href="/servicos.html" class="btn-highlight btn-highlight-inverse">Conhecer soluções</a>
     </div>
   </section>
-  </div>
 </div>
 
 {% endblock %}

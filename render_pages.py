@@ -35,17 +35,17 @@ for page in PAGES:
     html = template.render()          # pode passar context aqui se precisar
     with open(os.path.join(OUTPUT_DIR, page), "w", encoding="utf-8") as f:
         f.write(html)
-        print(f"[✔] Gerado: {page}")
+        print(f"[OK] Gerado: {page}")
 
 # recria os assets estáticos para preview local em /public
 if os.path.exists(PUBLIC_STATIC_DIR):
     shutil.rmtree(PUBLIC_STATIC_DIR)
 
 shutil.copytree(STATIC_DIR, PUBLIC_STATIC_DIR)
-print(f"[✔] Gerado: {PUBLIC_STATIC_DIR}")
+print(f"[OK] Gerado: {PUBLIC_STATIC_DIR}")
 
 # mantém favicon de fallback no root do preview local
 favicon_source = Path(STATIC_DIR) / "favicon.ico"
 if favicon_source.exists():
     shutil.copy2(favicon_source, Path(OUTPUT_DIR) / "favicon.ico")
-    print(f"[✔] Gerado: {Path(OUTPUT_DIR) / 'favicon.ico'}")
+    print(f"[OK] Gerado: {Path(OUTPUT_DIR) / 'favicon.ico'}")
