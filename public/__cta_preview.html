@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NIS CTA Preview</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #111;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="preview-frame" src="/index.html" title="NIS CTA preview"></iframe>
+  <script>
+    const frame = document.getElementById("preview-frame");
+
+    frame.addEventListener("load", () => {
+      const doc = frame.contentDocument;
+      const win = frame.contentWindow;
+      const target = doc.getElementById("home-cta-title");
+
+      if (!doc || !win || !target) {
+        return;
+      }
+
+      const headerHeight = parseFloat(
+        win.getComputedStyle(doc.documentElement).getPropertyValue("--header-height")
+      ) || 110;
+
+      const rect = target.getBoundingClientRect();
+      win.scrollTo({
+        top: win.scrollY + rect.top - headerHeight - 56,
+        behavior: "instant"
+      });
+
+      const section = target.closest(".cta-section--home");
+      const panel = doc.querySelector(".cta-visual-shell");
+      const scale = window.innerWidth < win.innerWidth ? window.innerWidth / win.innerWidth : 1;
+
+      frame.style.width = `${win.innerWidth}px`;
+      frame.style.height = `${win.innerHeight}px`;
+      frame.style.transformOrigin = "top left";
+      frame.style.transform = `scale(${scale})`;
+
+      document.body.dataset.metrics = JSON.stringify({
+        innerWidth: win.innerWidth,
+        scrollWidth: doc.documentElement.scrollWidth,
+        max920: win.matchMedia("(max-width: 920px)").matches,
+        scale,
+        ctaWidth: section ? Math.round(section.getBoundingClientRect().width) : null,
+        ctaLeft: section ? Math.round(section.getBoundingClientRect().left) : null,
+        ctaRight: section ? Math.round(section.getBoundingClientRect().right) : null,
+        panelWidth: panel ? Math.round(panel.getBoundingClientRect().width) : null,
+        panelLeft: panel ? Math.round(panel.getBoundingClientRect().left) : null,
+        panelTop: panel ? Math.round(panel.getBoundingClientRect().top) : null
+      });
+    });
+  </script>
+</body>
+</html>

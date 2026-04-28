@@ -1,0 +1,5 @@
+2026/04/24-19:17:39.401 8098 Creating DB C:\Projetos\NIS_site\.edge-headless\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/04/24-19:17:39.450 8098 Reusing MANIFEST C:\Projetos\NIS_site\.edge-headless\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/04/24-19:17:39.742 7318 Level-0 table #5: started
+2026/04/24-19:17:39.746 7318 Level-0 table #5: 682121 bytes OK
+2026/04/24-19:17:39.747 7318 Delete type=0 #3

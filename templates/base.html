@@ -85,62 +85,98 @@
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-col about">
-        <h3>NIS</h3>
-        <p>Organizamos processos críticos com automação, documentos, integrações e soluções sob medida.</p>
-        <ul class="footer-contact-list">
-          <li>
-            <span>Tel</span>
-            <a href="{{ phone_href }}">{{ phone_label }}</a>
-          </li>
-          <li>
-            <span>Email</span>
-            <a href="mailto:{{ email_address }}">{{ email_address }}</a>
-          </li>
-        </ul>
+  <footer class="site-footer" id="site-footer" aria-labelledby="footer-brand-title">
+    <div class="footer-shell">
+      <div class="footer-editorial-line" aria-hidden="true">
+        <span>Do processo ao digital</span>
       </div>
 
-      <div class="footer-col links">
-        <h4>Navegação</h4>
-        <ul>
-          {% for item in nav_items %}
-          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="footer-col social">
-        <h4>Siga-nos</h4>
-        <ul>
-          {% for item in social_items %}
-          <li>
-            <a href="{{ item.href }}" target="_blank" rel="noopener">
-              <img src="{{ item.icon }}" alt="" class="social-icon" aria-hidden="true">
-              {{ item.label }}
+      <div class="footer-grid">
+        <section class="footer-brand" aria-labelledby="footer-brand-title">
+          <p class="footer-kicker">Do processo ao digital</p>
+          <h2 id="footer-brand-title" class="footer-brand-logo">
+            <a href="/index.html" class="footer-logo-link" aria-label="Página inicial da NIS">
+              <span class="footer-brand-mark" aria-hidden="true">
+                <img src="/static/logo.svg" alt="">
+              </span>
             </a>
-          </li>
-          {% endfor %}
-        </ul>
+          </h2>
+          <p class="footer-brand-lead">Clareza operacional com estrutura, integração e continuidade.</p>
+          <p class="footer-brand-copy">Organizamos processos críticos, documentos, integrações e software sob medida para operações que precisam avançar com controle.</p>
+
+          <address class="footer-contact-grid" aria-label="Contato da NIS">
+            <a class="footer-contact-card" href="{{ phone_href }}">
+              <span>Telefone</span>
+              <strong>{{ phone_label }}</strong>
+            </a>
+            <a class="footer-contact-card" href="mailto:{{ email_address }}">
+              <span>E-mail</span>
+              <strong>{{ email_address }}</strong>
+            </a>
+          </address>
+        </section>
+
+        <nav class="footer-block footer-nav" aria-label="Navegação do rodapé">
+          <h3 class="footer-heading">Navegação</h3>
+          <ul class="footer-link-list">
+            {% for item in nav_items %}
+            <li><a href="{{ item.href }}"><span>{{ item.label }}</span></a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+
+        <section class="footer-block footer-presence" aria-labelledby="footer-presence-title">
+          <h3 id="footer-presence-title" class="footer-heading">Presença</h3>
+          <ul class="footer-social-list">
+            {% for item in social_items %}
+            <li>
+              <a class="footer-social-link" href="{{ item.href }}" target="_blank" rel="noopener">
+                <span class="footer-social-icon" aria-hidden="true">
+                  <img src="{{ item.icon }}" alt="">
+                </span>
+                <span class="footer-social-copy">
+                  <strong>{{ item.label }}</strong>
+                  <small>{% if item.label == "LinkedIn" %}Insights e atualizações{% else %}Conversa direta{% endif %}</small>
+                </span>
+                <span class="footer-link-arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section class="footer-newsletter" aria-labelledby="footer-newsletter-title">
+          <div class="footer-newsletter-copy">
+            <h3 id="footer-newsletter-title" class="footer-heading">Fique por dentro</h3>
+            <p>Sinais curtos sobre processos, automação e clareza operacional.</p>
+          </div>
+
+          <form action="https://formspree.io/f/xknajwye" method="POST" class="footer-newsletter-form">
+            <label for="newsletter-email">E-mail profissional</label>
+            <div class="footer-newsletter-row">
+              <input type="email" id="newsletter-email" name="email" placeholder="nome@empresa.com.br" autocomplete="email" required>
+              <button type="submit">
+                <span>Receber</span>
+                <span class="footer-submit-arrow" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="footer-newsletter-note">Sem ruído: apenas contexto aplicável à operação.</p>
+          </form>
+        </section>
       </div>
 
-      <div class="footer-col newsletter">
-        <h4>Fique por dentro</h4>
-        <form action="https://formspree.io/f/xknajwye" method="POST" class="newsletter-form">
-          <label for="newsletter-email">Seu e-mail</label>
-          <input type="email" id="newsletter-email" name="email" placeholder="Seu e-mail" required>
-          <button type="submit">Enviar</button>
-        </form>
+      <div class="footer-bottom">
+        <p>
+          <span>&copy; 2026 NIS</span>
+          <span>Processos, documentos, integrações e software sob medida.</span>
+        </p>
+        <button class="scroll-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo">
+          <span>Voltar ao topo</span>
+          <span class="scroll-top-icon" aria-hidden="true"></span>
+        </button>
       </div>
-    </div>
-
-    <div class="footer-bottom">
-      <button class="scroll-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
     </div>
   </footer>
-
-  <div class="footer-year">&copy; 2026&nbsp;NIS</div>
 
   <script src="/static/script.js"></script>
 
