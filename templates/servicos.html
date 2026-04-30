@@ -70,6 +70,7 @@
   }
 ] %}
 {% block title %}Soluções{% endblock %}
+{% block body_class %}services-page{% endblock %}
 {% block content %}
 
 <section class="hero-section hero-section--solutions">
@@ -78,35 +79,111 @@
     <source src="{{ url_for('static', filename='videos/service.mp4') }}" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-content hero-content-home">
-    <div class="hero-copy">
+  <div class="solutions-hero-depth" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="hero-content hero-content--solutions">
+    <div class="solutions-hero-copy">
       <span class="hero-eyebrow">Soluções para operação crítica</span>
-      <h1>Soluções que organizam fluxo, documento, integração e decisão.</h1>
-      <p>A NIS traduz tecnologia em estrutura operacional: menos retrabalho, mais rastreabilidade e mais controle para logística e outras operações complexas.</p>
-      <div class="hero-actions">
-        <a href="/contato.html" class="btn-cta">Conversar sobre a operação</a>
-        <a href="#pilares" class="btn-highlight btn-hero-secondary">Ver pilares</a>
+      <div class="solutions-hero-copy-main">
+        <h1>Estruturamos operações para conectar fluxo, documento, integração e decisão.</h1>
+        <p>Aplicamos tecnologia onde a rotina trava: retrabalho, anexos dispersos, aprovações sem trilha e sistemas que não conversam. O resultado é mais rastreabilidade e controle para logística e operações complexas.</p>
+      </div>
+      <div class="hero-actions solutions-hero-actions">
+        <a href="/contato.html" class="btn-cta solutions-hero-primary">
+          <span>Conversar sobre a operação</span>
+        </a>
+        <a href="#pilares" class="solutions-hero-secondary">
+          <span class="solutions-hero-secondary-copy">
+            <small>Capacidades aplicadas</small>
+            <strong>Ver pilares</strong>
+          </span>
+        </a>
       </div>
     </div>
 
-    <aside class="hero-panel hero-panel--compact">
-      <span class="hero-panel-label">O que entregamos</span>
-      <ul class="hero-panel-list">
-        <li>Processos com regra, dono e SLA.</li>
-        <li>Documentos com controle e acesso confiável.</li>
-        <li>Integrações que eliminam duplicidade manual.</li>
-        <li>Software e dados sob medida para contexto real.</li>
-      </ul>
+    <aside class="solutions-hero-panel" aria-labelledby="solutions-hero-panel-title">
+      <div class="solutions-hero-panel-head">
+        <span class="hero-panel-label">O que a entrega organiza</span>
+        <h2 id="solutions-hero-panel-title">Capacidades aplicadas ao fluxo real.</h2>
+        <p>Combinamos processo, documento, integração, software e dados conforme o gargalo da operação.</p>
+      </div>
+
+      <div class="solutions-hero-capabilities">
+        <article class="solutions-hero-capability">
+          <span>01</span>
+          <div>
+            <strong>Processos com regra</strong>
+            <p>Dono, SLA, etapa e exceção com trilha.</p>
+          </div>
+        </article>
+        <article class="solutions-hero-capability">
+          <span>02</span>
+          <div>
+            <strong>Documentos sob controle</strong>
+            <p>Acesso confiável para anexos, comprovantes e evidências.</p>
+          </div>
+        </article>
+        <article class="solutions-hero-capability">
+          <span>03</span>
+          <div>
+            <strong>Integrações sem duplicidade</strong>
+            <p>ERP, TMS, WMS, portais e legados sem retrabalho manual.</p>
+          </div>
+        </article>
+        <article class="solutions-hero-capability">
+          <span>04</span>
+          <div>
+            <strong>Software e dados no contexto real</strong>
+            <p>Aplicações, APIs e indicadores quando ferramenta pronta não cobre.</p>
+          </div>
+        </article>
+      </div>
     </aside>
   </div>
 </section>
 
 <div class="solutions-flow">
-  <section class="editorial-section editorial-section--intro">
-    <div class="section-intro">
-      <span class="eyebrow">Como pensamos solução</span>
-      <h2>A NIS não vende stack. Estrutura a operação certa para o problema certo.</h2>
-      <p>Cada entrega pode combinar processo, documento, integração, software e dados na medida necessária. O desenho muda conforme a rotina, o volume operacional e os sistemas já existentes.</p>
+  <section class="editorial-section editorial-section--intro services-method" aria-labelledby="services-method-title">
+    <div class="services-method-shell">
+      <div class="services-method-copy">
+        <span class="eyebrow services-method-eyebrow">Como pensamos solução</span>
+        <h2 id="services-method-title">Não vendemos stack. Estruturamos a operação certa para o problema real.</h2>
+        <p>Cada entrega nasce do diagnóstico do fluxo real: o que precisa ser decidido, comprovado, conectado e acompanhado. A composição combina processo, documento, integração, software e dados na medida certa, respeitando volume operacional, contexto e sistemas que já sustentam a operação.</p>
+      </div>
+
+      <aside class="services-method-support" aria-label="Capacidades que podem compor uma entrega">
+        <span class="services-method-support-label">Composição da entrega</span>
+        <ul class="services-method-capabilities">
+          <li>Processo</li>
+          <li>Documento</li>
+          <li>Integração</li>
+          <li>Software</li>
+          <li>Dados</li>
+        </ul>
+        <p>O arranjo muda conforme o gargalo: às vezes a resposta é fluxo; em outros casos, controle documental, integração, produto próprio ou inteligência operacional.</p>
+      </aside>
+
+      <div class="services-method-principles" aria-label="Princípios de desenho da solução">
+        <article>
+          <span>01</span>
+          <strong>Contexto antes da stack</strong>
+          <p>Partimos da rotina, do risco e do ponto em que a operação perde controle.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>Estrutura antes da automação</strong>
+          <p>Fluxo, regra, dono e evidência vêm antes de acelerar uma operação instável.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>Solução antes da ferramenta</strong>
+          <p>A tecnologia entra como composição, não como pacote fechado.</p>
+        </article>
+      </div>
     </div>
   </section>
 
