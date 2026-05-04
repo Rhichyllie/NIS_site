@@ -4,69 +4,88 @@
     "id": "processos",
     "kicker": "Fluxo e decisão",
     "title": "Processos e aprovações",
-    "description": "Estruturamos etapas, regras, responsáveis, SLAs e exceções para que a operação deixe de depender de controles informais.",
+    "description": "Desenhamos o fluxo como estrutura de decisão: etapas, regras, responsáveis, SLAs e exceções ficam explícitos, com trilha para operar e auditar.",
     "points": [
-      "Mapeamento e desenho de workflows operacionais",
-      "Aprovações, exceções e filas com rastreabilidade",
-      "Orquestração BPM/BPMN com visão clara de ponta a ponta"
+      "Workflows operacionais com etapas, donos e critérios de passagem",
+      "Aprovações, filas, exceções e SLAs com histórico rastreável",
+      "Modelagem BPM/BPMN para enxergar ponta a ponta e evoluir com segurança"
     ],
-    "note": "Indicado para operações com muitas passagens entre áreas, dependência de validação e retrabalho recorrente."
+    "note_label": "Indicado quando",
+    "note": "a operação passa por muitas áreas, depende de validações e ainda perde tempo com retrabalho ou controle paralelo."
   },
   {
     "id": "documentos",
     "kicker": "Documento e evidência",
     "title": "Documentos e controle operacional",
-    "description": "Centralizamos documentos críticos com classificação, versionamento, acesso confiável e vínculo com o fluxo operacional.",
+    "description": "Organizamos documentos críticos como evidência operacional, conectando contratos, comprovantes, anexos e dossiês ao contexto em que são usados.",
     "points": [
-      "GED / ECM para contratos, comprovantes, anexos e dossiês",
-      "Assinaturas, retenção, busca e governança documental",
-      "Mais contexto para a operação e mais segurança para auditoria"
+      "GED / ECM para classificar, versionar e localizar documentos essenciais",
+      "Assinatura, retenção, busca e governança documental no fluxo",
+      "Mais segurança para auditoria sem tirar agilidade da operação"
     ],
-    "note": "Faz sentido quando documento é peça central da rotina, da conferência e da comprovação."
+    "note_label": "Aplicação típica",
+    "note": "rotinas em que documento comprova execução, libera decisão ou sustenta conferência entre operação, cliente e auditoria."
   },
   {
     "id": "integracoes",
     "kicker": "Sistema e automação",
     "title": "Integrações e automações",
-    "description": "Conectamos sistemas, eliminamos digitação repetida e automatizamos tarefas para reduzir atrito entre áreas, plataformas e rotinas.",
+    "description": "Integramos plataformas e automatizamos rotinas para que dados circulem com menos digitação, menos conciliação manual e menos atrito entre áreas.",
     "points": [
-      "Integrações entre ERP, TMS, WMS, portais e legados",
-      "Automação de tarefas manuais e sincronização de dados",
-      "Menos duplicidade operacional e menos conciliação paralela"
+      "ERP, TMS, WMS, portais e sistemas legados operando em conjunto",
+      "Automação de tarefas repetitivas e sincronização confiável de dados",
+      "Redução de planilhas auxiliares, redigitação e conciliações paralelas"
     ],
-    "note": "Útil quando a operação depende de sistemas que não conversam e de controles auxiliares para fechar o fluxo."
+    "note_label": "Útil quando",
+    "note": "a informação precisa atravessar sistemas diferentes e a equipe ainda fecha o processo com conferências manuais."
   },
   {
     "id": "sob-medida",
     "kicker": "Produto e inteligência",
     "title": "Soluções sob medida e dados",
-    "description": "Desenvolvemos portais, aplicações, APIs, dashboards e estruturas analíticas quando a operação exige uma resposta própria.",
+    "description": "Criamos portais, aplicações, APIs e camadas analíticas quando a operação pede uma solução própria, evolutiva e tecnicamente sustentada.",
     "points": [
-      "Software sob medida para contexto operacional específico",
-      "Dashboards, indicadores e visibilidade sobre o processo",
-      "Evolução contínua com sustentação técnica e arquitetura sólida"
+      "Software sob medida para regras, volumes e jornadas específicas",
+      "Dashboards e indicadores para visibilidade do processo e seus gargalos",
+      "APIs, sustentação técnica e evolução contínua com arquitetura sólida"
     ],
-    "note": "Quando a ferramenta pronta não cobre a realidade do negócio, desenhamos a solução certa para o cenário."
+    "note_label": "Faz sentido quando",
+    "note": "a ferramenta pronta não cobre a regra do negócio e a operação precisa de produto, dados e melhoria contínua no mesmo desenho."
   }
 ] %}
-{% set logistics_fit = [
-  "Controle de anexos, comprovantes, pendências e documentos ao longo da operação.",
-  "Aprovações e exceções que precisam de histórico, SLA e clareza entre áreas.",
-  "Integração entre sistemas de operação, backoffice e controles paralelos.",
-  "Mais rastreabilidade para decisões, evidências e status sem depender de busca manual."
+{% set fit_map_points = [
+  {
+    "title": "Documentos críticos espalhados",
+    "description": "Comprovantes, anexos, dossiês e evidências circulam entre áreas, pastas, portais e sistemas sem contexto único."
+  },
+  {
+    "title": "Aprovações e exceções sem trilha clara",
+    "description": "Decisões passam por múltiplos responsáveis, mas histórico, critérios e pendências nem sempre ficam rastreáveis."
+  },
+  {
+    "title": "Status e responsáveis pouco visíveis",
+    "description": "A operação perde tempo entendendo onde cada solicitação parou, quem precisa agir e qual risco está aberto."
+  },
+  {
+    "title": "Sistemas e controles desconectados",
+    "description": "TMS, WMS, ERP, portais, planilhas e backoffice precisam conversar melhor para reduzir retrabalho e conferência manual."
+  }
 ] %}
-{% set flexibility_points = [
+{% set fit_map_expansion = [
   {
-    "title": "Backoffice e operações administrativas",
-    "description": "Processos internos, fluxos documentais, aprovações e rotinas que exigem mais controle e menos dispersão."
+    "kicker": "Rotinas internas",
+    "title": "Backoffice operacional",
+    "description": "Fluxos administrativos, conferências, aprovações e evidências ganham dono, regra e continuidade."
   },
   {
-    "title": "Produtos e camadas operacionais próprias",
-    "description": "Portais, aplicações, integrações, APIs e componentes feitos para acomodar regras específicas do negócio."
+    "kicker": "Produto próprio",
+    "title": "Produtos internos sob medida",
+    "description": "Portais, aplicações e camadas de workflow acomodam regras específicas que ferramentas prontas não cobrem."
   },
   {
-    "title": "Dados para gestão e melhoria contínua",
-    "description": "Indicadores, dashboards e visão analítica para acompanhar gargalos, tempos de ciclo e estabilidade operacional."
+    "kicker": "Gestão e controle",
+    "title": "Dados para decisão e controle",
+    "description": "Indicadores, painéis e visões analíticas acompanham pendências, gargalos, tempos de ciclo e estabilidade."
   }
 ] %}
 {% block title %}Soluções{% endblock %}
@@ -187,69 +206,174 @@
     </div>
   </section>
 
-  <section id="pilares" class="servicos-grid servicos-grid--solutions" aria-label="Pilares de solução da NIS">
-    {% for item in solution_pillars %}
-    <article class="servico servico--solution" id="{{ item.id }}">
-      <div class="servico-top">
-        <span class="servico-kicker">{{ item.kicker }}</span>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-      </div>
-      <ul>
-        {% for point in item.points %}
-        <li>{{ point }}</li>
-        {% endfor %}
-      </ul>
-      <p class="servico-note">{{ item.note }}</p>
-    </article>
-    {% endfor %}
-  </section>
-
-  <section class="destaque-section destaque-section--logistics">
-    <div class="destaque-content">
-      <div class="destaque-text">
-        <span class="eyebrow">Aderência prioritária para logística</span>
-        <h2>Alta carga documental, múltiplas aprovações e baixa visibilidade operacional.</h2>
-        <p>Esse é o cenário em que a NIS gera tração mais rápida hoje, especialmente para operadores logísticos, transportadoras, armazenagem e centros de distribuição.</p>
-        <ul class="destaque-list">
-          {% for item in logistics_fit %}
-          <li><span class="destaque-icon">&#10003;</span>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="destaque-image">
-        <img src="{{ url_for('static', filename='imgs/destaque.jpg') }}" alt="Estrutura operacional com foco em documentação, fluxo e rastreabilidade" loading="lazy" decoding="async">
-      </div>
-    </div>
-  </section>
-
-  <section class="info-section info-section-flexibility">
-    <div class="section-intro section-intro--split">
-      <div>
-        <span class="eyebrow">Amplitude da NIS</span>
-        <h2>Logística é prioridade comercial, não limite de atuação.</h2>
-      </div>
-      <p>As mesmas capacidades atendem backoffice, operações administrativas, integrações críticas e produtos internos sempre que a rotina pede mais estrutura, controle e continuidade.</p>
+  <section id="pilares" class="solutions-pillars" aria-labelledby="solution-pillars-title">
+    <div class="solutions-pillars-head">
+      <span class="solutions-pillars-eyebrow">Famílias de solução</span>
+      <h2 id="solution-pillars-title">Quatro frentes para dar forma ao fluxo real.</h2>
+      <p>As entregas se combinam conforme o gargalo da operação: decisão, evidência, integração ou produto próprio. Cada frente tem função clara, linguagem própria e espaço para evoluir.</p>
     </div>
 
-    <div class="info-cards info-cards--three">
-      {% for item in flexibility_points %}
-      <article class="info-card info-card--compact">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
+    <div class="servicos-grid servicos-grid--solutions solutions-pillars-grid" aria-label="Pilares de solução da NIS">
+      {% for item in solution_pillars %}
+      <article class="servico servico--solution solution-card solution-card--{{ item.id }}" id="{{ item.id }}">
+        <div class="solution-card-shell">
+          <div class="servico-top solution-card-top">
+            <div class="solution-card-meta">
+              <span class="solution-card-index">0{{ loop.index }}</span>
+              <span class="servico-kicker solution-card-kicker">{{ item.kicker }}</span>
+            </div>
+            <div class="solution-card-copy">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+
+          <ul class="solution-card-points">
+            {% for point in item.points %}
+            <li><span>{{ point }}</span></li>
+            {% endfor %}
+          </ul>
+
+          <p class="servico-note solution-card-note">
+            <span class="solution-card-note-label">{{ item.note_label }}</span>
+            <span>{{ item.note }}</span>
+          </p>
+        </div>
       </article>
       {% endfor %}
     </div>
   </section>
 
-  <section class="cta-section cta-section--solutions">
-    <span class="eyebrow eyebrow-inverse">Conversa inicial</span>
-    <h2>Se o gargalo está entre processo, documento e sistema, a NIS desenha uma resposta operacional para isso.</h2>
-    <p>Fale com a equipe para avaliar o contexto da sua operação e identificar a combinação certa entre automação, gestão documental, integrações e solução sob medida.</p>
-    <div class="cta-actions">
-      <a href="/contato.html" class="btn-cta-alt">Agendar conversa</a>
-      <a href="/portfolio.html" class="btn-highlight btn-highlight-inverse">Ver portfólio</a>
+  <section class="services-fit-map" aria-labelledby="services-fit-map-title">
+    <div class="fit-map-shell">
+      <div class="fit-map-main">
+        <div class="fit-map-copy">
+          <div class="fit-map-heading">
+            <span class="eyebrow fit-map-eyebrow">Onde a NIS ganha tração</span>
+            <span class="fit-map-heading-line" aria-hidden="true"></span>
+          </div>
+          <h2 id="services-fit-map-title">Logística é prioridade porque concentra documentos, aprovações e decisões em movimento.</h2>
+          <p>Transportadoras, operadores logísticos, armazenagem e centros de distribuição convivem com comprovantes, exceções, pendências e sistemas que precisam conversar melhor. É nesse tipo de rotina que a NIS costuma organizar o fluxo com mais velocidade.</p>
+        </div>
+
+        <div class="fit-map-points" role="list" aria-label="Sinais de aderência operacional">
+          {% for item in fit_map_points %}
+          <article class="fit-map-point" role="listitem">
+            <span class="fit-map-point-index">0{{ loop.index }}</span>
+            <div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <aside class="fit-map-media" aria-label="Vertical prioritária">
+        <div class="fit-map-image-shell">
+          <img src="{{ url_for('static', filename='imgs/destaque.jpg') }}" alt="Operação logística com documentos, sistemas e decisões conectadas" loading="lazy" decoding="async">
+          <div class="fit-map-image-caption">
+            <span>Vertical prioritária</span>
+            <strong>Logística</strong>
+            <p>Alta carga documental, sistêmica e operacional.</p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="fit-map-expansion" aria-labelledby="fit-map-expansion-title">
+        <div class="fit-map-expansion-head">
+          <span id="fit-map-expansion-title">Da logística para outras rotinas críticas</span>
+          <p>A mesma base se aplica onde fluxo, documento e decisão precisam sair do controle paralelo e ganhar rastreabilidade.</p>
+        </div>
+
+        <div class="fit-map-expansion-grid">
+          {% for item in fit_map_expansion %}
+          <article class="fit-map-expansion-card">
+            <span>{{ item.kicker }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section class="cta-section--home" aria-labelledby="services-cta-title">
+    <div class="cta-copy">
+      <div class="cta-eyebrow-row">
+        <span class="eyebrow">Próximo passo</span>
+        <span class="cta-eyebrow-line" aria-hidden="true"></span>
+        <span class="cta-eyebrow-note">Diagnóstico aplicado ao fluxo crítico</span>
+      </div>
+
+      <div class="cta-copy-body">
+        <h2 id="services-cta-title">Se processo, documento, integração e decisão travam a operação, a NIS estrutura o fluxo certo para avançar.</h2>
+        <p>A conversa começa pelo ponto de maior atrito e evolui para uma solução aplicada ao contexto real da sua operação.</p>
+      </div>
+
+      <div class="cta-actions-home">
+        <a href="/contato.html" class="btn-cta-alt cta-primary">
+          <span>Agendar conversa</span>
+          <span class="cta-btn-arrow" aria-hidden="true"></span>
+        </a>
+        <a href="#pilares" class="btn-highlight cta-secondary">
+          <span>Explorar soluções</span>
+        </a>
+      </div>
+
+      <div class="cta-proof">
+        <span class="cta-proof-dot" aria-hidden="true"></span>
+        <p>Leitura objetiva, decisão segura e próximo passo claro.</p>
+      </div>
+    </div>
+
+    <aside class="cta-visual-panel" aria-hidden="true">
+      <div class="cta-visual-shell">
+        <div class="cta-visual-heading">
+          <span class="cta-visual-kicker">Antes / depois</span>
+          <p>Da rotina fragmentada para um fluxo mais claro, seguro e contínuo.</p>
+        </div>
+
+        <div class="cta-shift-panel">
+          <section class="cta-shift-stage cta-shift-stage--before">
+            <span class="cta-shift-label">Antes</span>
+            <div class="cta-shift-cloud">
+              <span class="cta-shift-chip cta-shift-chip--process">Processo</span>
+              <span class="cta-shift-chip cta-shift-chip--document">Documento</span>
+              <span class="cta-shift-chip cta-shift-chip--approval">Aprovação</span>
+              <span class="cta-shift-chip cta-shift-chip--system">Sistema</span>
+            </div>
+            <p>Peças críticas dispersas, com pouca leitura comum.</p>
+          </section>
+
+          <div class="cta-shift-pivot">
+            <span>NIS</span>
+            <strong>Organiza o fluxo</strong>
+          </div>
+
+          <section class="cta-shift-stage cta-shift-stage--after">
+            <span class="cta-shift-label">Depois</span>
+            <div class="cta-shift-outcomes">
+              <article class="cta-shift-outcome">
+                <strong>Clareza</strong>
+                <span>operacional</span>
+              </article>
+
+              <article class="cta-shift-outcome">
+                <strong>Controle</strong>
+                <span>documental</span>
+              </article>
+
+              <article class="cta-shift-outcome">
+                <strong>Rastreio</strong>
+                <span>contínuo</span>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </aside>
   </section>
 </div>
 
