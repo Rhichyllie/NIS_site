@@ -28,7 +28,7 @@
 
   <link rel="stylesheet" href="/static/style.css">
 </head>
-<body class="">
+<body class="method-page">
 
   <header class="header-top" id="header">
     <nav class="navbar" aria-label="Navegação principal">
@@ -87,21 +87,88 @@
   <main class="site-main">
     
 
-<!-- Hero Processos -->
-<section class="hero-section">
-  <!-- vídeo de fundo -->
-  <video class="hero-video" autoplay muted loop playsinline
+<section class="hero-section method-hero" aria-labelledby="method-hero-title">
+  <video class="hero-video method-hero-video" autoplay muted loop playsinline aria-hidden="true"
          poster="/static/imgs/hero-bg.jpg">
     <source src="/static/videos/tec.mp4" type="video/mp4">
   </video>
 
-  <!-- overlay escurecido -->
-  <div class="hero-overlay"></div>
+  <div class="hero-overlay method-hero-overlay"></div>
+  <div class="method-hero-depth" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-  <!-- texto centralizado -->
-  <div class="hero-content">
-    <h1>Método &amp; Tecnologias</h1>
-    <p>Combinamos <span class="highlight">método operacional, BPM, integrações e arquitetura sólida</span> para transformar gargalos em fluxos aplicáveis.</p>
+  <div class="hero-content method-hero-content">
+    <div class="method-hero-copy">
+      <span class="hero-eyebrow method-hero-eyebrow">Método operacional aplicado</span>
+      <div class="method-hero-copy-main">
+        <h1 id="method-hero-title">Transformamos contexto em estrutura aplicável.</h1>
+        <p>Antes de propor tecnologia, lemos o fluxo real: regras, documentos, exceções, integrações e dependências. A partir dessa leitura, combinamos BPM, arquitetura e software sob medida para desenhar soluções com critério, adoção e continuidade.</p>
+      </div>
+
+      <div class="hero-actions method-hero-actions">
+        <a href="/contato.html" class="btn-cta method-hero-primary">
+          <span>Mapear um gargalo crítico</span>
+        </a>
+        <a href="#processos" class="method-hero-secondary">
+          <span class="method-hero-secondary-copy">
+            <small>Lógica do método</small>
+            <strong>Ver estrutura</strong>
+          </span>
+        </a>
+      </div>
+
+      <p class="method-hero-note">
+        <span>Método antes da ferramenta.</span>
+        Processo, documento, integração e software entram conforme a lógica do problema.
+      </p>
+    </div>
+
+    <aside class="method-hero-system" aria-hidden="true">
+      <div class="method-system-shell">
+        <div class="method-system-top">
+          <span class="method-system-kicker">Leitura operacional</span>
+          <span class="method-system-code">NIS / 04</span>
+        </div>
+
+        <div class="method-system-core">
+          <div class="method-system-layer method-system-layer--context">
+            <span>Contexto</span>
+            <strong>Sinais reais</strong>
+          </div>
+          <div class="method-system-layer method-system-layer--flow">
+            <span>Fluxo</span>
+            <strong>Etapas e regras</strong>
+          </div>
+          <div class="method-system-layer method-system-layer--dependencies">
+            <span>Dependências</span>
+            <strong>Documentos e sistemas</strong>
+          </div>
+          <div class="method-system-layer method-system-layer--application">
+            <span>Aplicação</span>
+            <strong>Solução certa</strong>
+          </div>
+        </div>
+
+        <div class="method-system-map">
+          <span class="method-map-node method-map-node--a"></span>
+          <span class="method-map-node method-map-node--b"></span>
+          <span class="method-map-node method-map-node--c"></span>
+          <span class="method-map-node method-map-node--d"></span>
+          <span class="method-map-route method-map-route--one"></span>
+          <span class="method-map-route method-map-route--two"></span>
+          <span class="method-map-route method-map-route--three"></span>
+        </div>
+
+        <div class="method-system-footer">
+          <span><strong>01</strong>Ler</span>
+          <span><strong>02</strong>Estruturar</span>
+          <span><strong>03</strong>Aplicar</span>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
 
