@@ -1,92 +1,83 @@
 {% extends "base.html" %}
-{% set contact_points = [
-  {
-    "label": "Email",
-    "href": "mailto:contato@nisconsultoria.com.br",
-    "text": "contato@nisconsultoria.com.br",
-    "external": false
-  },
-  {
-    "label": "Telefone",
-    "href": "tel:+5547992064403",
-    "text": "+55 (47) 99206-4403",
-    "external": false
-  },
-  {
-    "label": "Website",
-    "href": "https://www.nisconsultoria.com.br",
-    "text": "www.nisconsultoria.com.br",
-    "external": true
-  }
-] %}
-{% set contact_actions = [
-  {
-    "href": "https://wa.me/5547992064403",
-    "text": "WhatsApp",
-    "class": "btn-contact btn-contact-primary",
-    "label": "Falar via WhatsApp"
-  },
-  {
-    "href": "https://www.linkedin.com/company/n-i-s-insights-solutions",
-    "text": "LinkedIn",
-    "class": "btn-contact",
-    "label": "Acessar perfil LinkedIn"
-  }
-] %}
 {% block title %}Contato{% endblock %}
+{% block body_class %}contact-page{% endblock %}
 {% block content %}
 
-<section id="contato" class="contact-section">
-  <div class="contact-overlay">
+<section id="contato" class="contact-section" aria-labelledby="contact-title">
+  <div class="contact-art" aria-hidden="true">
     <img
-      src="{{ url_for('static', filename='imgs/hero-bg.jpg') }}"
+      src="{{ url_for('static', filename='imgs/contato.png') }}"
       alt=""
       class="contact-bg-image"
       role="presentation"
     >
   </div>
 
-  <div class="contact-content">
-    <div class="contact-header">
-      <h2>Fale Conosco</h2>
-      <p>
-        Compartilhe o contexto da sua operação e avalie com a NIS como
-        <span class="highlight">estruturar processos, documentos e integrações</span>
-        com mais controle.
+  <div class="contact-shell">
+    <div class="contact-editorial">
+      <p class="contact-eyebrow">Contato estratégico</p>
+      <h1 id="contact-title">Vamos começar pelo ponto de atrito da sua operação.</h1>
+      <p class="contact-lead">
+        A conversa inicial parte do <span>contexto real</span>: processos, documentos,
+        aprovações e sistemas que precisam ganhar clareza, rastreabilidade e continuidade.
       </p>
     </div>
 
-    <address class="contact-details">
-      <ul class="contact-list">
-        {% for item in contact_points %}
-        <li class="contact-item">
-          <span class="contact-label">{{ item.label }}</span>
-          <a
-            href="{{ item.href }}"
-            {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}
-          >
-            {{ item.text }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-    </address>
-    
-    <div class="contact-buttons">
-      {% for item in contact_actions %}
+    <div class="contact-paths" aria-label="Caminhos principais de contato">
+      <p class="contact-paths-intro">Escolha o melhor ponto de entrada para falar com a NIS.</p>
+
       <a
-        href="{{ item.href }}"
+        class="contact-route contact-route-primary"
+        href="https://wa.me/5547992064403"
         target="_blank"
         rel="noopener noreferrer"
-        class="{{ item.class }}"
-        aria-label="{{ item.label }}"
+        aria-label="Iniciar conversa rápida pelo WhatsApp"
       >
-        {{ item.text }}
+        <span class="contact-route-meta">
+          <span>01</span>
+          <span>WhatsApp</span>
+        </span>
+        <span class="contact-route-copy">
+          <strong>Conversa rápida</strong>
+          <span>Para iniciar o contato, explicar o cenário e alinhar prioridade.</span>
+        </span>
+        <span class="contact-route-cta">
+          Iniciar no WhatsApp
+          <span class="contact-route-arrow" aria-hidden="true"></span>
+        </span>
       </a>
-      {% endfor %}
+
+      <a
+        class="contact-route contact-route-secondary"
+        href="mailto:contato@nisconsultoria.com.br"
+        aria-label="Enviar e-mail institucional para a NIS"
+      >
+        <span class="contact-route-meta">
+          <span>02</span>
+          <span>E-mail</span>
+        </span>
+        <span class="contact-route-copy">
+          <strong>Contato institucional</strong>
+          <span>Para enviar contexto, documentos, demandas ou solicitações formais.</span>
+        </span>
+        <span class="contact-route-cta">
+          Enviar e-mail
+          <span class="contact-route-arrow" aria-hidden="true"></span>
+        </span>
+      </a>
+
+      <a
+        class="contact-linkedin"
+        href="https://www.linkedin.com/company/n-i-s-insights-solutions"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Acompanhar a NIS no LinkedIn"
+      >
+        <span>Acompanhe a NIS no LinkedIn</span>
+        <span class="contact-route-arrow" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
 </section>
 
 {% endblock %}
-

@@ -1,0 +1,201 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation "Navegação principal" [ref=e3]:
+      - link "Página inicial da NIS" [ref=e4] [cursor=pointer]:
+        - /url: /index.html
+      - generic "Links principais" [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "Início" [ref=e9] [cursor=pointer]:
+              - /url: /index.html
+              - generic [ref=e10]: Início
+          - listitem [ref=e11]:
+            - link "Soluções" [ref=e12] [cursor=pointer]:
+              - /url: /servicos.html
+              - generic [ref=e13]: Soluções
+          - listitem [ref=e14]:
+            - link "Método" [ref=e15] [cursor=pointer]:
+              - /url: /processos.html
+              - generic [ref=e16]: Método
+          - listitem [ref=e17]:
+            - link "Contato" [ref=e18] [cursor=pointer]:
+              - /url: /contato.html
+              - generic [ref=e19]: Contato
+      - link "Agendar conversa" [ref=e21] [cursor=pointer]:
+        - /url: /contato.html
+        - generic [ref=e22]: Agendar conversa
+  - main [ref=e24]:
+    - region "Transformamos contexto em estrutura aplicável." [ref=e25]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: Método operacional aplicado
+          - generic [ref=e31]:
+            - heading "Transformamos contexto em estrutura aplicável." [level=1] [ref=e32]
+            - paragraph [ref=e33]: "Antes de propor tecnologia, lemos o fluxo real: regras, documentos, exceções, integrações e dependências. A partir dessa leitura, combinamos BPM, arquitetura e software sob medida para desenhar soluções com critério, adoção e continuidade."
+          - generic [ref=e34]:
+            - link "Mapear um gargalo crítico" [ref=e35] [cursor=pointer]:
+              - /url: /contato.html
+              - generic [ref=e36]: Mapear um gargalo crítico
+            - link "Lógica do método Ver estrutura ↓" [ref=e37] [cursor=pointer]:
+              - /url: "#processos"
+              - generic [ref=e38]:
+                - generic [ref=e39]: Lógica do método
+                - strong [ref=e40]: Ver estrutura
+              - text: ↓
+          - paragraph [ref=e41]: Método antes da ferramenta. Processo, documento, integração e software entram conforme a lógica do problema.
+        - complementary [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]:
+              - generic [ref=e45]: Leitura operacional
+              - generic [ref=e46]: NIS / 04
+            - generic [ref=e47]:
+              - generic [ref=e48]:
+                - generic [ref=e49]: Contexto
+                - strong [ref=e50]: Sinais reais
+              - generic [ref=e51]:
+                - generic [ref=e52]: Fluxo
+                - strong [ref=e53]: Etapas e regras
+              - generic [ref=e54]:
+                - generic [ref=e55]: Dependências
+                - strong [ref=e56]: Documentos e sistemas
+              - generic [ref=e57]:
+                - generic [ref=e58]: Aplicação
+                - strong [ref=e59]: Solução certa
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - strong [ref=e70]: "01"
+                - text: Ler
+              - generic [ref=e71]:
+                - strong [ref=e72]: "02"
+                - text: Estruturar
+              - generic [ref=e73]:
+                - strong [ref=e74]: "03"
+                - text: Aplicar
+    - region "A NIS não começa pela tecnologia. Começa pela leitura da operação." [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - generic [ref=e79]: Antes da ferramenta
+            - heading "A NIS não começa pela tecnologia. Começa pela leitura da operação." [level=2] [ref=e80]
+            - paragraph [ref=e81]: "Cada projeto nasce da leitura do fluxo real: onde o documento para, onde a aprovação depende de alguém, onde o sistema não conversa e onde a rotina perde rastreabilidade. A partir disso, desenhamos uma solução possível, aplicável e evolutiva."
+          - complementary "Princípio central do método NIS" [ref=e82]:
+            - generic [ref=e83]: Tese central
+            - strong [ref=e84]: Estruturar antes de automatizar.
+            - paragraph [ref=e85]: Processo, documento, integração e software entram no desenho conforme o contexto da operação, não como uma pilha de ferramentas soltas.
+            - generic "Linha de raciocínio do método" [ref=e86]:
+              - generic [ref=e87]: Ler
+              - generic [ref=e88]: Organizar
+              - generic [ref=e89]: Desenhar
+              - generic [ref=e90]: Aplicar
+              - generic [ref=e91]: Evoluir
+        - generic "Diferenciais metodológicos da NIS" [ref=e92]:
+          - article [ref=e93]:
+            - generic [ref=e94]: "01"
+            - generic [ref=e95]:
+              - heading "Leitura operacional antes da solução." [level=3] [ref=e96]
+              - paragraph [ref=e97]: Antes de propor ferramenta, entendemos o fluxo, os pontos de atrito, as dependências e as exceções da rotina.
+          - article [ref=e98]:
+            - generic [ref=e99]: "02"
+            - generic [ref=e100]:
+              - heading "Processo, documento e sistema no mesmo desenho." [level=3] [ref=e101]
+              - paragraph [ref=e102]: A solução considera como pessoas, documentos, aprovações e sistemas se conectam na prática.
+          - article [ref=e103]:
+            - generic [ref=e104]: "03"
+            - generic [ref=e105]:
+              - heading "Tecnologia aplicada ao contexto real." [level=3] [ref=e106]
+              - paragraph [ref=e107]: Automação, integração, dados e software entram onde geram clareza, controle e continuidade.
+          - article [ref=e108]:
+            - generic [ref=e109]: "04"
+            - generic [ref=e110]:
+              - heading "Estrutura evolutiva, sem projeto engessado." [level=3] [ref=e111]
+              - paragraph [ref=e112]: A entrega nasce com uma base organizada e pode evoluir conforme a operação amadurece.
+          - article [ref=e113]:
+            - generic [ref=e114]: "05"
+            - generic [ref=e115]:
+              - heading "Clareza para decidir e operar." [level=3] [ref=e116]
+              - paragraph [ref=e117]: O objetivo é reduzir ruído, aumentar rastreabilidade e dar mais visibilidade para a rotina crítica.
+    - generic [ref=e119]:
+      - heading "Ferramentas & Tecnologias" [level=2] [ref=e120]
+      - paragraph [ref=e121]: "Principais stacks, plataformas e motores de processo que utilizamos:"
+      - list [ref=e122]:
+        - listitem [ref=e123]: Python & FastAPI
+        - listitem [ref=e124]: JavaScript (Node.js, React, Next.js)
+        - listitem [ref=e125]: Flutter
+        - listitem [ref=e126]: Docker & Kubernetes
+        - listitem [ref=e127]: Camunda & Zeebe (BPM Engine)
+        - listitem [ref=e128]: UiPath & Power Automate (RPA)
+        - listitem [ref=e129]: AWS (EC2, ECS, S3, Lambda)
+        - listitem [ref=e130]: Azure (App Services, Functions)
+        - listitem [ref=e131]: PostgreSQL, Redis & MongoDB
+  - contentinfo "Página inicial da NIS" [ref=e132]:
+    - generic [ref=e133]:
+      - generic [ref=e135]: Do processo ao digital
+      - generic [ref=e136]:
+        - region "Página inicial da NIS" [ref=e137]:
+          - paragraph [ref=e138]: Do processo ao digital
+          - heading "Página inicial da NIS" [level=2] [ref=e139]:
+            - link "Página inicial da NIS" [ref=e140] [cursor=pointer]:
+              - /url: /index.html
+          - paragraph [ref=e142]: Clareza operacional com estrutura, integração e continuidade.
+          - paragraph [ref=e143]: Organizamos processos críticos, documentos, integrações e software sob medida para operações que precisam avançar com controle.
+          - generic "Contato da NIS" [ref=e144]:
+            - link "Telefone +55 (47) 99206-4403" [ref=e145] [cursor=pointer]:
+              - /url: tel:+5547992064403
+              - generic [ref=e146]: Telefone
+              - strong [ref=e147]: +55 (47) 99206-4403
+            - link "E-mail contato@nisconsultoria.com.br" [ref=e148] [cursor=pointer]:
+              - /url: mailto:contato@nisconsultoria.com.br
+              - generic [ref=e149]: E-mail
+              - strong [ref=e150]: contato@nisconsultoria.com.br
+        - navigation "Navegação do rodapé" [ref=e151]:
+          - heading "Navegação" [level=3] [ref=e152]
+          - list [ref=e153]:
+            - listitem [ref=e154]:
+              - link "Início" [ref=e155] [cursor=pointer]:
+                - /url: /index.html
+                - generic [ref=e156]: Início
+            - listitem [ref=e157]:
+              - link "Soluções" [ref=e158] [cursor=pointer]:
+                - /url: /servicos.html
+                - generic [ref=e159]: Soluções
+            - listitem [ref=e160]:
+              - link "Método" [ref=e161] [cursor=pointer]:
+                - /url: /processos.html
+                - generic [ref=e162]: Método
+            - listitem [ref=e163]:
+              - link "Contato" [ref=e164] [cursor=pointer]:
+                - /url: /contato.html
+                - generic [ref=e165]: Contato
+        - region "Presença" [ref=e166]:
+          - heading "Presença" [level=3] [ref=e167]
+          - list [ref=e168]:
+            - listitem [ref=e169]:
+              - link "LinkedIn Insights e atualizações" [ref=e170] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/n-i-s-insights-solutions
+                - generic [ref=e172]:
+                  - strong [ref=e173]: LinkedIn
+                  - generic [ref=e174]: Insights e atualizações
+            - listitem [ref=e176]:
+              - link "WhatsApp Conversa direta" [ref=e177] [cursor=pointer]:
+                - /url: https://wa.me/5547992064403
+                - generic [ref=e179]:
+                  - strong [ref=e180]: WhatsApp
+                  - generic [ref=e181]: Conversa direta
+        - region "Fique por dentro" [ref=e183]:
+          - generic [ref=e184]:
+            - heading "Fique por dentro" [level=3] [ref=e185]
+            - paragraph [ref=e186]: Sinais curtos sobre processos, automação e clareza operacional.
+          - generic [ref=e187]:
+            - generic [ref=e188]: E-mail profissional
+            - generic [ref=e189]:
+              - textbox "E-mail profissional" [ref=e190]:
+                - /placeholder: nome@empresa.com.br
+              - button "Receber" [ref=e191] [cursor=pointer]:
+                - generic [ref=e192]: Receber
+            - paragraph [ref=e194]: "Sem ruído: apenas contexto aplicável à operação."
+      - generic [ref=e195]:
+        - paragraph [ref=e196]:
+          - generic [ref=e197]: © 2026 NIS
+          - generic [ref=e198]: Processos, documentos, integrações e software sob medida.
+        - button "Voltar ao topo":
+          - generic: Voltar ao topo

@@ -1,0 +1,35 @@
+127.0.0.1 - - [04/May/2026 17:47:24] "GET /processos.html HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54513)
+Traceback (most recent call last):
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 1304, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 668, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 433, in handle
+    self.handle_one_request()
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 421, in handle_one_request
+    method()
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 675, in do_GET
+    self.copyfile(f, self.wfile)
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 875, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 198, in copyfileobj
+    fdst_write(buf)
+  File "C:\Users\rhich\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 826, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] Uma conexão estabelecida foi anulada pelo software no computador host
+----------------------------------------
+127.0.0.1 - - [04/May/2026 17:47:43] "GET /processos.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2026 17:47:43] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2026 17:47:43] "GET /static/imgs/hero-bg.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2026 17:47:43] "GET /static/icons/linkedin.svg HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2026 17:47:43] "GET /static/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2026 17:47:43] "GET /static/icons/whatsapp.svg HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2026 17:47:43] "GET /static/videos/tec.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2026 17:47:43] "GET /static/logo.svg HTTP/1.1" 200 -
+127.0.0.1 - - [04/May/2026 17:47:44] "GET /static/favicon.ico HTTP/1.1" 200 -
