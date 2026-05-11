@@ -87,7 +87,7 @@
   <footer class="site-footer" id="site-footer" aria-labelledby="footer-brand-title">
     <div class="footer-shell">
       <div class="footer-editorial-line" aria-hidden="true">
-        <span>Do processo ao digital</span>
+        <span>Estrutura, integração, continuidade</span>
       </div>
 
       <div class="footer-grid">
@@ -101,16 +101,18 @@
             </a>
           </h2>
           <p class="footer-brand-lead">Clareza operacional com estrutura, integração e continuidade.</p>
-          <p class="footer-brand-copy">Organizamos processos críticos, documentos, integrações e software sob medida para operações que precisam avançar com controle.</p>
+          <p class="footer-brand-copy">Estruturamos processos críticos, documentos, integrações e software sob medida para operações que precisam avançar com controle.</p>
 
           <address class="footer-contact-grid" aria-label="Contato da NIS">
             <a class="footer-contact-card" href="{{ phone_href }}">
-              <span>Telefone</span>
+              <span>Telefone direto</span>
               <strong>{{ phone_label }}</strong>
+              <i aria-hidden="true"></i>
             </a>
             <a class="footer-contact-card" href="mailto:{{ email_address }}">
-              <span>E-mail</span>
+              <span>E-mail institucional</span>
               <strong>{{ email_address }}</strong>
+              <i aria-hidden="true"></i>
             </a>
           </address>
         </section>
@@ -135,7 +137,7 @@
                 </span>
                 <span class="footer-social-copy">
                   <strong>{{ item.label }}</strong>
-                  <small>{% if item.label == "LinkedIn" %}Insights e atualizações{% else %}Conversa direta{% endif %}</small>
+                  <small>{% if item.label == "LinkedIn" %}Leitura institucional{% else %}Canal de conversa{% endif %}</small>
                 </span>
                 <span class="footer-link-arrow" aria-hidden="true"></span>
               </a>
