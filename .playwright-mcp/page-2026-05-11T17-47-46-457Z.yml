@@ -1,0 +1,361 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation "Navegação principal" [ref=e3]:
+      - link "Página inicial da NIS" [ref=e4] [cursor=pointer]:
+        - /url: /index.html
+      - generic "Links principais" [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "Início" [ref=e9] [cursor=pointer]:
+              - /url: /index.html
+              - generic [ref=e10]: Início
+          - listitem [ref=e11]:
+            - link "Soluções" [ref=e12] [cursor=pointer]:
+              - /url: /servicos.html
+              - generic [ref=e13]: Soluções
+          - listitem [ref=e14]:
+            - link "Método" [ref=e15] [cursor=pointer]:
+              - /url: /processos.html
+              - generic [ref=e16]: Método
+          - listitem [ref=e17]:
+            - link "Contato" [ref=e18] [cursor=pointer]:
+              - /url: /contato.html
+              - generic [ref=e19]: Contato
+      - link "Agendar conversa" [ref=e21] [cursor=pointer]:
+        - /url: /contato.html
+        - generic [ref=e22]: Agendar conversa
+  - main [ref=e24]:
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: Soluções para operação crítica
+        - generic [ref=e31]:
+          - heading "Estruturamos operações para conectar fluxo, documento, integração e decisão." [level=1] [ref=e32]
+          - paragraph [ref=e33]: "Aplicamos tecnologia onde a rotina trava: retrabalho, anexos dispersos, aprovações sem trilha e sistemas que não conversam. O resultado é mais rastreabilidade e controle para logística e operações complexas."
+        - generic [ref=e34]:
+          - link "Conversar sobre a operação →" [ref=e35] [cursor=pointer]:
+            - /url: /contato.html
+            - generic [ref=e36]: Conversar sobre a operação
+            - text: →
+          - link "Capacidades aplicadas Ver pilares ↓" [ref=e37] [cursor=pointer]:
+            - /url: "#pilares"
+            - generic [ref=e38]:
+              - generic [ref=e39]: Capacidades aplicadas
+              - strong [ref=e40]: Ver pilares
+            - text: ↓
+      - complementary "Capacidades aplicadas ao fluxo real." [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: O que a entrega organiza
+          - heading "Capacidades aplicadas ao fluxo real." [level=2] [ref=e44]
+          - paragraph [ref=e45]: Combinamos processo, documento, integração, software e dados conforme o gargalo da operação.
+        - generic [ref=e46]:
+          - article [ref=e47]:
+            - generic [ref=e48]: "01"
+            - generic [ref=e49]:
+              - strong [ref=e50]: Processos com regra
+              - paragraph [ref=e51]: Dono, SLA, etapa e exceção com trilha.
+          - article [ref=e52]:
+            - generic [ref=e53]: "02"
+            - generic [ref=e54]:
+              - strong [ref=e55]: Documentos sob controle
+              - paragraph [ref=e56]: Acesso confiável para anexos, comprovantes e evidências.
+          - article [ref=e57]:
+            - generic [ref=e58]: "03"
+            - generic [ref=e59]:
+              - strong [ref=e60]: Integrações sem duplicidade
+              - paragraph [ref=e61]: ERP, TMS, WMS, portais e legados sem retrabalho manual.
+          - article [ref=e62]:
+            - generic [ref=e63]: "04"
+            - generic [ref=e64]:
+              - strong [ref=e65]: Software e dados no contexto real
+              - paragraph [ref=e66]: Aplicações, APIs e indicadores quando ferramenta pronta não cobre.
+    - generic [ref=e67]:
+      - region "Não vendemos stack. Estruturamos a operação certa para o problema real." [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - generic [ref=e71]: Como pensamos solução
+            - heading "Não vendemos stack. Estruturamos a operação certa para o problema real." [level=2] [ref=e72]
+            - paragraph [ref=e73]: "Cada entrega nasce do diagnóstico do fluxo real: o que precisa ser decidido, comprovado, conectado e acompanhado. A composição combina processo, documento, integração, software e dados na medida certa, respeitando volume operacional, contexto e sistemas que já sustentam a operação."
+          - complementary "Capacidades que podem compor uma entrega" [ref=e74]:
+            - generic [ref=e75]: Composição da entrega
+            - list [ref=e76]:
+              - listitem [ref=e77]: Processo
+              - listitem [ref=e78]: Documento
+              - listitem [ref=e79]: Integração
+              - listitem [ref=e80]: Software
+              - listitem [ref=e81]: Dados
+            - paragraph [ref=e82]: "O arranjo muda conforme o gargalo: às vezes a resposta é fluxo; em outros casos, controle documental, integração, produto próprio ou inteligência operacional."
+          - generic "Princípios de desenho da solução" [ref=e83]:
+            - article [ref=e84]:
+              - generic [ref=e85]: "01"
+              - strong [ref=e86]: Contexto antes da stack
+              - paragraph [ref=e87]: Partimos da rotina, do risco e do ponto em que a operação perde controle.
+            - article [ref=e88]:
+              - generic [ref=e89]: "02"
+              - strong [ref=e90]: Estrutura antes da automação
+              - paragraph [ref=e91]: Fluxo, regra, dono e evidência vêm antes de acelerar uma operação instável.
+            - article [ref=e92]:
+              - generic [ref=e93]: "03"
+              - strong [ref=e94]: Solução antes da ferramenta
+              - paragraph [ref=e95]: A tecnologia entra como composição, não como pacote fechado.
+      - region "Quatro frentes para dar forma ao fluxo real." [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]: Famílias de solução
+          - heading "Quatro frentes para dar forma ao fluxo real." [level=2] [ref=e99]
+          - paragraph [ref=e100]: "As entregas se combinam conforme o gargalo da operação: decisão, evidência, integração ou produto próprio. Cada frente tem função clara, linguagem própria e espaço para evoluir."
+        - generic "Pilares de solução da NIS" [ref=e101]:
+          - article [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e104]:
+                - generic [ref=e105]:
+                  - generic [ref=e106]: "01"
+                  - generic [ref=e107]: Fluxo e decisão
+                - generic [ref=e108]:
+                  - heading "Processos e aprovações" [level=3] [ref=e109]
+                  - paragraph [ref=e110]: "Desenhamos o fluxo como estrutura de decisão: etapas, regras, responsáveis, SLAs e exceções ficam explícitos, com trilha para operar e auditar."
+              - list [ref=e111]:
+                - listitem [ref=e112]:
+                  - generic [ref=e113]: Workflows operacionais com etapas, donos e critérios de passagem
+                - listitem [ref=e114]:
+                  - generic [ref=e115]: Aprovações, filas, exceções e SLAs com histórico rastreável
+                - listitem [ref=e116]:
+                  - generic [ref=e117]: Modelagem BPM/BPMN para enxergar ponta a ponta e evoluir com segurança
+              - paragraph [ref=e118]:
+                - generic [ref=e119]: Indicado quando
+                - generic [ref=e120]: a operação passa por muitas áreas, depende de validações e ainda perde tempo com retrabalho ou controle paralelo.
+          - article [ref=e121]:
+            - generic [ref=e122]:
+              - generic [ref=e123]:
+                - generic [ref=e124]:
+                  - generic [ref=e125]: "02"
+                  - generic [ref=e126]: Documento e evidência
+                - generic [ref=e127]:
+                  - heading "Documentos e controle operacional" [level=3] [ref=e128]
+                  - paragraph [ref=e129]: Organizamos documentos críticos como evidência operacional, conectando contratos, comprovantes, anexos e dossiês ao contexto em que são usados.
+              - list [ref=e130]:
+                - listitem [ref=e131]:
+                  - generic [ref=e132]: GED / ECM para classificar, versionar e localizar documentos essenciais
+                - listitem [ref=e133]:
+                  - generic [ref=e134]: Assinatura, retenção, busca e governança documental no fluxo
+                - listitem [ref=e135]:
+                  - generic [ref=e136]: Mais segurança para auditoria sem tirar agilidade da operação
+              - paragraph [ref=e137]:
+                - generic [ref=e138]: Aplicação típica
+                - generic [ref=e139]: rotinas em que documento comprova execução, libera decisão ou sustenta conferência entre operação, cliente e auditoria.
+          - article [ref=e140]:
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic [ref=e143]:
+                  - generic [ref=e144]: "03"
+                  - generic [ref=e145]: Sistema e automação
+                - generic [ref=e146]:
+                  - heading "Integrações e automações" [level=3] [ref=e147]
+                  - paragraph [ref=e148]: Integramos plataformas e automatizamos rotinas para que dados circulem com menos digitação, menos conciliação manual e menos atrito entre áreas.
+              - list [ref=e149]:
+                - listitem [ref=e150]:
+                  - generic [ref=e151]: ERP, TMS, WMS, portais e sistemas legados operando em conjunto
+                - listitem [ref=e152]:
+                  - generic [ref=e153]: Automação de tarefas repetitivas e sincronização confiável de dados
+                - listitem [ref=e154]:
+                  - generic [ref=e155]: Redução de planilhas auxiliares, redigitação e conciliações paralelas
+              - paragraph [ref=e156]:
+                - generic [ref=e157]: Útil quando
+                - generic [ref=e158]: a informação precisa atravessar sistemas diferentes e a equipe ainda fecha o processo com conferências manuais.
+          - article [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - generic [ref=e162]:
+                  - generic [ref=e163]: "04"
+                  - generic [ref=e164]: Produto e inteligência
+                - generic [ref=e165]:
+                  - heading "Soluções sob medida e dados" [level=3] [ref=e166]
+                  - paragraph [ref=e167]: Criamos portais, aplicações, APIs e camadas analíticas quando a operação pede uma solução própria, evolutiva e tecnicamente sustentada.
+              - list [ref=e168]:
+                - listitem [ref=e169]:
+                  - generic [ref=e170]: Software sob medida para regras, volumes e jornadas específicas
+                - listitem [ref=e171]:
+                  - generic [ref=e172]: Dashboards e indicadores para visibilidade do processo e seus gargalos
+                - listitem [ref=e173]:
+                  - generic [ref=e174]: APIs, sustentação técnica e evolução contínua com arquitetura sólida
+              - paragraph [ref=e175]:
+                - generic [ref=e176]: Faz sentido quando
+                - generic [ref=e177]: a ferramenta pronta não cobre a regra do negócio e a operação precisa de produto, dados e melhoria contínua no mesmo desenho.
+      - region "Logística é prioridade porque concentra documentos, aprovações e decisões em movimento." [ref=e178]:
+        - generic [ref=e179]:
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - generic [ref=e183]: Onde a NIS ganha tração
+              - heading "Logística é prioridade porque concentra documentos, aprovações e decisões em movimento." [level=2] [ref=e185]
+              - paragraph [ref=e186]: Transportadoras, operadores logísticos, armazenagem e centros de distribuição convivem com comprovantes, exceções, pendências e sistemas que precisam conversar melhor. É nesse tipo de rotina que a NIS costuma organizar o fluxo com mais velocidade.
+            - list "Sinais de aderência operacional" [ref=e187]:
+              - listitem [ref=e188]:
+                - generic [ref=e189]: "01"
+                - generic [ref=e190]:
+                  - heading "Documentos críticos espalhados" [level=3] [ref=e191]
+                  - paragraph [ref=e192]: Comprovantes, anexos, dossiês e evidências circulam entre áreas, pastas, portais e sistemas sem contexto único.
+              - listitem [ref=e193]:
+                - generic [ref=e194]: "02"
+                - generic [ref=e195]:
+                  - heading "Aprovações e exceções sem trilha clara" [level=3] [ref=e196]
+                  - paragraph [ref=e197]: Decisões passam por múltiplos responsáveis, mas histórico, critérios e pendências nem sempre ficam rastreáveis.
+              - listitem [ref=e198]:
+                - generic [ref=e199]: "03"
+                - generic [ref=e200]:
+                  - heading "Status e responsáveis pouco visíveis" [level=3] [ref=e201]
+                  - paragraph [ref=e202]: A operação perde tempo entendendo onde cada solicitação parou, quem precisa agir e qual risco está aberto.
+              - listitem [ref=e203]:
+                - generic [ref=e204]: "04"
+                - generic [ref=e205]:
+                  - heading "Sistemas e controles desconectados" [level=3] [ref=e206]
+                  - paragraph [ref=e207]: TMS, WMS, ERP, portais, planilhas e backoffice precisam conversar melhor para reduzir retrabalho e conferência manual.
+          - complementary "Vertical prioritária" [ref=e208]:
+            - generic [ref=e209]:
+              - img "Operação logística com documentos, sistemas e decisões conectadas" [ref=e210]
+              - generic [ref=e211]:
+                - generic [ref=e212]: Vertical prioritária
+                - strong [ref=e213]: Logística
+                - paragraph [ref=e214]: Alta carga documental, sistêmica e operacional.
+          - generic "Da logística para outras rotinas críticas" [ref=e215]:
+            - generic [ref=e216]:
+              - generic [ref=e217]: Da logística para outras rotinas críticas
+              - paragraph [ref=e218]: A mesma base se aplica onde fluxo, documento e decisão precisam sair do controle paralelo e ganhar rastreabilidade.
+            - generic [ref=e219]:
+              - article [ref=e220]:
+                - generic [ref=e221]: Rotinas internas
+                - heading "Backoffice operacional" [level=3] [ref=e222]
+                - paragraph [ref=e223]: Fluxos administrativos, conferências, aprovações e evidências ganham dono, regra e continuidade.
+              - article [ref=e224]:
+                - generic [ref=e225]: Produto próprio
+                - heading "Produtos internos sob medida" [level=3] [ref=e226]
+                - paragraph [ref=e227]: Portais, aplicações e camadas de workflow acomodam regras específicas que ferramentas prontas não cobrem.
+              - article [ref=e228]:
+                - generic [ref=e229]: Gestão e controle
+                - heading "Dados para decisão e controle" [level=3] [ref=e230]
+                - paragraph [ref=e231]: Indicadores, painéis e visões analíticas acompanham pendências, gargalos, tempos de ciclo e estabilidade.
+      - region "A solução certa começa pelo ponto de maior atrito." [ref=e232]:
+        - generic [ref=e233]:
+          - generic [ref=e234]:
+            - generic [ref=e235]: Diagnóstico aplicado
+            - generic [ref=e237]: Escolha a frente certa
+          - generic [ref=e238]:
+            - heading "A solução certa começa pelo ponto de maior atrito." [level=2] [ref=e239]
+            - paragraph [ref=e240]: A conversa inicial lê onde a rotina perde clareza, rastreabilidade ou continuidade para indicar o caminho mais adequado entre processo, documento, integração, automação, software e dados.
+          - list "Como a conversa avança" [ref=e241]:
+            - listitem [ref=e242]: Entender o cenário
+            - listitem [ref=e243]: Priorizar a frente certa
+            - listitem [ref=e244]: Desenhar a solução aplicável
+          - generic [ref=e245]:
+            - link "Agendar conversa" [ref=e246] [cursor=pointer]:
+              - /url: /contato.html
+              - generic [ref=e247]: Agendar conversa
+            - link "Explorar frentes" [ref=e249] [cursor=pointer]:
+              - /url: "#pilares"
+              - generic [ref=e250]: Explorar frentes
+        - complementary "Onde o atrito aparece?" [ref=e252]:
+          - generic [ref=e253]:
+            - generic [ref=e254]:
+              - generic [ref=e255]: Por onde começar
+              - heading "Onde o atrito aparece?" [level=3] [ref=e256]
+            - generic "Frentes para iniciar o diagnóstico" [ref=e257]:
+              - link "01 Processo Fluxo, regra, responsável e aprovação." [ref=e258] [cursor=pointer]:
+                - /url: "#processos"
+                - generic [ref=e259]: "01"
+                - strong [ref=e260]: Processo
+                - paragraph [ref=e261]: Fluxo, regra, responsável e aprovação.
+              - link "02 Documento Controle, versão, evidência e rastreio." [ref=e262] [cursor=pointer]:
+                - /url: "#documentos"
+                - generic [ref=e263]: "02"
+                - strong [ref=e264]: Documento
+                - paragraph [ref=e265]: Controle, versão, evidência e rastreio.
+              - link "03 Integração Sistemas conversando sem retrabalho." [ref=e266] [cursor=pointer]:
+                - /url: "#integracoes"
+                - generic [ref=e267]: "03"
+                - strong [ref=e268]: Integração
+                - paragraph [ref=e269]: Sistemas conversando sem retrabalho.
+              - link "04 Dados Visibilidade para decidir e evoluir." [ref=e270] [cursor=pointer]:
+                - /url: "#sob-medida"
+                - generic [ref=e271]: "04"
+                - strong [ref=e272]: Dados
+                - paragraph [ref=e273]: Visibilidade para decidir e evoluir.
+              - link "05 Software Produto próprio para regras específicas." [ref=e274] [cursor=pointer]:
+                - /url: "#sob-medida"
+                - generic [ref=e275]: "05"
+                - strong [ref=e276]: Software
+                - paragraph [ref=e277]: Produto próprio para regras específicas.
+            - generic [ref=e279]: NIS estrutura a solução
+            - generic "Etapas do diagnóstico aplicado" [ref=e280]:
+              - generic [ref=e281]: Diagnóstico
+              - generic [ref=e282]: Desenho
+              - generic [ref=e283]: Implementação
+  - contentinfo "Página inicial da NIS" [ref=e284]:
+    - generic [ref=e285]:
+      - text: NIS
+      - generic [ref=e287]: Estrutura, integração, continuidade
+      - generic [ref=e288]:
+        - region "Página inicial da NIS" [ref=e289]:
+          - paragraph [ref=e290]: Do processo ao digital
+          - heading "Página inicial da NIS" [level=2] [ref=e291]:
+            - link "Página inicial da NIS" [ref=e292] [cursor=pointer]:
+              - /url: /index.html
+          - paragraph [ref=e294]: Clareza operacional com estrutura, integração e continuidade.
+          - paragraph [ref=e295]: Estruturamos processos críticos, documentos, integrações e software sob medida para operações que precisam avançar com controle.
+          - generic "Contato da NIS" [ref=e296]:
+            - link "Telefone direto +55 (47) 99206-4403" [ref=e297] [cursor=pointer]:
+              - /url: tel:+5547992064403
+              - generic [ref=e298]: Telefone direto
+              - strong [ref=e299]: +55 (47) 99206-4403
+            - link "E-mail institucional contato@nisconsultoria.com.br" [ref=e301] [cursor=pointer]:
+              - /url: mailto:contato@nisconsultoria.com.br
+              - generic [ref=e302]: E-mail institucional
+              - strong [ref=e303]: contato@nisconsultoria.com.br
+        - navigation "Navegação do rodapé" [ref=e305]:
+          - heading "Navegação" [level=3] [ref=e306]
+          - list [ref=e307]:
+            - listitem [ref=e308]:
+              - link "Início" [ref=e309] [cursor=pointer]:
+                - /url: /index.html
+                - generic [ref=e310]: Início
+            - listitem [ref=e311]:
+              - link "Soluções" [ref=e312] [cursor=pointer]:
+                - /url: /servicos.html
+                - generic [ref=e313]: Soluções
+            - listitem [ref=e314]:
+              - link "Método" [ref=e315] [cursor=pointer]:
+                - /url: /processos.html
+                - generic [ref=e316]: Método
+            - listitem [ref=e317]:
+              - link "Contato" [ref=e318] [cursor=pointer]:
+                - /url: /contato.html
+                - generic [ref=e319]: Contato
+        - region "Presença" [ref=e320]:
+          - heading "Presença" [level=3] [ref=e321]
+          - list [ref=e322]:
+            - listitem [ref=e323]:
+              - link "LinkedIn Leitura institucional" [ref=e324] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/n-i-s-insights-solutions
+                - generic [ref=e326]:
+                  - strong [ref=e327]: LinkedIn
+                  - generic [ref=e328]: Leitura institucional
+            - listitem [ref=e330]:
+              - link "WhatsApp Canal de conversa" [ref=e331] [cursor=pointer]:
+                - /url: https://wa.me/5547992064403
+                - generic [ref=e333]:
+                  - strong [ref=e334]: WhatsApp
+                  - generic [ref=e335]: Canal de conversa
+        - region "Fique por dentro" [ref=e337]:
+          - generic [ref=e338]:
+            - heading "Fique por dentro" [level=3] [ref=e339]
+            - paragraph [ref=e340]: Sinais curtos sobre processos, automação e clareza operacional.
+          - generic [ref=e341]:
+            - generic [ref=e342]: E-mail profissional
+            - generic [ref=e343]:
+              - textbox "E-mail profissional" [ref=e344]:
+                - /placeholder: nome@empresa.com.br
+              - button "Receber" [ref=e345] [cursor=pointer]:
+                - generic [ref=e346]: Receber
+            - paragraph [ref=e348]: "Sem ruído: apenas contexto aplicável à operação."
+      - generic [ref=e349]:
+        - paragraph [ref=e350]:
+          - generic [ref=e351]: © 2026 NIS
+          - generic [ref=e352]: Processos, documentos, integrações e software sob medida.
+        - button "Voltar ao topo":
+          - generic: Voltar ao topo

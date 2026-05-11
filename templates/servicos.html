@@ -4,24 +4,24 @@
     "id": "processos",
     "kicker": "Fluxo e decisão",
     "title": "Processos e aprovações",
-    "description": "Desenhamos o fluxo como estrutura de decisão: etapas, regras, responsáveis, SLAs e exceções ficam explícitos, com trilha para operar e auditar.",
+    "description": "Estruturamos o fluxo como arquitetura de decisão: etapas, regras, responsáveis, SLAs e exceções passam a ter dono, critério e trilha.",
     "points": [
-      "Workflows operacionais com etapas, donos e critérios de passagem",
-      "Aprovações, filas, exceções e SLAs com histórico rastreável",
-      "Modelagem BPM/BPMN para enxergar ponta a ponta e evoluir com segurança"
+      "Etapas, donos e critérios de passagem definidos no fluxo",
+      "Aprovações, exceções e SLAs com histórico consultável",
+      "Modelagem BPM/BPMN para leitura ponta a ponta antes da evolução"
     ],
     "note_label": "Indicado quando",
-    "note": "a operação passa por muitas áreas, depende de validações e ainda perde tempo com retrabalho ou controle paralelo."
+    "note": "a decisão passa por muitas áreas, depende de validações e ainda se apoia em retrabalho ou controle paralelo."
   },
   {
     "id": "documentos",
     "kicker": "Documento e evidência",
     "title": "Documentos e controle operacional",
-    "description": "Organizamos documentos críticos como evidência operacional, conectando contratos, comprovantes, anexos e dossiês ao contexto em que são usados.",
+    "description": "Tratamos documentos críticos como evidência operacional, conectando contratos, comprovantes, anexos e dossiês ao contexto de uso.",
     "points": [
-      "GED / ECM para classificar, versionar e localizar documentos essenciais",
-      "Assinatura, retenção, busca e governança documental no fluxo",
-      "Mais segurança para auditoria sem tirar agilidade da operação"
+      "GED/ECM para classificar, versionar e localizar documentos essenciais",
+      "Acesso, assinatura, retenção e busca integrados à rotina",
+      "Dossiês e anexos com governança sem tirar agilidade da operação"
     ],
     "note_label": "Aplicação típica",
     "note": "rotinas em que documento comprova execução, libera decisão ou sustenta conferência entre operação, cliente e auditoria."
@@ -30,11 +30,11 @@
     "id": "integracoes",
     "kicker": "Sistema e automação",
     "title": "Integrações e automações",
-    "description": "Integramos plataformas e automatizamos rotinas para que dados circulem com menos digitação, menos conciliação manual e menos atrito entre áreas.",
+    "description": "Conectamos plataformas e automatizamos rotinas para que dados circulem com menos digitação, menos conciliação e menos atrito entre áreas.",
     "points": [
-      "ERP, TMS, WMS, portais e sistemas legados operando em conjunto",
-      "Automação de tarefas repetitivas e sincronização confiável de dados",
-      "Redução de planilhas auxiliares, redigitação e conciliações paralelas"
+      "ERP, TMS, WMS, portais e legados operando em conjunto",
+      "Sincronização confiável e automação de tarefas repetitivas",
+      "Menos redigitação, planilhas auxiliares e conciliações paralelas"
     ],
     "note_label": "Útil quando",
     "note": "a informação precisa atravessar sistemas diferentes e a equipe ainda fecha o processo com conferências manuais."
@@ -43,13 +43,13 @@
     "id": "sob-medida",
     "kicker": "Produto e inteligência",
     "title": "Soluções sob medida e dados",
-    "description": "Criamos portais, aplicações, APIs e camadas analíticas quando a operação pede uma solução própria, evolutiva e tecnicamente sustentada.",
+    "description": "Desenhamos portais, aplicações, APIs e camadas analíticas quando a operação pede uma solução própria, evolutiva e sustentada.",
     "points": [
-      "Software sob medida para regras, volumes e jornadas específicas",
-      "Dashboards e indicadores para visibilidade do processo e seus gargalos",
+      "Produto sob medida para regras, volumes e jornadas específicas",
+      "Dashboards e indicadores para visibilidade de gargalos",
       "APIs, sustentação técnica e evolução contínua com arquitetura sólida"
     ],
-    "note_label": "Faz sentido quando",
+    "note_label": "Melhor para",
     "note": "a ferramenta pronta não cobre a regra do negócio e a operação precisa de produto, dados e melhoria contínua no mesmo desenho."
   }
 ] %}
@@ -208,39 +208,50 @@
 
   <section id="pilares" class="solutions-pillars" aria-labelledby="solution-pillars-title">
     <div class="solutions-pillars-head">
-      <span class="solutions-pillars-eyebrow">Famílias de solução</span>
-      <h2 id="solution-pillars-title">Quatro frentes para dar forma ao fluxo real.</h2>
-      <p>As entregas se combinam conforme o gargalo da operação: decisão, evidência, integração ou produto próprio. Cada frente tem função clara, linguagem própria e espaço para evoluir.</p>
+      <div class="solutions-pillars-title-block">
+        <span class="solutions-pillars-eyebrow">Arquitetura aplicada</span>
+        <h2 id="solution-pillars-title">Quatro frentes para dar forma ao fluxo real.</h2>
+      </div>
+      <div class="solutions-pillars-support">
+        <span class="solutions-pillars-support-line" aria-hidden="true"></span>
+        <p>A estratégia se constrói em frentes aplicadas ao contexto real: processo, documento, integração e produto próprio entram quando reduzem ruído, aumentam rastreabilidade e dão forma ao fluxo.</p>
+      </div>
     </div>
 
-    <div class="servicos-grid servicos-grid--solutions solutions-pillars-grid" aria-label="Pilares de solução da NIS">
-      {% for item in solution_pillars %}
-      <article class="servico servico--solution solution-card solution-card--{{ item.id }}" id="{{ item.id }}">
-        <div class="solution-card-shell">
-          <div class="servico-top solution-card-top">
-            <div class="solution-card-meta">
-              <span class="solution-card-index">0{{ loop.index }}</span>
-              <span class="servico-kicker solution-card-kicker">{{ item.kicker }}</span>
+    <div class="solutions-pillars-system">
+      <span class="solutions-pillars-axis" aria-hidden="true"></span>
+      <div class="servicos-grid servicos-grid--solutions solutions-pillars-grid" aria-label="Pilares de solução da NIS">
+        {% for item in solution_pillars %}
+        <article class="servico servico--solution solution-card solution-card--{{ item.id }}" id="{{ item.id }}">
+          <div class="solution-card-shell">
+            <span class="solution-card-accent" aria-hidden="true"></span>
+            <div class="servico-top solution-card-top">
+              <div class="solution-card-meta">
+                <span class="solution-card-index">0{{ loop.index }}</span>
+                <span class="servico-kicker solution-card-kicker">{{ item.kicker }}</span>
+              </div>
+              <div class="solution-card-copy">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
             </div>
-            <div class="solution-card-copy">
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
+
+            <div class="solution-card-points-block">
+              <ul class="solution-card-points">
+                {% for point in item.points %}
+                <li><span>{{ point }}</span></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="servico-note solution-card-note">
+              <span class="solution-card-note-label">{{ item.note_label }}</span>
+              <p>{{ item.note }}</p>
             </div>
           </div>
-
-          <ul class="solution-card-points">
-            {% for point in item.points %}
-            <li><span>{{ point }}</span></li>
-            {% endfor %}
-          </ul>
-
-          <p class="servico-note solution-card-note">
-            <span class="solution-card-note-label">{{ item.note_label }}</span>
-            <span>{{ item.note }}</span>
-          </p>
-        </div>
-      </article>
-      {% endfor %}
+        </article>
+        {% endfor %}
+      </div>
     </div>
   </section>
 
@@ -271,7 +282,7 @@
 
       <aside class="fit-map-media" aria-label="Vertical prioritária">
         <div class="fit-map-image-shell">
-          <img src="{{ url_for('static', filename='imgs/destaque.jpg') }}" alt="Operação logística com documentos, sistemas e decisões conectadas" loading="lazy" decoding="async">
+          <img src="{{ url_for('static', filename='imgs/logistic.png') }}" alt="Operação logística com documentos, sistemas e decisões conectadas" loading="lazy" decoding="async">
           <div class="fit-map-image-caption">
             <span>Vertical prioritária</span>
             <strong>Logística</strong>
@@ -299,78 +310,84 @@
     </div>
   </section>
 
-  <section class="cta-section--home" aria-labelledby="services-cta-title">
-    <div class="cta-copy">
-      <div class="cta-eyebrow-row">
-        <span class="eyebrow">Próximo passo</span>
-        <span class="cta-eyebrow-line" aria-hidden="true"></span>
-        <span class="cta-eyebrow-note">Diagnóstico aplicado ao fluxo crítico</span>
+  <section class="services-final-cta" aria-labelledby="services-cta-title">
+    <div class="services-final-cta__copy">
+      <div class="services-final-cta__eyebrow">
+        <span class="eyebrow">Diagnóstico aplicado</span>
+        <span aria-hidden="true"></span>
+        <small>Escolha a frente certa</small>
       </div>
 
-      <div class="cta-copy-body">
-        <h2 id="services-cta-title">Se processo, documento, integração e decisão travam a operação, a NIS estrutura o fluxo certo para avançar.</h2>
-        <p>A conversa começa pelo ponto de maior atrito e evolui para uma solução aplicada ao contexto real da sua operação.</p>
+      <div class="services-final-cta__body">
+        <h2 id="services-cta-title">A solução certa começa pelo ponto de maior atrito.</h2>
+        <p>A conversa inicial lê onde a rotina perde clareza, rastreabilidade ou continuidade para indicar o caminho mais adequado entre processo, documento, integração, automação, software e dados.</p>
       </div>
 
-      <div class="cta-actions-home">
-        <a href="/contato.html" class="btn-cta-alt cta-primary">
+      <ul class="services-final-cta__principles" aria-label="Como a conversa avança">
+        <li>Entender o cenário</li>
+        <li>Priorizar a frente certa</li>
+        <li>Desenhar a solução aplicável</li>
+      </ul>
+
+      <div class="services-final-cta__actions">
+        <a href="/contato.html" class="services-final-cta__button services-final-cta__button--primary">
           <span>Agendar conversa</span>
-          <span class="cta-btn-arrow" aria-hidden="true"></span>
+          <span class="services-final-cta__button-arrow" aria-hidden="true"></span>
         </a>
-        <a href="#pilares" class="btn-highlight cta-secondary">
-          <span>Explorar soluções</span>
+        <a href="#pilares" class="services-final-cta__button services-final-cta__button--secondary">
+          <span>Explorar frentes</span>
+          <span class="services-final-cta__button-arrow" aria-hidden="true"></span>
         </a>
-      </div>
-
-      <div class="cta-proof">
-        <span class="cta-proof-dot" aria-hidden="true"></span>
-        <p>Leitura objetiva, decisão segura e próximo passo claro.</p>
       </div>
     </div>
 
-    <aside class="cta-visual-panel" aria-hidden="true">
-      <div class="cta-visual-shell">
-        <div class="cta-visual-heading">
-          <span class="cta-visual-kicker">Antes / depois</span>
-          <p>Da rotina fragmentada para um fluxo mais claro, seguro e contínuo.</p>
+    <aside class="services-entry-map" aria-labelledby="services-entry-map-title">
+      <div class="services-entry-map__surface">
+        <div class="services-entry-map__head">
+          <span>Por onde começar</span>
+          <h3 id="services-entry-map-title">Onde o atrito aparece?</h3>
         </div>
 
-        <div class="cta-shift-panel">
-          <section class="cta-shift-stage cta-shift-stage--before">
-            <span class="cta-shift-label">Antes</span>
-            <div class="cta-shift-cloud">
-              <span class="cta-shift-chip cta-shift-chip--process">Processo</span>
-              <span class="cta-shift-chip cta-shift-chip--document">Documento</span>
-              <span class="cta-shift-chip cta-shift-chip--approval">Aprovação</span>
-              <span class="cta-shift-chip cta-shift-chip--system">Sistema</span>
-            </div>
-            <p>Peças críticas dispersas, com pouca leitura comum.</p>
-          </section>
+        <div class="services-entry-map__grid" aria-label="Frentes para iniciar o diagnóstico">
+          <a href="#processos" class="services-entry-card services-entry-card--process">
+            <span>01</span>
+            <strong>Processo</strong>
+            <p>Fluxo, regra, responsável e aprovação.</p>
+          </a>
 
-          <div class="cta-shift-pivot">
-            <span>NIS</span>
-            <strong>Organiza o fluxo</strong>
-          </div>
+          <a href="#documentos" class="services-entry-card services-entry-card--document">
+            <span>02</span>
+            <strong>Documento</strong>
+            <p>Controle, versão, evidência e rastreio.</p>
+          </a>
 
-          <section class="cta-shift-stage cta-shift-stage--after">
-            <span class="cta-shift-label">Depois</span>
-            <div class="cta-shift-outcomes">
-              <article class="cta-shift-outcome">
-                <strong>Clareza</strong>
-                <span>operacional</span>
-              </article>
+          <a href="#integracoes" class="services-entry-card services-entry-card--integration">
+            <span>03</span>
+            <strong>Integração</strong>
+            <p>Sistemas conversando sem retrabalho.</p>
+          </a>
 
-              <article class="cta-shift-outcome">
-                <strong>Controle</strong>
-                <span>documental</span>
-              </article>
+          <a href="#sob-medida" class="services-entry-card services-entry-card--data">
+            <span>04</span>
+            <strong>Dados</strong>
+            <p>Visibilidade para decidir e evoluir.</p>
+          </a>
 
-              <article class="cta-shift-outcome">
-                <strong>Rastreio</strong>
-                <span>contínuo</span>
-              </article>
-            </div>
-          </section>
+          <a href="#sob-medida" class="services-entry-card services-entry-card--software">
+            <span>05</span>
+            <strong>Software</strong>
+            <p>Produto próprio para regras específicas.</p>
+          </a>
+        </div>
+
+        <div class="services-entry-map__center">
+          <span>NIS estrutura a solução</span>
+        </div>
+
+        <div class="services-entry-map__flow" aria-label="Etapas do diagnóstico aplicado">
+          <span>Diagnóstico</span>
+          <span>Desenho</span>
+          <span>Implementação</span>
         </div>
       </div>
     </aside>

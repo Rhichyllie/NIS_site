@@ -1,0 +1,4 @@
+[0511/134131.833:ERROR:third_party\crashpad\crashpad\util\win\registration_protocol_win.cc:108] CreateFile: Acesso negado. (0x5)
+[0511/134131.879:ERROR:third_party\crashpad\crashpad\util\file\file_io_win.cc:172] CreateFile C:\Users\rhich\AppData\Local\Google\Chrome\User Data\Crashpad\reports\1e76ffa8-4e8c-4cf4-9812-c8c1009d2ee5.dmp: Acesso negado. (0x5)
+[89664:38472:0511/134131.893:ERROR:chrome\browser\process_singleton_win.cc:421] Lock file can not be created! Error code: 5
+[89664:38472:0511/134131.893:ERROR:chrome\app\chrome_main_delegate.cc:515] Failed to create a ProcessSingleton for your profile directory. This means that running multiple instances would start multiple browser processes rather than opening a new window in the existing process. Aborting now to avoid profile corruption.
