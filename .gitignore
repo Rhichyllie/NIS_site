@@ -1,2 +1,55 @@
-# --- Python ---*.py[cod]*.egg*.egg-info/dist/build/__pycache__/*.so*.log# Virtual environmentsvenv/env/ENV/.venv/# Configurações de ambiente.env.env.*.local# --- Flask / Web ---instance/*.db*.sqlite3# Arquivos estáticos gerados / uploads temporáriosuploads/tmp/*.cache# --- Git LFS pointers (não ignorar .mp4, pois já estão sendo gerenciados pelo LFS) ---# se houvesse outros tipos grandes que você não quer versionar fora do LFS:# *.mp4# --- Node (caso use ferramentas JS/Front-end) ---node_modules/npm-debug.log*yarn-error.log*yarn-debug.log*# --- IDEs e editores ---.vscode/.idea/*.sublime-project*.sublime-workspace# --- Sistema operacional ---.DS_StoreThumbs.dbdesktop.ini
-.vercel
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+
+# Environment and deploy state
+.env
+.env.local
+.env.*.local
+.vercel/
+
+# Temporary output and local validation artifacts
+build/
+tmp/
+temp/
+uploads/
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.log
+*.cache
+__*_preview.html
+*-playwright.png
+processos-*.png
+method-hero-*.png
+cta-final-*.png
+
+# Browser and Playwright local profiles
+.chrome-*/
+.edge-*/
+.playwright-mcp/
+playwright-report/
+test-results/
+
+# Node tooling, if used locally
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini

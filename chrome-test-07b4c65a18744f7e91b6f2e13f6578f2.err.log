@@ -1,3 +1,0 @@
-[0505/132415.239:ERROR:third_party\crashpad\crashpad\util\win\registration_protocol_win.cc:108] CreateFile: Acesso negado. (0x5)
-[27104:26128:0505/132416.187:FATAL:mojo\public\cpp\platform\platform_channel.cc:108] Check failed: . : Acesso negado. (0x5)
-[0505/132416.190:ERROR:third_party\crashpad\crashpad\client\crashpad_client_win.cc:142] crash server failed to launch, self-terminating

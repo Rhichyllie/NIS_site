@@ -1,4 +1,6 @@
 {
-  "buildCommand": "python3 -m pip install --quiet -r requirements.txt && python3 render_pages.py && cp -R static public/static",
+  "framework": null,
+  "installCommand": "python3 -m pip install --quiet -r requirements.txt",
+  "buildCommand": "python3 render_pages.py",
   "outputDirectory": "public"
 }

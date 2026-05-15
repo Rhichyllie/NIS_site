@@ -1,51 +1,53 @@
-from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
-import os
 import shutil
 
-TEMPLATE_DIR = "templates"
-OUTPUT_DIR   = "public"
-STATIC_DIR   = "static"
-PUBLIC_STATIC_DIR = os.path.join(OUTPUT_DIR, "static")
+from jinja2 import Environment, FileSystemLoader
+
+TEMPLATE_DIR = Path("templates")
+OUTPUT_DIR = Path("public")
+STATIC_DIR = Path("static")
+PUBLIC_STATIC_DIR = OUTPUT_DIR / "static"
+
 PAGES = [
     "index.html",
-    "processos.html",
     "servicos.html",
-    "portfolio.html",
-    "contato.html",      # novo arquivo
+    "processos.html",
+    "contato.html",
 ]
 
-# cria pasta de saída
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+OUTPUT_DIR.mkdir(exist_ok=True)
 
-# configura Jinja
 env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
-# ✨ stub simples de url_for só para 'static'
+
 def fake_url_for(endpoint, filename=""):
     if endpoint == "static":
         return f"/static/{filename}"
     return ""
 
-env.globals["url_for"] = fake_url_for   # <-- aqui está o segredo
 
-# renderiza todas as páginas
+env.globals["url_for"] = fake_url_for
+
+for stale_page in OUTPUT_DIR.glob("*.html"):
+    if stale_page.name not in PAGES:
+        stale_page.unlink()
+        print(f"[OK] Removido HTML obsoleto: {stale_page.name}")
+
 for page in PAGES:
     template = env.get_template(page)
-    html = template.render()          # pode passar context aqui se precisar
-    with open(os.path.join(OUTPUT_DIR, page), "w", encoding="utf-8") as f:
+    html = template.render()
+    with (OUTPUT_DIR / page).open("w", encoding="utf-8") as f:
         f.write(html)
         print(f"[OK] Gerado: {page}")
 
-# recria os assets estáticos para preview local em /public
-if os.path.exists(PUBLIC_STATIC_DIR):
+if PUBLIC_STATIC_DIR.exists():
     shutil.rmtree(PUBLIC_STATIC_DIR)
 
 shutil.copytree(STATIC_DIR, PUBLIC_STATIC_DIR)
 print(f"[OK] Gerado: {PUBLIC_STATIC_DIR}")
 
-# mantém favicon de fallback no root do preview local
-favicon_source = Path(STATIC_DIR) / "favicon.ico"
+favicon_source = STATIC_DIR / "favicon.ico"
 if favicon_source.exists():
-    shutil.copy2(favicon_source, Path(OUTPUT_DIR) / "favicon.ico")
-    print(f"[OK] Gerado: {Path(OUTPUT_DIR) / 'favicon.ico'}")
+    favicon_target = OUTPUT_DIR / "favicon.ico"
+    shutil.copy2(favicon_source, favicon_target)
+    print(f"[OK] Gerado: {favicon_target}")

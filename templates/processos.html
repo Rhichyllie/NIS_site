@@ -98,6 +98,10 @@
       </div>
 
       <aside class="method-difference-principle" aria-label="Princípio central do método NIS">
+        <figure class="method-difference-visual">
+          <img src="{{ url_for('static', filename='imgs/destaque.jpg') }}" alt="Leitura de documentos e indicadores para estruturar a operação antes da tecnologia" loading="lazy" decoding="async">
+          <figcaption>Leitura do fluxo real</figcaption>
+        </figure>
         <span class="method-difference-principle-label">Tese central</span>
         <strong>Estruturar antes de automatizar.</strong>
         <p>Processo, documento, integração e software entram no desenho conforme o contexto da operação, não como uma pilha de ferramentas soltas.</p>
@@ -113,15 +117,26 @@
 
     <div class="method-difference-grid" aria-label="Diferenciais metodológicos da NIS">
       <article class="method-difference-card method-difference-card--featured">
-        <span class="method-difference-index">01</span>
-        <div>
+        <div class="method-difference-read-panel" aria-hidden="true">
+          <span class="method-difference-read-grid"></span>
+          <span class="method-difference-read-trace"></span>
+          <span class="method-difference-read-line method-difference-read-line--top"></span>
+          <span class="method-difference-read-line method-difference-read-line--middle"></span>
+          <span class="method-difference-read-line method-difference-read-line--side"></span>
+          <span class="method-difference-read-dot method-difference-read-dot--friction"></span>
+          <span class="method-difference-read-dot method-difference-read-dot--flow"></span>
+          <span class="method-difference-read-dot method-difference-read-dot--dependency"></span>
+          <span class="method-difference-read-label method-difference-read-label--friction">Atrito</span>
+          <span class="method-difference-read-label method-difference-read-label--flow">Fluxo</span>
+          <span class="method-difference-read-label method-difference-read-label--dependency">Dependências</span>
+        </div>
+        <div class="method-difference-feature-copy">
           <h3>Leitura operacional antes da solução.</h3>
           <p>Antes de propor ferramenta, entendemos o fluxo, os pontos de atrito, as dependências e as exceções da rotina.</p>
         </div>
       </article>
 
       <article class="method-difference-card">
-        <span class="method-difference-index">02</span>
         <div>
           <h3>Processo, documento e sistema no mesmo desenho.</h3>
           <p>A solução considera como pessoas, documentos, aprovações e sistemas se conectam na prática.</p>
@@ -129,7 +144,6 @@
       </article>
 
       <article class="method-difference-card">
-        <span class="method-difference-index">03</span>
         <div>
           <h3>Tecnologia aplicada ao contexto real.</h3>
           <p>Automação, integração, dados e software entram onde geram clareza, controle e continuidade.</p>
@@ -137,7 +151,6 @@
       </article>
 
       <article class="method-difference-card">
-        <span class="method-difference-index">04</span>
         <div>
           <h3>Estrutura evolutiva, sem projeto engessado.</h3>
           <p>A entrega nasce com uma base organizada e pode evoluir conforme a operação amadurece.</p>
@@ -145,7 +158,6 @@
       </article>
 
       <article class="method-difference-card">
-        <span class="method-difference-index">05</span>
         <div>
           <h3>Clareza para decidir e operar.</h3>
           <p>O objetivo é reduzir ruído, aumentar rastreabilidade e dar mais visibilidade para a rotina crítica.</p>
@@ -162,8 +174,8 @@
       <span class="eyebrow tech-architecture-eyebrow">Arquitetura aplicada</span>
       <h2 id="tech-architecture-title">Base técnica para operações que precisam avançar com controle.</h2>
       <div class="tech-architecture-copy">
-        <p>Nossa base técnica não existe para impressionar. Ela sustenta integrações confiáveis, automações úteis, dados legíveis e soluções que funcionam na rotina.</p>
-        <p>Cada escolha nasce do contexto operacional: o que precisa ser integrado, automatizado, registrado, governado e evoluído sem criar dependência desnecessária.</p>
+        <p>Nossa base técnica sustenta integrações confiáveis, automações úteis, dados legíveis e soluções que permanecem operáveis na rotina.</p>
+        <p>Cada escolha nasce do contexto operacional: o que precisa se conectar, ser registrado, governado e evoluído sem criar dependência desnecessária.</p>
       </div>
 
       <aside class="tech-architecture-visual" aria-label="Representação visual de arquitetura conectando operação, integração, automação e dados">
@@ -183,19 +195,19 @@
             <strong>Operação</strong>
           </span>
           <span class="tech-map-node tech-map-node--api">
-            <small>01</small>
+            <small>Serviços</small>
             <strong>APIs e serviços</strong>
           </span>
           <span class="tech-map-node tech-map-node--flow">
-            <small>02</small>
+            <small>Fluxos</small>
             <strong>Fluxos operacionais</strong>
           </span>
           <span class="tech-map-node tech-map-node--data">
-            <small>03</small>
+            <small>Dados</small>
             <strong>Dados e contexto</strong>
           </span>
           <span class="tech-map-node tech-map-node--cloud">
-            <small>04</small>
+            <small>Infra</small>
             <strong>Infraestrutura cloud</strong>
           </span>
         </div>
@@ -212,10 +224,9 @@
 
     <div class="tech-capability-grid" aria-label="Capacidades técnicas aplicadas">
       <article class="tech-capability-card">
-        <span class="tech-capability-index">01</span>
         <div class="tech-capability-body">
           <h3>Back-end e APIs</h3>
-          <p>Serviços, regras de negócio e integrações desenhados para sustentar processos críticos com estabilidade.</p>
+          <p>Serviços e regras de negócio preparados para sustentar processos críticos com estabilidade, rastreabilidade e evolução.</p>
         </div>
         <ul class="tech-capability-tags" aria-label="Tecnologias de apoio">
           <li>Python</li>
@@ -225,10 +236,9 @@
       </article>
 
       <article class="tech-capability-card">
-        <span class="tech-capability-index">02</span>
         <div class="tech-capability-body">
           <h3>Portais e interfaces operacionais</h3>
-          <p>Telas objetivas para equipes acompanharem, validarem e executarem fluxos sem depender de controles paralelos.</p>
+          <p>Interfaces para equipes acompanharem, validarem e executarem rotinas com menos controles paralelos.</p>
         </div>
         <ul class="tech-capability-tags" aria-label="Tecnologias de apoio">
           <li>React</li>
@@ -238,7 +248,6 @@
       </article>
 
       <article class="tech-capability-card">
-        <span class="tech-capability-index">03</span>
         <div class="tech-capability-body">
           <h3>Automação e integração</h3>
           <p>Conexões entre sistemas e rotinas que reduzem retrabalho, preservam contexto e mantêm a operação fluindo.</p>
@@ -251,7 +260,6 @@
       </article>
 
       <article class="tech-capability-card">
-        <span class="tech-capability-index">04</span>
         <div class="tech-capability-body">
           <h3>Orquestração de processos</h3>
           <p>Fluxos com etapas, responsáveis, exceções e indicadores para dar visibilidade ao que antes ficava disperso.</p>
@@ -264,10 +272,9 @@
       </article>
 
       <article class="tech-capability-card">
-        <span class="tech-capability-index">05</span>
         <div class="tech-capability-body">
           <h3>Cloud e infraestrutura</h3>
-          <p>Ambientes preparados para evolução, disponibilidade e manutenção sem transformar infraestrutura em obstáculo.</p>
+          <p>Ambientes preparados para disponibilidade, manutenção e evolução sem transformar infraestrutura em obstáculo.</p>
         </div>
         <ul class="tech-capability-tags" aria-label="Tecnologias de apoio">
           <li>Docker</li>
@@ -277,7 +284,6 @@
       </article>
 
       <article class="tech-capability-card">
-        <span class="tech-capability-index">06</span>
         <div class="tech-capability-body">
           <h3>Dados e armazenamento</h3>
           <p>Bases organizadas para consulta, auditoria, performance e leitura gerencial da operação.</p>
