@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "installCommand": "python3 -m pip install --quiet -r requirements.txt",
-  "buildCommand": "python3 render_pages.py",
+  "installCommand": "echo \"Skipping install\"",
+  "buildCommand": "echo \"Using committed public directory\"",
   "outputDirectory": "public"
 }
